@@ -1,19 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="BADLI AL RASHID">
+    <meta name="keywords" content="BADLI, BADLI AL RASHID, BADLI RASHID">
     <meta name="description" content="...">
-    <title>B A D L I</title>
+    <title>BADLI AL RASHID</title>
+    <style>
+      body {
+	  background-color: grey;
+      }
+      .parent {
+	  display: grid;
+	  align-items: center;
+	  justify-content: center;
+	  grid-template-rows: auto 1fr auto;
+      }
+      
+      h1 {
+	  color: black;
+      }
+      
+      h2 {
+	  font-size: 20px;
+	  font-weight: bold;
+	  color: darkslategray;
+      }
+
+      a {
+	  color: lightgrey;
+	  text-decoration: none;
+	  transition: all 0.7s ease-in;
+      }
+      
+      .about a:hover {
+	  color: blue;
+	  text-decoration: none;
+	  transition: all 0.2s ease-in;
+      }
+      
+      .links a:hover {
+	  color: green;
+	  text-decoration: none;
+	  transition: all 0.2s ease-in;
+      }
+      
+      .sources a:hover {
+	  color: red;
+	  text-decoration: none;
+	  transition: all 0.2s ease-in;
+      }
+
+    </style>
   </head>
-<body>
-  <h1>BADLI AL RASHID</h1>
-  <p>Hello,
-    <br>nothing fancy
-    <br>just a website
-    <br>you can contact me <a href="mailto:badli.rashid@yahoo.com">&lt; b a d l i dot r a s h i d at y a h o o &gt;</a></p>
-  <h2>PERSONAL LINKS</h2>
-  <a href="https://badli.blogspot.com">blog</a>  
-</body>
+  <body>
+    <div class="parent">
+      <header class="top">
+	<h1>BADLI  AL  RASHID</h1>
+      </header>
+      <main class="content">
+	<div class="about">
+	  <h2>About Me</h2>
+	  <p>Hi,
+	    <br>I am from Brunei Darussalam, on the island of Borneo,
+	    <br>You can email me at <a href="mailto:badli.a.r@gmail.com"><em>gmail</em></a> or <a href="mailto:badli.rashid@yahoo.com"><em>yahoo</em></a></p>
+	</div>
+	<div class="links">
+	  <h2>Links</h2>
+	  <a href="https://badli.blogspot.com">blog</a>
+	  <a href="https://github.com/badlirashid">github</a>
+	  <a href="https://www.linkedin.com/badli-al-rashid-49756037">linkedin</a>
+	</div>
+	<div class="sources">
+	  <h2>HTML Reference</h2>
+	  <a href="https://1linelayouts.glitch.me">1linelayouts</a>
+	  <a href="https://codewithmosh.com">codewithmosh</a>
+	</div>
+      </main>
+    </div>
+  </body>
 </html>
