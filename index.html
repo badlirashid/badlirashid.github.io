@@ -7,21 +7,34 @@
     <meta name="description" content="...">
     <title>BADLI AL RASHID</title>
     <style>
-      body {
+      html, body {
+	  width: 100%;
+	  height: 100%;
 	  background-color: grey;
       }
       .parent {
-	  display: grid;
+	  min-height: 100%;
+	  display: flex;
+	  flex-direction: column;
 	  align-items: center;
 	  justify-content: center;
-	  grid-template-rows: auto 1fr auto;
       }
       
       h1 {
+	  font-family: Arial;
 	  color: black;
       }
+
+      .contents {
+	  flex-grow: 1;
+      }
+
+      .top, .contents, .bottom {
+	  flex-shrink: 0;
+      }
       
-      h2 {
+      .contents h2 {
+	  font-family: Courier;
 	  font-size: 20px;
 	  font-weight: bold;
 	  color: darkslategray;
@@ -51,6 +64,11 @@
 	  transition: all 0.2s ease-in;
       }
 
+      .bottom p {
+	  font-size: 6;
+	  font-style: italic;
+      }
+
     </style>
   </head>
   <body>
@@ -58,7 +76,7 @@
       <header class="top">
 	<h1>BADLI  AL  RASHID</h1>
       </header>
-      <main class="content">
+      <main class="contents">
 	<div class="about">
 	  <h2>About Me</h2>
 	  <p>Hi,
@@ -68,16 +86,25 @@
 	<div class="links">
 	  <h2>Links</h2>
 	  <a href="https://badli.blogspot.com">blog</a>
+	  <a href="https://www.gnu.org/software/emacs">Emacs</a>
 	  <a href="https://github.com/badlirashid">github</a>
+	  <a href="https://mozilla.org">Firefox</a>
 	  <a href="https://badlirashid.bitbucket.io">bitbucket</a>
+	  <a href="https://git-scam.org">git</a>	  
 	  <a href="https://www.linkedin.com/in/badli-al-rashid-49756037">linkedin</a>
+
+
 	</div>
 	<div class="sources">
 	  <h2>HTML Reference</h2>
 	  <a href="https://1linelayouts.glitch.me">1linelayouts</a>
 	  <a href="https://codewithmosh.com">codewithmosh</a>
+	  <a href="https://dev.to/domysee/keeping-the-footer-at-the-bottom-with-css-flexbox-5h5f">dev.to</a>
 	</div>
       </main>
+      <footer class="bottom">
+	<p>Copyright 2021 Badli Al Rashid</p>
+      </footer>
     </div>
   </body>
 </html>
