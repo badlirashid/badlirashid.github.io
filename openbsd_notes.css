@@ -1,1 +1,8 @@
+/* Reset global values except unicode-bidi, direction CSS Custom properties */
+{
+all: unset;
+}
 
+#PERBEZZAN table, th, td {
+	border: 1px solid black;
+} 
