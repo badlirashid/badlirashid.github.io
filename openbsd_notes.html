@@ -18,6 +18,7 @@
 	</header>
 		<article class="PERMULAAN">
 			<h2>Permulaan</h2>
+			
 			<p>Documen ini mengenai perisai percuma OpenBSD yang diusahakan oleh sukarelawan di seluruh dunia.
 			<br>OpenBSD bermula pada July 1996 oleh pengasasnya Theo De Raadt kerana dia telah disingkirkan oleh kumpulan NetBSD  
 			</p>
@@ -51,6 +52,11 @@
 					<td>/ </td>
 					<td>/boot </td>
 				</tr>
+				<tr>
+					<td>Swap partition</td>
+					<td>Not dedicated partion</td>
+					<td>Ya</td>
+				</tr>
 
 				<tr>
 					<td>Default Shell</td>
@@ -69,12 +75,71 @@
 		<article class=PERMASANGAN>
 			<h2>Permasangan Perisai OpenBSD</h2>
 			
-			<p>Sebelum anda memasang OpenBSD ke dalam Laptop atau Desktop anda. Sebaiknya kita selidiki jikalau perkakas anda serasi.
-			<br>Maksud perkasas di sini Storage controller, Network Adapter, Wireless Adapter, Graphics Card dan Audio Card.
-			<br>Berbanding dengan perkembangan Linux, drivers OpenBSD akan setapak di belakang.
-						
-			<p>Sekiranya anda belum selesa dengan pemasang perisai tersebut ke dalam Laptop atau Desktop
-			<br>anda boleh memsang secara virtulize seperti Hyper-V, VMWare, VirtualBox dan lain lain. 
+			<p>Sebelum anda memasang OpenBSD ke dalam Laptop, Desktop atau Server anda. Sebaiknya kita selidiki jikalau perkakas anda serasi.
+			<br>Maksud perkasas di sini seperti Storage controller, Network Adapter, Wireless Adapter, Graphics Card dan Audio Card.
+			<br>Berbanding dengan perkembangan Linux, perkembangan drivers OpenBSD akan setapak di belakang.
+			</p>
+			
+			<p>Sekiranya anda belum selesa dengan pemasang perisai tersebut ke dalam Laptop, Desktop dan Server
+			<br>anda boleh memasang perisai tersebut secara virtual seperti Microsoft Hyper-V, VMWare, Oracle VirtualBox dan lain lain.
+			</p>
+			
+			<p>Sebelum memulakan installation ada beberapa maklumat anda perlu tahu terlebih dahulu
+			<br>hostname ia itu nama komputer anda
+			<br>IP address 
+			<br>IP address DNS
+			</p>
+		
+			<p><img src="openbsd_notes/step_1.png" alt="Pemasangan 01 - Kickstart Install"><a></em>
+			</br><em>Pemasangan 01 - Install</em>
+			</p>
+			
+			<p><img src="openbsd_notes/step_15.png" alt="Pemasangan 02 - Mengenaie SSHD dan root"><a></em>
+			</br><em>Pemasangan 02 - SSHD dan root</em>
+			</p>
+			
+			<P> Jika awda tidak mahu enable remote access ke computer anda kita boleh memberi jawapan tidak disini
+			<br>Sebagai langkah keselamatan akses root melaluie remote login adalah di disable  
+			</p>
+			
+			<p><img src="openbsd_notes/step_18.png" alt="Pemasangan 03 - harddrive layout"><a></em>
+			</br><em>Pemasangan 03 - harddrive layout</em>
+			</p>
+			
+			<p>Layout yang saya pilih adalah yang disediakan oleh installer. Anda boleh mengubah layout mengikut ke hendak anda
+			</br> atau megubahnya selepas selesai. Di sini Size harddrive saya adalah berjumlah 32GB
+			</p>
+			
+			<p>Dulu semasa saya belajar mengenaie Debian ada orang menyebut tentang /exports, saya bengang apa maksud folder exports ? 
+			</br>Saya mendapat tahu, dia mengunakan untuk mount point NFS server mereka.     
+			</p>
+			
+			<p><img src="openbsd_notes/step_23.png" alt="Pemasangan 04 - Fileset"><a></em>
+			</br><em>Pemasangan 04 - Fileset</em>
+			</p>
+			
+			<p>Semasa process ini, ia akan mengambil masa jikalau anda menggunakan internet installation kerana ia tertakluk kepada
+			</br> kecepatan internet anda.
+			</p>
+			
+			<p><img src="openbsd_notes/step_26.png" alt="Pemasangan 05 - Reboot "><a></em>
+			</br><em>Pemasangan 05 - Reboot</em>
+			</p>
+			
+			<p> Setelah selesai, anda perlu reboot system anda.
+			</p>
+			
+			<p><img src="openbsd_notes/step_27_done.png" alt="Pemasangan 06 - Tamat"><a></em>
+			</br><em>Pemasangan 06 - Tamat</em>
+			</p>
+			
+			<p>Jikalau system anda sudah bereboot dan anda terlihat url http://firmware.openbsd.org, kemungkinan
+			<br> sistem anda menghendaki drivers proprietary, di gamabar tersebut ia dari Intel. Kalau tidak ada access internet
+			<br> awda boleh menggunakan fw_update untuk memasang driver tersebut apabila mendapat access internet.
+			</p>
+			
+
+
 		
 		</article>
 	</body>
