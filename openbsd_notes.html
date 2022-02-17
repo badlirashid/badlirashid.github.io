@@ -13,7 +13,7 @@
 		<h1>Nota OpenBSD</h1>
 		<p> penulis&nbsp;:&nbsp;Badli Al Rashid
 		<br>e-mel&nbsp;&nbsp;&nbsp;:&nbsp;badli.a.r@gmail.com
-		<br>tarikh&nbsp;&nbsp;&nbsp;:&nbsp;17FEB2022
+		<br>tarikh&nbsp;&nbsp;&nbsp;:&nbsp;18 Febuari 2022
 		</p>
 	</header>
 		<article class="PERMULAAN">
@@ -123,7 +123,7 @@
 			<br>anda boleh memasang perisai tersebut secara virtual seperti Microsoft Hyper-V, VMWare, Oracle VirtualBox dan lain lain.
 			</p>
 			
-			<p>Sebelum memulakan installation ada beberapa maklumat anda perlu tahu terlebih dahulu
+			<p>Sebelum memasang perisai ada beberapa maklumat anda perlu ada terlebih dahulu
 			<br>hostname ia itu nama komputer anda
 			<br>IP address 
 			<br>IP address DNS
@@ -133,12 +133,14 @@
 			</br><em>Pemasangan 01 - Install</em>
 			</p>
 			
+			<p>Tekan huruf i and tekan enter untuk memulakan permasang OpenBSD</p>
+			
 			<p><img src="openbsd_notes/step_15.png" alt="Pemasangan 02 - Mengenaie SSHD dan root"><a></em>
 			</br><em>Pemasangan 02 - SSHD dan root</em>
 			</p>
 			
-			<P> Jika awda tidak mahu enable remote access ke computer anda kita boleh memberi jawapan tidak disini
-			<br>Sebagai langkah keselamatan akses root melaluie remote login adalah di disable  
+			<P> Jika anda tidak mahu computer diakses dari luar, anda kita boleh memberi jawapan tidak disini supaya SSHD tidak diaktifkan.
+			<br>Sebagai langkah keselamatan akses root melaluie akeses SSHD tidak diaktifkan.  
 			</p>
 			
 			<p><img src="openbsd_notes/step_18.png" alt="Pemasangan 03 - harddrive layout"><a></em>
@@ -149,7 +151,7 @@
 			</br> atau megubahnya selepas selesai. Di sini Size harddrive saya adalah berjumlah 32GB
 			</p>
 			
-			<p>Dulu semasa saya belajar mengenaie Debian ada orang menyebut tentang /exports, saya bengang apa maksud folder exports ? 
+			<p>Dulu semasa saya belajar mengenaie Debian ada orang menyebut tentang /exports, saya bengang apa yang dimaksudkan dengan folder exports ? 
 			</br>Saya mendapat tahu, dia mengunakan untuk mount point NFS server mereka.     
 			</p>
 			
@@ -157,8 +159,8 @@
 			</br><em>Pemasangan 04 - Fileset</em>
 			</p>
 			
-			<p>Semasa process ini, ia akan mengambil masa jikalau anda menggunakan internet installation kerana ia tertakluk kepada
-			</br> kecepatan internet anda.
+			<p>Jikalau anda menggunakan internet installation ia akan memakan masa kerana ia tertakluk kepada
+			</br>kecepatan internet anda.
 			</p>
 			
 			<p><img src="openbsd_notes/step_26.png" alt="Pemasangan 05 - Reboot "><a></em>
@@ -172,7 +174,7 @@
 			</br><em>Pemasangan 06 - Tamat</em>
 			</p>
 			
-			<p>Jikalau system anda sudah bereboot dan anda terlihat url http://firmware.openbsd.org, kemungkinan
+			<p>System anda sudah bereboot dan anda terlihat url http://firmware.openbsd.org,
 			<br> sistem anda menghendaki drivers proprietary, di gamabar tersebut ia dari Intel. Kalau tidak ada access internet
 			<br> awda boleh menggunakan fw_update untuk memasang driver tersebut apabila mendapat access internet.
 			</p>		
