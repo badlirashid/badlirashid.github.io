@@ -8,6 +8,10 @@ html, body {
 	height: 100%;
 }
 
+body {
+	background-color: white;
+}
+
 #PERBEZZAN table, th, td {
 	border: 1px solid black;
 } 
