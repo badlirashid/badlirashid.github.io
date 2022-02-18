@@ -104,7 +104,7 @@
 			
 			<p>***<em> Pengurusan Userland tools dibuat oleh sukarelawan GNU dan Linux Kernel di uruskan oleh sukarelawan Linux. Sukarelawan Debian akan menguruskan integrasi aplikasi dan menyumbang kepada pembaik pulih aplikasi kepada pengurusnya yang asal.</em></p>
 		</article>
-		<article class=PERMASANGAN>
+		<article class=PEMASANGAN>
 			<h2>Pemasangan OpenBSD</h2>
 			
 			<p>Sebelum anda memasang OpenBSD ke dalam Laptop, Desktop atau Server anda. Sebaiknya kita selidiki jikalau perkakas anda serasi dengan OpenBSD. Maksud perkakas di sini ialah:- 
@@ -159,10 +159,10 @@
 			<p>Gambar di atas menunjukan OpenBSD menunggu hendak membuat boot dar Cakera Padat. Tekan "Enter" untuk meneruskan</p>
 
 			<h3>2. Skrip pemasangan OpenBSD</h3>
-			<p><img src="openbsd_notes/step_1.png" alt="Skrip pemasangan OpenBSD>
+			<p><img src="openbsd_notes/step_1.png" alt="Skrip pemasangan OpenBSD">
 			</br><em>i untuk Install</em></p>
 			
-			<p>Semasa process Boot, ia akan menunjukkan perkakas yang ada terpasang di dalam sistem komputer anda. Setelah selesai ia menunjukkan beberapa pilihan. Tekan huruf "i" and tekan "enter" untuk memulakan pemasang OpenBSD</p>
+			<p>Semasa process Boot, ia akan menunjukkan perkakas yang ada terpasang di dalam sistem anda. Setelah selesai ia menunjukkan beberapa pilihan. Tekan huruf "i" and tekan "enter" untuk memulakan pemasang OpenBSD</p>
 			
 			<h3>3. Akses Sistem dan Akaun root</h3>
 			<p><img src="openbsd_notes/step_15.png" alt="Akses dan Root">
@@ -178,39 +178,63 @@
 			
 			<p>Dulu semasa saya belajar mengenai Debian ada orang menyebut tentang /exports, saya bengang apa yang dimaksudkan dengan folder exports ? Saya mendapat tahu, dia menggunakan untuk mount point NFS server mereka. Struktur folder mereka berbeza dengan yang saya biasa</p>
 			
-			<h3>5. Fileset</h3>
-			<p><img src="openbsd_notes/step_23.png" alt="Pemasangan 04 - Fileset">
-			<br><em>Pemasangan 04 - Fileset</em>
+			<h3>5. Komponen OpenBSD</h3>
+			<p><img src="openbsd_notes/step_23.png" alt="Komponent OpenBSD">
+			<br><em>Komponen OpenBSD</em>
 			</p>
 			
-			<p>Jikalau anda menggunakan internet installation ia akan memakan masa kerana ia tertakluk kepada
-			<br>kecepatan internet anda.
+			<p>Di sini kita memilih semua komponen yang ada. 
+			<ul>
+				<li>bsd</li>
+				<li>bsd.rd</li>
+				<li>base70.tgz</li>
+				<li>etc.tgz</li>
+				<li>comp70.tgz</li>
+				<li>game70.tgz</li>
+				<li>man70.tgz</li>
+				<li>game70.tgz</li>
+				<li>xbase70.tgz</li>
+				<li>xshare70.tgz</li>
+				<li>xfont70.tgz</li>
 			</p>
 			
-			<h3>6. Reboot</h3>
-			<p><img src="openbsd_notes/step_26.png" alt="Pemasangan 05 - Reboot ">
-			</br><em>Pemasangan 05 - Reboot</em>
+			<h3>6. Waktu tempatan</h3>
+			<p><img src="openbsd_notes/step_26.png" alt="waktu">
+			</br><em>Waktu tempatan</em>
 			</p>
 			
-			<p> Setelah selesai, anda perlu reboot system anda.
+			<p> Di sini sama memilih "Asia/Brunei" sebagai waktu tempatan dan reboot sistem saya.  
 			</p>
 			
-			<h3>7. Login Local</h3>
-			<p><img src="openbsd_notes/step_27_done.png" alt="Pemasangan 06 - Tamat">
-			</br><em>Pemasangan 06 - Tamat</em>
+			<h3>7. Pertama kali Log Masuk ke OpenBSD</h3>
+			<p><img src="openbsd_notes/step_27_done.png" alt="Pertama kali Log Masuk">
+			</br><em>Pertama kali Log Masuk</em>
 			</p>
 
-			<p>System anda sudah boot ke dalam perisai OpenBSD dan jika anda terlihat ada url tertera http://firmware.openbsd.org atau seumpamanya,
-			<br> OpenBSD sedang memasang drivers proprietary untuk perkakas anda, gamabar di atas perkakas itu adalah dari Intel. 
-			<br>Kalau tidak ada access internet awda boleh menggunakan fw_update untuk memasang driver tersebut apabila mendapat access internet.
+			<p>System anda sudah boot ke dalam perisai OpenBSD dan jika anda terlihat ada url tertera http://firmware.openbsd.org, OpenBSD sedang memasang drivers proprietary untuk perkakas anda, dari gambar di atas menunjukkan OpenBSD memasang drivers untuk perkakas Intel. Kalau tidak ada access internet anda boleh menggunakan fw_update untuk memasang drivers tersebut apabila mendapat access internet.
+			</p>
+			
+			<p>Saya log masuk dengan pengguna root. Sistem OpenBSD melihat penyata sistem mereka. 
 			</p>
 
-			<h3>8. Login Remote</h3>
+			<h3>8. Log masuk dari luar</h3>
 			
-			<p><img src="openbsd_notes/remote-login.png" alt="Akses secara remote">
-			</br><em>Access secara remote</em>
+			<p><img src="openbsd_notes/remote-login.png" alt="Akses dari luar">
+			</br><em>Menggunakan PuTTY untuk log masuk ke OpenBSD</em></p>
+			
+			<p>OpenBSD dapat di akses dari luar. Maksud di sini kita log masuk ke sistem tidak berada di tempat sistem itu. kita memerlukan alamat IP atau alamat penuh URL OpenBSD.
+			<br> Selain itu menggunakan aplikasi utility seperti:-
+			<ul>
+				<li>PuTTY - Aplikasi mudah terminal untuk perisai * Microsoft Windows menggunakan protokol SSH</li>
+				<li>WinSCP - Aplikasi untuk memindah file menggunakan SSH untuk perisian * Microsoft Windows menggunakan protokol SSH</li>
+				<li>ssh - Aplikasi terminal tersedia di dalam perisai Linux dan Windows </li>
+				<li>scp - Aplikasi memindah file tersedia di dalam perisai Linux dan Windows menggunakan protokol SSH </li>
+			</ul> 
 			</p>
-			<p>sss</p>
+			
+			<p>Gambar di atas menunjukan kita telah log masuk dengan aplikasi PuTTY. Putty adalah aplikasi terminal, anda boleh memuat turun aplikasi di halaman resmi <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a>.
+			
+			</p>
 		</article>
 		
 	<footer>
