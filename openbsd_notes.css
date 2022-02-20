@@ -16,16 +16,27 @@ img {
 	width: 75%;
 }
 
-/** #diff table {
+.diff table,th,td {
 	width: 100%;
-	border: 1px solid red;
+	border: 1px solid black;
+	text-align: center;
+	padding: 5px;
+
 }
 
-#home table, th, td {
-	width: 100%;
-	border: 1px solid blue;
+.diff td:nth-child(1n) {
+	text-align: left;
 }
-**/
+
+.diff td:nth-child(2n) {
+	text-align: center;
+}
+
+.diff td:nth-child(3n) {
+	text-align: center;
+}
+
+
 figure figcaption {
 	text-align: center;
 }
