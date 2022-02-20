@@ -16,12 +16,16 @@ img {
 	width: 75%;
 }
 
-#PERBEZZAN table, th, td {
+/** #diff table {
 	width: 100%;
-	border: 1px solid black;
+	border: 1px solid red;
 }
 
-
+#home table, th, td {
+	width: 100%;
+	border: 1px solid blue;
+}
+**/
 figure figcaption {
 	text-align: center;
 }

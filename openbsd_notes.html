@@ -17,14 +17,16 @@
 		<br>lesen&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Creative Commons
 		</p>
 	</header>
-		<article class="PERMULAAN">
+		<article class="intro">
 			<h2>1 - Permulaan</h2>
 			
-			<p>Saya bukannya pakar pengguna <a href="https://openbsd.org">OpenBSD</a> atau <a href="https://www.edu.uni-klu.ac.at/epirker/unix/guru.html">"unix guru"</a>. Saya pengguna biasa sahaja. </p>
+			<p>Saya bukannya pakar pengguna <a href="https://openbsd.org">OpenBSD</a>
+			 atau <a href="https://www.edu.uni-klu.ac.at/epirker/unix/guru.html">"unix
+			 guru"</a>. Saya pengguna biasa sahaja.</p>
 			
 			<figure>
-			<img src="openbsd_notes/MangaRamblo.jpg" alt="MangaRamblo.jpg"></img>
-			<figcaption>Gambar 1 - MangaRamblo</figcaption>
+				<img src="openbsd_notes/MangaRamblo.jpg" alt="MangaRamblo.jpg"></img>
+				<figcaption>Gambar 1 - MangaRamblo</figcaption>
 			</figure>
 			
 			
@@ -48,7 +50,7 @@
 			
 		</article>
 		
-		<article class="PERBEZAAN">
+		<article class="diff">
 			<h2>2 - Perbezaan Di Antara OpenBSD Dan Debian</h2> 
 			<p>Pengguna OpenBSD berasal dari perisai yang lain. Saya dulu menggunakan Microsoft Windows dan GNU/Linux.</p>
 			<table>
@@ -108,7 +110,7 @@
 			
 			<p>***<em> Pengurusan Userland tools dibuat oleh sukarelawan GNU dan Linux Kernel di uruskan oleh sukarelawan Linux. Sukarelawan Debian akan menguruskan integrasi aplikasi dan menyumbang kepada pembaik pulih aplikasi kepada pengurusnya yang asal.</em></p>
 		</article>
-		<article class=PEMASANGAN>
+		<article class=install>
 			<h2>3 - Pemasangan OpenBSD</h2>
 			
 			<p>Sebelum anda memasang OpenBSD ke dalam Laptop, Desktop atau Server anda. Sebaiknya kita selidiki jikalau perkakas anda serasi dengan OpenBSD. Maksud perkakas di sini ialah:- 
@@ -219,10 +221,7 @@
 			<p>Saya log masuk dengan pengguna root sistem mengeluar kan mesej penyata</p>
 
 			<h3>3 - 8 Log masuk dari luar</h3>
-			
-			<figure><img src="openbsd_notes/remote-login.png" alt="Akses dari luar">
-			<figcaption>Gambar 10 - Menggunakan PuTTY untuk log masuk ke OpenBSD</figcaption></figure>
-			
+						
 			<p>OpenBSD dapat di akses dari luar. Maksud di sini kita log masuk ke sistem tidak berada di tempat sistem itu. kita memerlukan alamat IP atau alamat penuh URL OpenBSD. Selain itu menggunakan aplikasi utility seperti:-
 			<ul>
 				<li><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a> - Aplikasi mudah terminal untuk perisai * Microsoft Windows menggunakan protokol SSH</li>
@@ -232,11 +231,52 @@
 			</ul> 
 			</p>
 			
-			<p>Gambar 10 menunjukkan kita telah log masuk dengan aplikasi PuTTY. Putty adalah aplikasi terminal, anda boleh memuat turun aplikasi di halaman resmi .
+			<figure><img src="openbsd_notes/remote-login.png" alt="Akses dari luar">
+			<figcaption>Gambar 10 - Menggunakan PuTTY untuk log masuk ke OpenBSD</figcaption></figure>
+
 			
+			<p>SSHD atau SSH Daemon ada lah service yang membolehkan kita log masuk dari luar.
 			</p>
 		</article>
 		
+		<article class="home">
+			<h2>4 - SHELL</h2>
+			<p>Nama cheesysalmon adalah nama sistem yang awda telah log masuk. Awda sekarang berada didalam akaun shell anda dan berada di dalam home direktori anda.<p> 
+			<p>Taip 'pwd' dan tekan enter untuk memastikan kita berada di dalam home folder, ia akan menunjukan '/home/badli'</p> 
+			<p>Taip 'ls' untuk melihat kandungan home direktori. Anda tidak nampak file atau direktori. Sekarang taip 'ls -a' kita akan mendapati ada file dan directori yang tidak dapaat di lihat sebelumnya.  
+			</p>
+			<figure>
+				<img src="openbsd_notes/4/4_1-folder.png" alt="Home Direktori"></img>
+				<figcaption>Gambar 11 - Apa yang berlaku jika kita lakukan diatas</figcaption>
+			</figure> 
+			
+			<p>Shell adalah tempat anda berinteraksi dengan sistem OpenBSD awda. Ia seperti dengan Windows "command prompt".Di dalm perisai Windows direktori badli berada di 'c:\users\badli' tetapi di OpenBSD ia berada di '/home/folder'</p>  
+			
+			<h3>4-1 Semua Bermula Dengan / </h3>
+			
+			<p>Di dalam Sistem Unix atau Semacam Unix permulaan bermula dengan / atau "slash root", di sini semua direktori utama akan dapat dilihat<p>
+			 
+			 <table>
+			 <tr>
+				<th>Direktori</th>
+				<th>Deskripsi</th>
+			</tr>
+			<tr>
+				<td> / </td>
+				<td>Tempat permulaan </td>
+			</tr>
+			<tr>
+				<td> /bin </td>
+				<td>Program yang penting</td>
+			</tr>
+			<tr>
+				<td> /sbin </td>
+				<td>sbin</td>
+			</tr>
+
+
+			 </table>
+		</article>
 	<footer>
 		<p><em><a href="https://creativecommons.org/licenses/by/4.0/"> <img src="openbsd_notes/cc-by.svg" alt="CC-BY-4.0"><a></em>
 		</p>
