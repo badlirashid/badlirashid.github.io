@@ -36,6 +36,20 @@ img {
 	text-align: center;
 }
 
+.dirs table,th,td {
+	width: 10%;
+	text-align: center;
+	padding: 5px;
+
+}
+
+
+}
+
+.dirs td:nth-child(even) {
+	text-align: left;
+}
+
 
 figure figcaption {
 	text-align: center;
