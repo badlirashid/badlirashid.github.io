@@ -13,7 +13,7 @@
 		<h1>Nota OpenBSD</h1>
 		<p> penulis&nbsp;&nbsp;:&nbsp;Badli Al Rashid
 		<br>e-mel&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;badli.a.r@gmail.com
-		<br>tarikh&nbsp;&nbsp;&nbsp;:&nbsp;20 Februari 2022
+		<br>tarikh&nbsp;&nbsp;&nbsp;:&nbsp;21 Februari 2022
 		<br>lesen&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Creative Commons
 		</p>
 	</header>
@@ -189,11 +189,12 @@
 				<li>macppc - Processor Power PC telah dipakai oleh Apple sebelum mereka bertukar ke Intel Processor dahulu</li>
 			</ul>
 			
-			</p>Sekiranya anda memasang drivers perkakas untuk sistem 32bit, drivers itu tidak akan berfungsi ke 64bit dan 
+			<h3> Processor 64bit dan 32bit</h3>
+			</p>Sekiranya anda memasang drivers perkakas untuk sistem 32bit, drivers itu tidak akan berfungsi ke sistem 64bit dan 
 			Begitu juga sebaliknya.
 			</p>
-			<p>For aplikasi Linux 32bit ia boleh di pakai di Linux 64bit tetapi 32bit tidak boleh pakai Aplikasi 64bit. 
-			Linux 32bit compatibility library mesti di install di Linux 64bit.  
+			<p>Aplikasi OpenBSD 32bit tidak boleh dipakai host OpenBSD 64bit dan aplikasi OpenBSD 64bit tidak boleh dipakai 
+			host OpenBSD 32bit.  
 			</p>
 			
 			<p>Sebelum memasang perisai ada beberapa maklumat anda perlu ada terlebih dahulu seperti:-
@@ -328,7 +329,7 @@
 			</p> 
 			
 			<p>Taip 'ls' untuk melihat kandungan home direktori. Anda tidak nampak file atau direktori. Sekarang taip 'ls -a' kita
-			akan mendapati ada file dan directori yang tidak dapaat di lihat sebelumnya.  
+			akan mendapati ada file dan direktori yang tidak dapaat di lihat sebelumnya.  
 			</p>
 			
 			<figure>
@@ -338,7 +339,7 @@
 			
 			<p>Shell adalah tempat anda berinteraksi dengan sistem OpenBSD awda. Ia seperti dengan Windows "command prompt".
 			Di dalam perisai Windows direktori badli akan berada di 'c:\users\badli' tetapi di OpenBSD pula ia terletak  
-			di '/home/folder'
+			di '/home/badli'
 			</p>  
 			
 			<h3>4-1 Semua Bermula Dengan / </h3>
@@ -358,7 +359,7 @@
 			</tr>
 			<tr>
 				<td>/etc</td>
-				<td>Tempat permulaan </td>
+				<td>Sistem Konfigurasi </td>
 			</tr>
 			
 			<tr>
@@ -387,16 +388,14 @@
 			</tr>
 			<tr>
 				<td>/usr/src</td>
-				<td>Sumber file dan folder perisai OpenBSD</td>
+				<td>Sumber file dan folder asas perisai OpenBSD</td>
 			</tr>
 			<tr>
 				<td>/usr/ports</td>
-				<td>koleksi ports folder</td>
+				<td>Direktori koleksi ports, ini adalah aplikasi extra. Bukan dari komponen asas OpenBSD.</td>
 			</tr>
-
-
 			
-						<tr>
+			<tr>
 				<td>/var</td>
 				<td>Direktori ini selalu berasing partition</td>
 			</tr>
