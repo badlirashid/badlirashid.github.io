@@ -27,7 +27,7 @@
 			
 			<figure>
 				<img src="openbsd_notes/MangaRamblo.jpg" alt="MangaRamblo.jpg"></img>
-				<figcaption>Gambar 1 - MangaRamblo</figcaption>
+				<figcaption>Gambar 01 - MangaRamblo</figcaption>
 			</figure>
 			
 			
@@ -59,7 +59,7 @@
 			
 			<figure>
 				<img src="openbsd_notes/StarryPointers.png " alt="StarryPointers.png "></img>
-				<figcaption>Gambar 2 - StarryPointers, semacam lukisan Vincent Van Goh</figcaption>
+				<figcaption>Gambar 02 - StarryPointers, semacam lukisan Vincent Van Goh</figcaption>
 			</figure>
 
 			<p>Semasa menulis dokumen ini, perisai OpenBSD di tahap versi 7.0
@@ -71,6 +71,9 @@
 			<h2>2 - Perbezaan Di Antara OpenBSD Dan Debian</h2> 
 			
 			<p>Pengguna OpenBSD berasal dari perisai yang lain. Saya dulu menggunakan Microsoft Windows dan GNU/Linux.
+			Saya memberi contoh Debian di sini kerana ia ada lah sebuah pengedar Linux amat popular yang di urus oleh 
+			suka relawan seluruh dunia. Kedua kedua perisian ini tidaklah begitu berbeza dari segi usia dan 
+			'Look and feel' mereka. 
 			</p>
 			
 			<table>
@@ -121,29 +124,84 @@
 				</tr>
 			</table>
 			
-			<p>Bagi pengguna biasa perbezaan di antara perisai ini tidaklah begitu ketara, namun sumber kod mereka agak berbeza.
+			<p>Perbezaan di antara perisai ini dari sumber kod dan lessen aplikasi mereka.
 			</p>
 			
-			<p>*<em> OpenBSD tergolong dari keluarga BSD Unix, Sumber kod bercabang dari NetBSD, Kod NetBSD bercabang dari 386BSD.
+			<h3> * BSD (Berkley Software Distribution)</h3>
+			
+			<p>OpenBSD tergolong dari keluarga BSD Unix, Sumber kod bercabang dari NetBSD, Kod NetBSD bercabang dari 386BSD.
 				Dan 386BSD bercabang dari kod 4.3 BSD Net/2 iaitu BSD (Berkley Software Distribution) yang di uruskan oleh Computer 
-				System Research Group (CSRG), di Universiti of Karlifornia, Berkeley.</em>
+				System Research Group (CSRG), di Universiti of Karlifornia, Berkeley.
 			</p>
 			
-			<p>**<em> GNU/Linux tergolong dari keluarga semacam Unix.<a href="https://www.GNU.org">GNU</a> atau "GNU Not Unix"
+			<p>Kod kod CSRG ini berasal dari perisian 'at&amp;t' (American Telephone and Telegraph) Unix. Sumber kod tersebut di beri
+			oleh pihak at&amp;t untuk pihak Universiti. Di sini kod kod tersebut telah terdedah kepada guru dan pelajar pada 
+			era tersebut. 
+			</p>
+			
+			<p>Pada mulanya mereka hanya membuat aplikasi. Tetapi Setelah selesa dengan kod dalaman mereka telah mengubah suai 
+			(Hacking the code) bahagian dalaman kod Unix tersebut dan mengedar jenama Unix mereka melauie tape. Di sinilah mulanya 
+			cabang atau Forking kod kod Unix tersebut. Boleh juga di katakan ini permulaan "Open Source".
+			</p>
+			
+			<p>Tetapi pada tahun lapan puluhan ke sembilan puluhan pihak at&amp;t telah menyaman Pihak CSRG, Universiti kerana 
+			menyalah gunakan sumber kod mereka. Keputusan dari perbicaraan itu telah mengeluarkan kod at&amp;t yang dimaksudkan 
+			dari kod BSD. Ini telah membuat perkembangan BSD setapak ke belakang namun sukarelawan BSD membuat kod baru untuk 
+			mengganti kod yang melanggar hak cipta at&amp;t tersebut. Kod yang dimaksudkan itu bukannya banyak tetapi ia adalah 
+			kod penting seperti kod boot dan seumpamanya.
+			</p>
+			
+			<p>Kod OpenBSD adalah cukup matang dan inovasinya menjadikan ia unik di kalang keluarga BSD Unix yang lain 
+			kerana tertumpu kepada sekuriti.</p>    
+			
+			<h3>** Debian GNU/Linux </h3> 
+			
+			<p>Debian GNU/Linux tergolong dari keluarga semacam Unix.<a href="https://www.GNU.org">GNU</a> atau "GNU Not Unix"
 			 dan Kernel <a href="https://www.kernel.org">Linux.</a>.</em>
 			</p>
 			
-			<p>***<em> Lessen GPL atau "GNU General Public license" adalah salah satu Lessen Open Source. Secara amnya 
+			<p>Populariti GNU tertumpu kepada aplikasi yang mereka ada. Pengasas utama GNU ialah Richard Stallman. Pada era sembilan 
+			puluhan GNU tidak ada persiain untuk di edar dengan aplikasi mereka. Komponen penting itu adalah Kernel. Kernel adalah kod yang 
+			mengatur dan mengurus sistem komputer.
+			</p>
+			
+			<p>Pada sekitar sembilan puluhan pula, Linus Trovalds penuntut di Universiti of Helsinki, Finland telah mempelawa salah sebuah
+				ruangan "Newsgroup", boleh di katakan semacam tapi bukan Facebook ala sembilan puluhan. Dari email tersebut tercetusnya 
+				revolusi digital yang mengubah aluan "Open Source". Gambar 3 ada email yang dimaksudkan.
+			</p>
+			
+			<figure>
+				<img src="openbsd_notes/trovalds_email.png" alt="Trovalds email"></img>
+			<figcaption>Gambar 03 - trovalds email</figcaption>
+			</figure>
+			
+			<p>Debian adalah nama singkatan sempena nama "Debra Lyn" dan "Ian Murdock". Pada masa itu mereka ada lah berpasangan. 
+			Projek Debian telah menyumbang kepada kemajuan Linux. Ia setanding dengan Linux komercial seperti Redhat, Suse dan lain lain.			
+			</p>
+			
+			<h3>*** Lessen</h3>
+			<h4>GPL (GNU General Public license)</h4>
+			<p>Lessen GPL atau "GNU General Public license" adalah salah satu Lessen Open Source. Secara amnya 
 			Lessen GPL menyatakan bahawa aplikasi kod mestilah dapat di akses oleh sesiapa sahaja. Jikalau sumber kod 
 			berubah atau terdapat modifikasi, sumber kod yang di ubah suai mestilah dapat di akses oleh sesiapa sahaja. 
-			Ini termasuk Linux Kommercial yang berada di dalam pasaran. 
-			<br>Berlainan dengan aplikasi yang menggunakan lessen BSD atau "Berkley Software Distribution License". 
+			Ini termasuk Linux Kommercial yang berada di dalam pasaran.
+			</p>
+			<figure>
+				<img src="openbsd_notes/GPL_note.png" alt="GPL Hak Cipta"></img>
+			<figcaption>Gambar 04 - GPL</figcaption>
+			</figure>
+			<h4>BSD license</h4>
+			<p>Berlainan dengan aplikasi yang menggunakan lessen BSD atau "Berkley Software Distribution License". 
 			Anda boleh mengedar aplikasi yang sudah dimodifikasi kodnya tanpa memberi sumber kod itu kepada sesiapapun
 			walaupun penulis asal sumber kod tersebut. Maklumat hakcipta aplikasi tersebut mestilah dipaparkan. 
 			Ada perkhidmatan komercial mahupun bukan komercial suka lessen BSD ini.</em>   
 			</p>
-			
-			<p>****<em> Pengurusan Userland tools dibuat oleh sukarelawan GNU dan Linux Kernel di uruskan oleh sukarelawan Linux. 
+			<figure>
+				<img src="openbsd_notes/BSD_note.png" alt="BSD Hak Cipta"></img>
+				<figcaption>Gambar 04 - BSD</figcaption>
+			</figure>
+			<h3>**** Integrasi</h3>
+			<p>Pengurusan Userland tools dibuat oleh sukarelawan GNU dan Linux Kernel di uruskan oleh sukarelawan Linux. 
 				Sukarelawan Debian akan menguruskan integrasi aplikasi dan menyumbang kepada pembaik pulih aplikasi kepada 
 				pengurusnya yang asal.</em>
 			</p>
@@ -223,7 +281,7 @@
 			<h3>3 - 1 Boot Dari Pemasangan Media</h3>
 			
 			<figure><img src="openbsd_notes/boot_cd.png" alt="Boot Dari Pemasangan Media">
-				<figcaption>Gambar 3 - Boot dari Cakera Padat</figcaption>
+				<figcaption>Gambar 05 - Boot dari Cakera Padat</figcaption>
 			</figure>
 			
 			<p>Gambar 3 di atas menunjukan OpenBSD menunggu hendak membuat boot dar Cakera Padat. Tekan "Enter" untuk meneruskan.
@@ -232,7 +290,7 @@
 			<h3>3 - 2 Skrip pemasangan OpenBSD</h3>
 			
 			<figure><img src="openbsd_notes/step_1.png" alt="Skrip pemasangan OpenBSD">
-				<figcaption>Gambar 4 - 'i' untuk Install</figcaption>
+				<figcaption>Gambar 06 - 'i' untuk Install</figcaption>
 			</figure>
 			
 			<p>Semasa process Boot, ia akan menunjukkan perkakas yang ada terpasang di dalam sistem anda. Setelah selesai ia
@@ -242,7 +300,7 @@
 			<h3>3 - 3 Akses Sistem dan Akaun root</h3>
 			
 			<figure><img src="openbsd_notes/step_15.png" alt="Akses dan Root">
-				<figcaption>Gambar 5 - Akses dan Root</figcaption>
+				<figcaption>Gambar 07 - Akses dan Root</figcaption>
 			</figure>
 
 			<P> Anda boleh mengakses sistem anda dari sistem yang lain dengan mengaktifkan SSH daemon dalam process boot. 
@@ -252,7 +310,7 @@
 			<h3>3 - 4 Pembahagian Struktur Cakera Keras</h3>
 			
 			<figure><img src="openbsd_notes/step_18.png" alt="Struktur Cakera Keras">
-				<figcaption>Gambar 6 -Struktur Cakera Keras</figcaption>
+				<figcaption>Gambar 08 -Struktur Cakera Keras</figcaption>
 			</figure>
 			
 			<p>Struktur Cakera Keras yang saya pilih adalah yang disediakan oleh skrip pemasangan. Anda boleh mengubah struktur mengikut
@@ -266,7 +324,7 @@
 			
 			<h3>3 - 5 Komponen OpenBSD</h3>
 			<figure><img src="openbsd_notes/step_23.png" alt="Komponent OpenBSD">
-			<figcaption>Gambar 7 - Komponen OpenBSD</figcaption></figure>
+			<figcaption>Gambar 09 - Komponen OpenBSD</figcaption></figure>
 			
 			<p>Di sini kita memilih semua komponen OpenBSD yang ada 
 			<ul>
@@ -287,7 +345,7 @@
 			<h3>3 - 6 Waktu tempatan</h3>
 			
 			<figure><img src="openbsd_notes/step_26.png" alt="waktu">
-				<figcaption>Gambar 8 - Waktu tempatan</figcaption>
+				<figcaption>Gambar 10 - Waktu tempatan</figcaption>
 			</figure>
 			
 			<p> Di sini sama memilih "Asia/Brunei" sebagai waktu tempatan dan tekan enter untuk sistem reboot.  
@@ -296,7 +354,7 @@
 			<h3>3 - 7 Pertama kali Log Masuk ke OpenBSD</h3>
 			
 			<figure><img src="openbsd_notes/step_27_done.png" alt="Pertama kali Log Masuk">
-				<figcaption>Gambar 9 - Pertama kali Log Masuk</figcaption>
+				<figcaption>Gambar 11 - Pertama kali Log Masuk</figcaption>
 			</figure>
 
 			<p>System anda sudah boot ke dalam perisai OpenBSD dan jika anda terlihat ada url tertera http://firmware.openbsd.org, 
@@ -320,7 +378,7 @@
 			</ul> 
 			
 			<figure><img src="openbsd_notes/remote-login.png" alt="Akses dari luar">
-			<figcaption>Gambar 10 - Menggunakan PuTTY untuk log masuk ke OpenBSD</figcaption></figure>
+			<figcaption>Gambar 12 - Menggunakan PuTTY untuk log masuk ke OpenBSD</figcaption></figure>
 			
 			<p>SSHD atau SSH Daemon ada lah service yang membolehkan kita log masuk dari luar.
 			</p>
@@ -344,7 +402,7 @@
 			
 			<figure>
 				<img src="openbsd_notes/4/4_1-folder.png" alt="Home Direktori"></img>
-				<figcaption>Gambar 11 - Apa yang berlaku jika kita lakukan diatas</figcaption>
+				<figcaption>Gambar 13 - Apa yang berlaku jika kita lakukan diatas</figcaption>
 			</figure> 
 			
 			<p>Shell adalah tempat anda berinteraksi dengan sistem OpenBSD awda. Ia seperti dengan Windows "command prompt".
