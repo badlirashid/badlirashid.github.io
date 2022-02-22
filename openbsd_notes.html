@@ -400,27 +400,58 @@
 		
 			<h2>Log masuk ke OpenBSD</h2>
 			
-			<p>Nama cheesysalmon adalah nama sistem yang awda telah log masuk. Awda sekarang berada didalam akaun shell anda dan 
+			<p>Nama "cheesysalmon" adalah nama sistem yang awda telah log masuk. Awda sekarang berada di dalam akaun shell anda dan 
 			berada di dalam home direktori anda.
 			<p> 
 			
-			<p>Taip 'pwd' dan tekan enter untuk memastikan kita berada di dalam home folder, ia akan menunjukan '/home/badli'. 
-			Satu lagi cari untuk memastikan dimana home folder kita ialah dengan menaip 'echo $HOME'
+			<h3>Shell</h3>
+			<p>Shell adalah tempat anda berinteraksi dengan sistem OpenBSD. Shell yang disediakan adalah Korn Shell atau 
+			nama singkatannya adalah 'ksh'. Ia sama seperti dengan Windows 'Command prompt' atau 'PowerShell'. Di Shell ini kita 
+			perlu menaip dan menekan enter untuk berinteraksi dengan sistem anda.	
+			</p>
+			
+			<h3>Direktori home anda</h3> 
+			<p>Kita mulakan dengan menaip 'pwd' (singkatan Print Working Directory)dan tekan 'Enter' untuk memastikan kita berada 
+			di dalam home folder. Ia akan menunjukkan '/home/badli'. Satu lagi cari untuk memastikan di mana home folder kita ialah 
+			dengan menaip 'echo $HOME'. $HOME ada lah home environment variable. 
 			</p> 
 			
-			<p>Taip 'ls' untuk melihat kandungan home direktori. Anda tidak nampak file atau direktori. Sekarang taip 'ls -a' kita
-			akan mendapati ada file dan direktori yang tidak dapaat di lihat sebelumnya.  
+			<h3> file dan direktori yang disembunyikan </h3>
+			
+			<p>Taip 'ls' (singkatan list) untuk melihat kandungan home direktori. Anda tidak nampak file atau direktori. 
+			Sekarang taip 'ls -a' kita akan mendapati ada file dan direktori yang di sembunyikan sebelumnya. '-a' di sini 
+			bermaksud untuk melihat semua file dan direktori.	
 			</p>
 			
 			<figure>
 				<img src="openbsd_notes/4/4_1-folder.png" alt="Home Direktori"></img>
-				<figcaption>Gambar 13 - Apa yang berlaku jika kita lakukan diatas</figcaption>
+				<figcaption>Gambar 13 - Apa yang berlaku jika kita input command </figcaption>
 			</figure> 
 			
-			<p>Shell adalah tempat anda berinteraksi dengan sistem OpenBSD awda. Ia seperti dengan Windows "command prompt".
-			Di dalam perisai Windows direktori badli akan berada di 'c:\users\badli' tetapi di OpenBSD pula ia terletak  
-			di '/home/badli'
-			</p>  
+			<p>File dan direktori di sembunyikan tersebut adalah:-
+			</p>
+			 <ul>
+			 <li>.Xdefaults</li> 
+			 <li>.cshrc</li>
+			 <li>.cvsrc</li>
+			 <li>.login</li> 
+			 <li>.mailrc</li>
+			 <li>.profile</li>
+			 <li>.ssh</li>
+			 </ul>
+
+			<h3> file atau direktori ? </h3>
+			<p>Kita boleh tahu yang mana satu file dan directory dengan menaip 'ls -al'. '-l' untuk menunjukkan butiran tersebut </p>
+			
+			<p>-rw-r--r--  1 badli  badli  212 Oct  1 04:00 .profile
+			<br>.profile adalah file kerana di arah permission (-rw-r--r--) ada menunjukan huruf 'd'
+			</p>
+			
+			<p>drwx------  2 badli  badli  512 Feb 23  2022 .ssh
+			<br>.ssh adalah file kerana di arah permission (drwx------) ada menunjukan huruf 'd' iaitu directory
+			</p>
+
+			  
 			
 			<h3>Semua Bermula Dengan / </h3>
 			
