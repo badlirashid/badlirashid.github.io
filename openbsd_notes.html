@@ -388,11 +388,14 @@
 			<h3>8 - Log masuk dari luar</h3>
 						
 			<p>OpenBSD dapat di akses dari luar. Maksud di sini kita log masuk ke sistem tidak berada di tempat sistem itu. kita 
-			memerlukan alamat IP atau alamat penuh URL OpenBSD. Selain itu menggunakan aplikasi utility seperti:-
+			memerlukan alamat IP atau alamat penuh URL ( seperti computer1.webluar.net) . Selain itu menggunakan aplikasi 
+			utility seperti:-
 			</p>
 			<ul>
-				<li><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a> - Aplikasi mudah terminal untuk perisai * Microsoft Windows menggunakan protokol SSH</li>
-				<li><a href="https://winscp.net">WinSCP</a> - Aplikasi untuk memindah file menggunakan SSH untuk perisian * Microsoft Windows menggunakan protokol SSH</li>
+				<li><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a> - Aplikasi mudah terminal untuk 
+				<br>perisai * Microsoft Windows menggunakan protokol SSH.</li>
+				<li><a href="https://winscp.net">WinSCP</a> - Aplikasi untuk memudahkan memindah file menggunakan SSH untuk perisian 
+				<br>* Microsoft Windows menggunakan protokol SFTP, SCP. </li>
 				<li>ssh - Aplikasi terminal tersedia di dalam perisai Linux dan Windows </li>
 				<li>scp - Aplikasi memindah file tersedia di dalam perisai Linux dan Windows menggunakan protokol SSH </li>
 			</ul> 
@@ -407,57 +410,123 @@
 		<article class="home">
 		
 			<h2>Log masuk ke OpenBSD</h2>
-			
-			<p>Nama "cheesysalmon" adalah nama sistem yang awda telah log masuk. Awda sekarang berada di dalam akaun shell anda dan 
-			berada di dalam home direktori anda.
+			<p class="prompt">OpenBSD 7.0 (GENERIC) #5: Mon Jan 31 09:03:23 MST 2022
+			<br>
+			<br>Welcome to OpenBSD: The proactively secure Unix-like operating system.
+			<br>
+			<br>Please use the sendbug(1) utility to report bugs in the system.
+			<br>Before reporting a bug, please try to reproduce it with the latest
+			<br>version of the code.  With bug reports, please try to ensure that
+			<br>enough information to reproduce the problem is enclosed, and if a
+			<br>known fix for it exists, include that as well.
+			<br>
+			<br>cheesysalmon$
+			</p>
+	
+			<p>Selamat datang ke OpenBSD, Nama "cheesysalmon" adalah nama sistem dan $ adalah shell prompt. 
+			cheesysalmon sedang menunggu arahan dari awak untuk di jalan kan di dalam sistem. 
 			<p> 
 			
 			<h3>Shell</h3>
-			<p>Shell adalah tempat anda berinteraksi dengan sistem OpenBSD. Shell yang disediakan adalah Korn Shell atau 
-			nama singkatannya adalah 'ksh'. Ia sama seperti dengan Windows 'Command prompt' atau 'PowerShell'. Di Shell ini kita 
-			perlu menaip dan menekan enter untuk berinteraksi dengan sistem anda.	
+			
+			<p>Secara ringkas, Shell adalah tempat anda berinteraksi dengan sistem OpenBSD dan seumpamanya. Shell yang disediakan 
+			telah disediakan adalah Korn Shell atau nama singkatannya adalah 'ksh'. kalau di dalam perisaian Windows adalah 
+			'Command prompt' atau 'PowerShell'. Di Shell ini kita 	
 			</p>
 			
 			<h3>Direktori home anda</h3> 
+			
+			<p class="prompt">cheesysalmon$ pwd
+			<br>/home/badli
+			<br>cheesysalmon$ echo $HOME
+			<br>/home/badli
+			<br>cheesysalmon$
+			</p>
+			
 			<p>Kita mulakan dengan menaip 'pwd' (singkatan Print Working Directory)dan tekan 'Enter' untuk memastikan kita berada 
-			di dalam home folder. Ia akan menunjukkan '/home/badli'. Satu lagi cari untuk memastikan di mana home folder kita ialah 
-			dengan menaip 'echo $HOME'. $HOME ada lah home environment variable. 
+			di dalam home folder. Ia akan menunjukkan '/home/badli'. 
+			</p>
+			<p>Satu lagi cari untuk memastikan di mana home folder kita ialah dengan menaip 'echo $HOME'. $HOME ada lah home 
+			environment variable. Setiap pengguna sistem ini mempunyaie berlainan home direktori.
 			</p> 
 			
 			<h3> file dan direktori yang disembunyikan </h3>
 			
-			<p>Taip 'ls' (singkatan list) untuk melihat kandungan home direktori. Anda tidak nampak file atau direktori. 
-			Sekarang taip 'ls -a' kita akan mendapati ada file dan direktori yang di sembunyikan sebelumnya. '-a' di sini 
-			bermaksud untuk melihat semua file dan direktori.	
+			<p class="prompt">cheesysalmon$ ls
+			<br>cheesysalmon$ ls -a
+			<br>.          ..         .Xdefaults .cshrc     .cvsrc     .login     .mailrc    .profile   .ssh
+			<br>cheesysalmon$
+			<br>
 			</p>
 			
-			<figure>
-				<img src="openbsd_notes/4/4_1-folder.png" alt="Home Direktori"></img>
-				<figcaption>Gambar 13 - Apa yang berlaku jika kita input command </figcaption>
-			</figure> 
+			<p>Taip 'ls' (singkatan list) untuk melihat kandungan home direktori. Anda tidak nampak apa pun sama ada 
+			file atau direktori di home directori kamu.
+			</p>			
+			
+			<p>Sekarang taip 'ls -a' kita akan mendapati ada file dan direktori yang di sembunyikan sebelumnya. '-a' di sini 
+			bermaksud untuk melihat semua file dan direktori walaupun ia di sembunyikan.	
+			</p>
 			
 			<p>File dan direktori di sembunyikan tersebut adalah:-
 			</p>
 			 <ul>
-			 <li>.Xdefaults</li> 
-			 <li>.cshrc</li>
-			 <li>.cvsrc</li>
-			 <li>.login</li> 
-			 <li>.mailrc</li>
-			 <li>.profile</li>
-			 <li>.ssh</li>
+				<li>.Xdefaults</li> 
+				<li>.cshrc</li>
+				<li>.cvsrc</li>
+				<li>.login</li> 
+				<li>.mailrc</li>
+				<li>.profile</li>
+				<li>.ssh</li>
 			 </ul>
 
-			<h3> file atau direktori ? </h3>
+			<h3> file atau direktori, butiran </h3>
+			
+			<p class="prompt">cheesysalmon$ ls -al
+			<br>total 36
+			<br>drwxr-xr-x  3 badli  badli  512 Feb 23 09:22 .
+			<br>drwxr-xr-x  3 root   wheel  512 Feb 23 03:46 ..
+			<br>-rw-r--r--  1 badli  badli   87 Oct  1 04:00 .Xdefaults
+			<br>-rw-r--r--  1 badli  badli  769 Oct  1 04:00 .cshrc
+			<br>-rw-r--r--  1 badli  badli  101 Oct  1 04:00 .cvsrc
+			<br>-rw-r--r--  1 badli  badli  359 Oct  1 04:00 .login
+			<br>-rw-r--r--  1 badli  badli  175 Oct  1 04:00 .mailrc
+			<br>-rw-r--r--  1 badli  badli  212 Oct  1 04:00 .profile
+			<br>drwx------  2 badli  badli  512 Feb 23 03:44 .ssh
+			<br>
+			</p>
+ 			
 			<p>Kita boleh tahu yang mana satu file dan directory dengan menaip 'ls -al'. '-l' untuk menunjukkan butiran tersebut </p>
 			
 			<p>-rw-r--r--  1 badli  badli  212 Oct  1 04:00 .profile
-			<br>.profile adalah file kerana di arah permission (-rw-r--r--) ada menunjukan huruf 'd'
+			<br>
+			<br><em>.profile adalah file kerana di arah permission (-rw-r--r--) tidak ada terdapat huruf 'd' yang menunjukkan direktori</em>
 			</p>
 			
-			<p>drwx------  2 badli  badli  512 Feb 23  2022 .ssh
-			<br>.ssh adalah file kerana di arah permission (drwx------) ada menunjukan huruf 'd' iaitu directory
+			<p>drwx------  2 badli  badli  512 Feb 23  0344 .ssh
+			<br>
 			</p>
+			
+			<p class="prompt">cheesysalmon$ file .profile
+			<br>.profile: ASCII text
+			<br>cheesysalmon$ file .ssh
+			<br>.ssh: directory
+			</p>
+			<p>Satu lagi kaedah untuk membeza di antara file dan directori adalah dengan menggunakan "file". Dari contoh program telah membezakan
+			.profile adalah text file dan .ssh adalah folder.
+			</p>
+			<p class="prompt">cheesysalmon$ file /sys
+			<br>/sys: broken symbolic link to 'usr/src/sys'
+			<br>cheesysalmon$ file /dev/sd0a
+			<br>/dev/sd1: block special (4/0)
+			<br>cheesysalmon$ file /bin/ls
+			<br>/bin/ls: ELF 64-bit LSB shared object, x86-64, version 1
+			</p>
+			<p>Program file juga dapat memberi tahu berapa jenis file.</p>
+			<ul>
+			<li>/sys - adalah symbolic link, sama seperti shortcut di dalam Windows</li>
+			<li>/dev/sd0a - Ini ada block device untuk cakera keras anda</li>
+			<li></li>
+			</ul>
 
 			  
 			
