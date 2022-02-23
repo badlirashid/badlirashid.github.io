@@ -1,40 +1,39 @@
 <!DOCTYPE html>
 <html lang="ms">
-	<head>
-		<link rel="stylesheet" href="openbsd_notes.css">
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="keywords" content="openbsd, bsd, unix, opensource">
-		<meta name="description" content="Nota OpenBSD">
-	</head>
-	<title>Nota OpenBSD</title>
-	<body>
-	<header>
-		<h1>Nota OpenBSD</h1>
-		<p> penulis&nbsp;&nbsp;:&nbsp;Badli Al Rashid
-		<br>e-mel&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;badli.a.r@gmail.com
-		<br>tarikh&nbsp;&nbsp;&nbsp;:&nbsp;22 Februari 2022
-		<br>lesen&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Creative Commons
-		</p>
-	</header>
-		<article class="intro">
-			<h2>Permulaan</h2>
-			
-			<p>Saya bukannya pakar pengguna <a href="https://openbsd.org">OpenBSD</a> atau 
-			<a href="https://www.edu.uni-klu.ac.at/epirker/unix/guru.html">"unix guru"</a>. Saya pengguna biasa sahaja. 
-			Saya akan menaruh nota nota saya ini ke dalam <a href="https://github.com">Github</a> dan saya berharap ia
-			bermanfaat untuk anda.
-			</p>
-			
-			<figure>
-				<img src="openbsd_notes/MangaRamblo.jpg" alt="Maskot OpenBSD, Puffy MangaRamblo"></img>
-				<figcaption>Gambar 01 - Maskot OpenBSD, Puffy versi MangaRamblo</figcaption>
-			</figure>
-			
-			
-			<p>Saya mulanya tertarik kepada watak puffy versi "MangaRamblo" kerana ia berbeza dengan watak 
-			 <a href="https://www.freebsd.org/gifs/daemon-phk.png">BSD Daemon</a>. Ia Seolah olah dilukis oleh pelukis X-Men
-			 sembilan puluhan, Joe Madureira. Lukisan dia di pengaruhi pelukis Manga Jepun yang membuatnya unik. Watak tersebut
+  <head>
+    <link rel="stylesheet" href="openbsd_notes.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="openbsd, bsd, unix, opensource">
+    <meta name="description" content="Nota OpenBSD">
+  </head>
+
+  <title>Nota OpenBSD</title>
+
+  <body>
+    <header>
+      <h1>Nota OpenBSD</h1>
+      <p> penulis&nbsp;&nbsp;:&nbsp;Badli Al Rashid
+      <br>e-mel&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;badli.a.r@gmail.com
+      <br>tarikh&nbsp;&nbsp;&nbsp;:&nbsp;24 Februari 2022
+      <br>lesen&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Creative Commons
+      </p>
+    </header>
+
+    <article class="intro">
+      <h2>Permulaan</h2>
+      <p>Saya bukannya pakar pengguna <a href="https://openbsd.org">OpenBSD</a> atau
+	<a href="https://www.edu.uni-klu.ac.at/epirker/unix/guru.html">"unix guru"</a>. Saya pengguna biasa sahaja.
+	Saya akan menaruh nota nota saya ini ke dalam <a href="https://github.com">Github</a> dan saya berharap ia
+	bermanfaat untuk anda.
+      </p>
+      <figure>
+	<img src="openbsd_notes/MangaRamblo.jpg" alt="Maskot OpenBSD, Puffy MangaRamblo"></img>
+	<figcaption>Gambar 01 - Maskot OpenBSD, Puffy versi MangaRamblo</figcaption>
+      </figure>
+      <p>Saya mulanya tertarik kepada watak puffy versi "MangaRamblo" kerana ia berbeza dengan watak
+	<a href="https://www.freebsd.org/gifs/daemon-phk.png">BSD Daemon</a>. Ia Seolah olah dilukis oleh pelukis X-Men
+	sembilan puluhan, Joe Madureira. Lukisan dia di pengaruhi pelukis Manga Jepun yang membuatnya unik. Watak tersebut
 			 juga digunakan oleh halaman <a href="https://undeadly.org">OpenBSD Journal</a>.
 			</p>
 						
@@ -300,41 +299,81 @@
 			
 			<h3>1 - Boot Dari Pemasangan Media</h3>
 			
+			<p class="prompt">&gt;OpenBSD&bsol;amd64 CDBOOT 3&period;53
+			<br>boot&gt;
+			</p>
+			<p><em>boot Cakera Padat yang mengandugi file permasangan OpenBSD</em>
+			</p>
+
+		
+			<!--
 			<figure><img src="openbsd_notes/boot_cd.png" alt="Boot Dari Pemasangan Media">
 				<figcaption>Gambar 06 - Boot dari Cakera Padat</figcaption>
 			</figure>
+			-->
 			
-			<p>Gambar 6 di atas menunjukan OpenBSD menunggu hendak membuat boot dar Cakera Padat. Tekan "Enter" untuk meneruskan.
+			<p>Sistem menanti arahan untuk membuat boot ke cakera padat OpenBSD. Tekan hanyan menekan "Enter" untuk meneruskan.
 			</p>
 
 			<h3>2 - Skrip pemasangan OpenBSD</h3>
 			
+			<p class="prompt">scsibus1 at softraid0&colon; 256 targets
+			<br>root on rd0a swap on rd0b dump on rd0b
+			<br>WARNING&colon; CHECK AND RESET THE DATE&excl;
+			<br>erase &Hat;?, werase &Hat;W, kill &Hat;U, intr &Hat;C, status &Hat;T
+			<br>
+			<br>Welcome to the OpenBSD&bsol;amd64 7.0 installation program&period;
+			<br>&lpar;I&rpar;nstall, &lpar;U&rpar;pgrade, &lpar;A&rpar;utoinstall or &lpar;S&rpar;hell&quest;
+			</p>
+
+			
+			<!--
 			<figure><img src="openbsd_notes/step_1.png" alt="Skrip pemasangan OpenBSD">
 				<figcaption>Gambar 07 - 'i' untuk Install</figcaption>
 			</figure>
+			-->
 			
 			<p>Semasa process Boot, ia akan menunjukkan perkakas yang ada terpasang di dalam sistem anda. Setelah selesai ia
-			menunjukkan beberapa pilihan. Tekan huruf "i" and tekan "enter" untuk memulakan pemasang OpenBSD
+			menunjukkan beberapa pilihan. Tekan huruf "i" and tekan "Enter" untuk meneruskan.
 			</p>
 			
-			<h3>3 - Akses Sistem dan Akaun root</h3>
+			<h3>3 - Akses Sistem melauie SSHD dan Akaun root</h3>
 			
+			<p class="prompt">DNS domain name&quest; &lpar;e&period;g&period; &apos;example&period;com&apos;&rpar; &lsqb;my&period;domain&rsqb;
+			<br>DNS nameservers&quest; &lpar&IP address list or &apos;none&apos;&rpar; &lsqb;none&rsqb; none
+			<br>
+			<br>Password for root account&quest; &lpar;will not echo&rpar;
+			<br>Password for root account&quest; &lpar;again&rpar;
+			<br>Start sshd&lpar;8&rpar; by default&quest; &lsqb;yes&rsqb;
+			<br>Do you expect to run the X Window System&quest; &lsqb;yes&rsqb;
+			<br>Do you want the X Window System to be started by xenodm&lpar;1&rpar;&quest; &lsqb;no&rsqb;
+			</p>
+
+			
+			<!--
 			<figure><img src="openbsd_notes/step_15.png" alt="Akses dan Root">
 				<figcaption>Gambar 08 - Akses dan Root</figcaption>
 			</figure>
+			-->
 
-			<P> Anda boleh mengakses sistem anda dari sistem yang lain dengan mengaktifkan SSH daemon dalam process boot. 
-			Sekiranya jika anda tidak mahu SSH daemon berfungsi anda boleh menjawab tidak. Awda hanya akses ke sistem secara fisi-kal
+			<P> Start sshd&lpar;8&rpar; by default&quest; &lsqb;yes&rsqb;
+			<br> Untuk mengakses sistem anda dari luar kita perlu mengaktifkan SSH daemon semasa boot. Sekiranya jika anda tidak mahu 
+			<br>SSH daemon berfungsi anda boleh menjawab No &lpar;tidak&rpar;.
+			</p>
+			
+			<p class="prompt">Allow root ssh login&quest; &lpar;yes, no, prohibit-password&rpar; &lsqb;no&rsqb;
+			</p>
+			<p>Kita menjawab No &lpar;tidak&rpar; di sini. 
 			</p>
 			
 			<h3>4 - Pembahagian Struktur Cakera Keras</h3>
 			
 			<figure><img src="openbsd_notes/step_18.png" alt="Struktur Cakera Keras">
-				<figcaption>Gambar 09 -Struktur Cakera Keras</figcaption>
+				<figcaption>Gambar 09 - Struktur Cakera Keras</figcaption>
 			</figure>
 			
-			<p>Struktur Cakera Keras yang saya pilih adalah yang disediakan oleh skrip pemasangan. Anda boleh mengubah struktur mengikut
-			ke hendak awda atau mengubahnya selepas selesai pemasangan.
+			<p>Struktur Cakera Keras yang saya pilih adalah yang saya buat sendiri. Anda boleh mengikut struktur yang di sediakan oleh
+			skrip pemasangan.
 			</p>
 			
 			<p>Dulu semasa saya belajar mengenai Debian ada orang menyebut tentang /exports, saya bengang apa yang dimaksudkan dengan
@@ -449,6 +488,22 @@
 			<p>Satu lagi cari untuk memastikan di mana home folder kita ialah dengan menaip 'echo $HOME'. $HOME ada lah home 
 			environment variable. Setiap pengguna sistem ini mempunyaie berlainan home direktori.
 			</p> 
+			
+			<h3>Nama akaun</h3>
+			
+			<p class="prompt">cheesysalmon$ whoami
+			<br>badli
+			<br>cheesysalmon$ who
+			<br>kiwis    ttyC0    Feb 23 21:58
+			<br>badli    ttyp0    Feb 23 22:10   (192.168.56.1)
+			</p>
+
+			<p>OpenBSD adalah multi user, beberapa pengguna dapat log masuk di dalam sistem tersebut secara akses di depan computer 
+			dan akses dari luar. 
+			</p>
+			<p>Di sini saya menggunakan arahan "whoami" untuk memastikan nama akaun saya betul. Setelah itu saya mengunakan who akan 
+			menunjukkan siapa yang sedang masuk di dalam sistem. Di sini who memberitahu yang dua pengguna telah masuk, saya dan kiwis.			
+			</p>    
 			
 			<h3> file dan direktori yang disembunyikan </h3>
 			
