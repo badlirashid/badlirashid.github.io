@@ -13,7 +13,7 @@
   <body>
     <header>
       <h1>Nota OpenBSD</h1>
-      <p> penulis&nbsp;&nbsp;:&nbsp;Badli Al Rashid
+      <p>penulis&nbsp;&nbsp;:&nbsp;Badli Al Rashid
       <br>e-mel&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;badli.a.r@gmail.com
       <br>tarikh&nbsp;&nbsp;&nbsp;:&nbsp;24 Februari 2022
       <br>lesen&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Creative Commons
@@ -21,52 +21,67 @@
     </header>
 
     <article class="intro">
+      
       <h2>Permulaan</h2>
+	  
       <p>Saya bukannya pakar pengguna <a href="https://openbsd.org">OpenBSD</a> atau
-	<a href="https://www.edu.uni-klu.ac.at/epirker/unix/guru.html">"unix guru"</a>. Saya pengguna biasa sahaja.
-	Saya akan menaruh nota nota saya ini ke dalam <a href="https://github.com">Github</a> dan saya berharap ia
-	bermanfaat untuk anda.
-      </p>
+	  <a href="https://www.edu.uni-klu.ac.at/epirker/unix/guru.html">"unix guru"</a>. Saya pengguna biasa sahaja.
+	  Saya akan menaruh nota nota saya ini ke dalam <a href="https://github.com">Github</a> dan saya berharap ia
+	  bermanfaat untuk anda.
+	  </p>
+
       <figure>
-	<img src="openbsd_notes/MangaRamblo.jpg" alt="Maskot OpenBSD, Puffy MangaRamblo"></img>
-	<figcaption>Gambar 01 - Maskot OpenBSD, Puffy versi MangaRamblo</figcaption>
-      </figure>
+	  <img src="openbsd_notes/MangaRamblo.jpg" alt="Maskot OpenBSD, Puffy MangaRamblo"></img>
+	  <figcaption>Gambar 01 - Maskot OpenBSD, Puffy versi MangaRamblo</figcaption>
+	  </figure>
+
       <p>Saya mulanya tertarik kepada watak puffy versi "MangaRamblo" kerana ia berbeza dengan watak
 	<a href="https://www.freebsd.org/gifs/daemon-phk.png">BSD Daemon</a>. Ia Seolah olah dilukis oleh pelukis X-Men
 	sembilan puluhan, Joe Madureira. Lukisan dia di pengaruhi pelukis Manga Jepun yang membuatnya unik. Watak tersebut
 	juga digunakan oleh halaman <a href="https://undeadly.org">OpenBSD Journal</a>.
       </p>
+
       <p>Perisai percuma OpenBSD yang diusahakan secara terbuka oleh sukarelawan dari seluruh dunia.
 	Bermula pada tahun 1996 oleh pengasasnya, <a href="https://www.theos.com">Theo De Raadt</a>.
 	Pada masa itu dia telah disingkirkan oleh kumpulan <a href="https://netbsd.org">NetBSD</a> yang mengusahakan perisai
 	terbuka NetBSD. <a href="https://mail-index.nrtbsd.org/netbsd-users/1994/12/23/0000.html">1* </a>
 	<a href="https://www.theos/deraadt/coremail.html">2** </a>. Walaupun begitu, kedua dua kumpulan ini masih berkolobirasi sama.
       </p>
+
       <p>Populariti OpenBSD tidaklah banyak berbanding perisai lain seperti <a href="https://freebsd.org">FreeBSD</a>,
 	<a href="https://www.apple.com/macos/">Apple macOS</a> dan juga<a href="https://www.microsoft.com/en-us/windows">
 	  Microsoft Windows</a>. Namun kebanyakan perisai Unix atau semacam Unix menggunakan aplikasi popular mereka OpenSSH.
       </p>
+
       <p><a href="https://openbsdfoundation.org">Yayasan OpenBSD</a> telah di tubuhkan pada tahun 2007 untuk mengurus,
 	merancang dan mengembangkan OpenBSD dan juga termasuk aplikasi aplikasi mereka yang lain seperti
 	<a href="https://openssh.com">OpenSSH</a>,<a href="https://openbgpd.org">OpenBGPD</a>,<a href="https://openntpd.org">
 	  OpenNTPD</a>, <a href="https://opensmtpd">OpenSMTPD</a>,<a href="https://libressl.org">LibreSSL</a>,
 	<a href="https://mandoc.bsd.lv">mandoc</a> dan <a href="https://rpki-client.org">rpki-client</a>
       </p>
+
       <figure>
 	<img src="openbsd_notes/StarryPointers.png " alt="StarryPointers.png "></img>
 	<figcaption>Gambar 02 - StarryPointers, semacam lukisan Vincent Van Goh</figcaption>
       </figure>
+
       <p>Semasa menulis dokumen ini, perisai OpenBSD di tahap versi 7.0
       </p>
+
     </article>
 
     <article class="diff">
+      
       <h2>Perbezaan Di Antara OpenBSD Dan Debian</h2>
+
       <p>Pengguna OpenBSD berasal dari perisai yang lain. Saya menggunakan Microsoft Windows dan GNU/Linux.
 	Saya memberi contoh <a href="https://www.debian.org"> Debian</a> kerana ia ada lah sebuah pengedar Linux amat popular
 	yang di urus oleh suka relawan. Kedua kedua perisian ini tidaklah begitu berbeza dari segi usia dan 'Look and feel' mereka.
       </p>
-      <p>Saya menggunakan Debian 11 dalam perbezaan ini</p>
+      
+      <p>Saya menggunakan Debian 11 dalam perbezaan ini
+      </p>
+      
       <table>
 	<tr>
 	  <th>Deskripsi</th>
@@ -114,28 +129,34 @@
 	  <td> .deb</td>
 	</tr>
       </table>
+      
       <p>Perbezaan di antara OpenBSD dan Debian ini adalah dari sumber kod, lessen dan budaya "Open Source" mereka.
       </p>
 
       <h3> * BSD (Berkley Software Distribution)</h3>
+      
       <p>OpenBSD tergolong dari keluarga BSD Unix, Sumber kod bercabang dari NetBSD, Kod NetBSD bercabang dari 386BSD.
 	Dan 386BSD bercabang dari kod 4.3 BSD Net/2 iaitu BSD (Berkley Software Distribution) yang di uruskan oleh Computer
 	System Research Group (CSRG), di University of California, Berkeley.
       </p>
+      
       <p>Kod kod CSRG ini berasal dari perisian 'at&amp;t' (American Telephone and Telegraph) Unix. Sumber kod tersebut di beri
 	oleh pihak at&amp;t untuk pihak Universiti. Di sini kod kod tersebut telah terdedah kepada guru dan pelajar pada era tujuh puluhan. </p>
       <p>Pada mulanya mereka hanya membuat aplikasi. Tetapi Setelah selesa dengan kod dalaman mereka telah mengubah suai
 	(Hacking the code) bahagian dalaman kod Unix tersebut dan mengedar jenama Unix mereka melauie tape. Di sinilah mulanya
 	cabang atau Forking kod kod Unix tersebut dan permulaan "Open Source" di antara komuniti pengguna komputer.</p>
+      
       <p>Tetapi pada tahun 1992 pihak UNIX System Laboratories (pemiliknya at&amp;t dan selepas itu Novell) telah menyaman pihak
 	Berkley Software Design Inc (BSDi) dan Regents of the University of Carlifornia atas sebab menyalahgunakan milik hak cipta.
 	Keputusan dari perbicaraan itu dibuat di luar mahkamah. Salah satu keputusan tersebut adalah mengeluarkan kod at&amp;t yang
 	dimaksudkan dari kod BSD. Kod yang dimaksudkan itu bukannya banyak tetapi ia adalah kod penting seperti kod boot dan seumpamanya.
       </p>
+      
       <p>Ini telah membuat perkembangan BSD setapak ke belakang. Namun sukarelawan BSD telah berjaya menghasilkan kod baru
 	untuk mengganti kod tersebut. Kod terakhir BSD adalah versi 4.4BSD-Lite Release 2 pada tahun 1995 dan keluarga BSD telah
 	mengassaskan kod tersebut.
       </p>
+      
       <p>Kod OpenBSD adalah cukup matang dan inovasinya menjadikan ia unik di kalang keluarga BSD Unix yang lain kerana tertumpu kepada sekuriti.
       </p>
 
@@ -143,18 +164,22 @@
       <p>Debian GNU/Linux tergolong dari keluarga semacam Unix.<a href="https://www.GNU.org">GNU</a> atau "GNU Not Unix" dan
 	Kernel <a href="https://www.kernel.org">Linux.</a>.
       </p>
+      
       <p>Populariti GNU tertumpu kepada aplikasi yang mereka ada. Pengasas utama GNU ialah Richard Stallman. Pada era sembilan puluhan
-	GNU tidak ada perisiain untuk di edar dengan aplikasi popular mereka. Komponen penting itu adalah Kernel. Kernel adalah kod yang
+	GNU tidak ada perisian untuk di edar dengan aplikasi popular mereka. Komponen penting itu adalah Kernel. Kernel adalah kod yang
 	mengatur dan mengurus sistem komputer.
       </p>
+      
       <p>Pada masa itu juga, Linus Trovalds penuntut di Universiti of Helsinki, Finland telah mempelawa salah sebuah ruangan "Newsgroup"
 	untuk maklum balas. Newsgroup semacam tapi bukan "Facebook" ala sembilan puluhan. Dari email tersebut tercetusnya revolusi digital
 	yang mengubah aluan "Open Source".
       </p>
+      
       <figure>
 	<img src="openbsd_notes/trovalds_email.png" alt="Trovalds email"></img>
 	<figcaption>Gambar 03 - trovalds email</figcaption>
       </figure>
+      
       <p>Debian adalah nama singkatan sempena nama "Debra Lyn" dan "Ian Murdock" pengasassnya. Pada masa itu mereka ada lah berpasangan.
 	Projek Debian telah menyumbang kepada kemajuan dan perkembangan Linux. Ia setanding dengan Linux komercial yang lainnya
 	seperti Redhat, Suse dan lain lain.
@@ -163,38 +188,49 @@
       <h3>*** Lessen</h3>
 
       <h4>GPL (GNU General Public license)</h4>
+      
       <p>Lessen GPL atau "GNU General Public license" adalah salah satu Lessen Open Source. Secara amnya Lessen GPL menyatakan
 	bahawa aplikasi kod mestilah dapat di akses oleh sesiapa sahaja. Jikalau sumber kod berubah atau terdapat modifikasi,
 	sumber kod yang di ubah suai mestilah dapat di akses oleh sesiapa sahaja. Ini termasuk Linux Kommercial yang berada di dalam pasaran.
       </p>
+
       <figure>
 	<img src="openbsd_notes/GPL_note.png" alt="Aplikasi GNU sed menggunakan GPL"></img>
 	<figcaption>Gambar 04 - Aplikasi GNU sed menggunakan GPL</figcaption>
       </figure>
+
       <h4>BSD license</h4>
+
       <p>Berlainan dengan aplikasi aplikasi yang menggunakan lessen BSD atau "Berkley Software Distribution License".
 	Anda boleh mengedar aplikasi yang sudah dimodifikasi kodnya tanpa memberi sumber kod itu kepada sesiapapun
 	walaupun penulis asal sumber kod tersebut. Tetapi maklumat hakcipta aplikasi tersebut mestilah dipaparkan.
 	Ada perkhidmatan komercial mahupun bukan komercial suka lessen BSD ini.
       </p>
+
       <figure>
 	<img src="openbsd_notes/BSD_note.png" alt="aplikasi sed OpenBSD yang menggunakan BSD license"></img>
 	<figcaption>Gambar 05 - Ini adalah aplikasi sed OpenBSD yang menggunakan BSD license </figcaption>
       </figure>
+
       <p> Oleh kerana lesen lesen GPL and BSD ini berbeza dan ia tidak serasi. Sebagai contoh Keluarga Unix BSD
 	menggunakan komponen asas mereka sendiri tidak seperti Debian GNU/Linux
       </p>
 
       <h3>**** Integrasi</h3>
+
       <p>Pengurusan Userland tools dibuat oleh sukarelawan GNU dan Linux Kernel di uruskan oleh sukarelawan Linux.Sukarelawan Debian akan
-	menguruskan integrasi aplikasi dan menyumbang kepada pembaik pulih aplikasi kepada pengurusnya yang asal.</p>
+	menguruskan integrasi aplikasi dan menyumbang kepada pembaik pulih aplikasi kepada pengurusnya yang asal.
+      </p>
+
     </article>
 
     <article class=install>
       <h2>Pemasangan OpenBSD</h2>
+      
       <p>Sebelum anda memasang OpenBSD ke dalam Laptop, Desktop atau Server anda. Sebaiknya kita selidiki jikalau perkakas anda serasi dengan
 	OpenBSD. Maksud perkakas di sini ialah:-
       </p>
+
       <ul>
 	<li>Storage controller</li>
 	<li>Network Adapter</li>
@@ -203,12 +239,15 @@
 	<li>Audio Card</li>
 	<li>dan perkakas multimedia yang lain.</li>
       </ul>
+
       <p>Berbanding perkembangan Linux drivers, OpenBSD berada setapak di belakang. Kegunaan utama Perisai OpenBSD adalah digunakan
 	untuk Server, Router dan Firewall tetapi ada juga yang memasang untuk digunakan harian ke dalam Laptop dan Desktop mereka.
       </p>
+
       <p>Sekiranya anda belum selesa dengan pemasang OpenBSD ke dalam Laptop, Desktop atau Server anda boleh memasang perisai tersebut
 	secara virtual. Contoh aplikasi virtualization yang ada adalah seperti berikut:-
       </p>
+
       <ul>
 	<li><a href="https://www.openbsd.org/faq/faq16.html">vmm</a></li>
 	<li><a href="https://bhyve.org">bhyve</a></li>
@@ -218,11 +257,14 @@
 	<li><a href="https://docs.microsoft.com">Microsoft Hyper-V</a></li>
 	<li><a href="https://www.vmware.com">dan VMware</a></li>
       </ul>
+
       <p>Installation media boleh didapati dihalaman utama<a href="https://www.openbsd.org"> OpenBSD</a>. Media yang boleh digunakan
 	seperti USB Pendrive, Cakera Padat dan Floppy.
       </p>
+
       <p> Ada berapa versi media pemasangan yang tersedia mengikut jenis Processor. Saya cuma memilih tiga sahaja:-
       </p>
+
       <ul>
 	<li>i386 - Processor 32bit untuk Intel 386 arkitektur atau pun kompatibel.</li>
 	<li>amd64- Processor 64 bit Dari AMD atau yang kompatibel.</li>
@@ -230,17 +272,22 @@
       </ul>
 
       <h3> Processor 64bit dan 32bit</h3>
+
       <p>Sekiranya anda memasang drivers perkakas untuk sistem 32bit, drivers itu tidak akan berfungsi ke sistem 64bit dan Begitu juga sebaliknya.
       </p>
+
       <p>Aplikasi OpenBSD 32bit tidak boleh dipakai host OpenBSD 64bit dan aplikasi OpenBSD 64bit tidak boleh dipakai host OpenBSD 32bit.
       </p>
+
       <p>Sebelum memasang perisai ada beberapa maklumat anda perlu ada terlebih dahulu seperti:-
       </p>
+
       <ul>
 	<li>hostname ia itu nama komputer anda</li>
 	<li>IP address</li>
 	<li>IP address DNS</li>
       </ul>
+
       <p>Dokumentasi untuk menyimpan file-file pemasangan OpenBSD di dalam media yang anda pilih ada di dalam halaman utama. Masukkan
 	media tersebut and mulakan pengembaraan awda ke dalam alam OpenBSD.
       </p>
@@ -250,6 +297,7 @@
       <p class="prompt">&gt;OpenBSD&bsol;amd64 CDBOOT 3&period;53
 	<br>boot&gt;
       </p>
+
       <p><em>boot Cakera Padat yang mengandugi file permasangan OpenBSD</em>
       </p>
 			<!--
@@ -261,6 +309,7 @@
       </p>
 
       <h3>2 - Skrip pemasangan OpenBSD</h3>
+
       <p class="prompt">scsibus1 at softraid0&colon; 256 targets
 	<br>root on rd0a swap on rd0b dump on rd0b
 	<br>WARNING&colon; CHECK AND RESET THE DATE&excl;
@@ -279,6 +328,7 @@
       </p>
 
       <h3>3 - Akses Sistem melauie SSHD dan Akaun root</h3>
+
       <p class="prompt">DNS domain name&quest; &lpar;e&period;g&period; &apos;example&period;com&apos;&rpar; &lsqb;my&period;domain&rsqb;
 	<br>DNS nameservers&quest; &lpar&IP address list or &apos;none&apos;&rpar; &lsqb;none&rsqb; none
 	<br>
@@ -297,26 +347,34 @@
 	<br> Untuk mengakses sistem anda dari luar kita perlu mengaktifkan SSH daemon semasa boot. Sekiranya jika anda tidak mahu
 	<br>SSH daemon berfungsi anda boleh menjawab No &lpar;tidak&rpar;.
       </p>
+
       <p class="prompt">Allow root ssh login&quest; &lpar;yes, no, prohibit-password&rpar; &lsqb;no&rsqb;
       </p>
+
       <p>Kita menjawab No &lpar;tidak&rpar; di sini.
       </p>
 
       <h3>4 - Pembahagian Struktur Cakera Keras</h3>
+
       <figure><img src="openbsd_notes/step_18.png" alt="Struktur Cakera Keras">
 	<figcaption>Gambar 09 - Struktur Cakera Keras</figcaption>
       </figure>
+
       <p>Struktur Cakera Keras yang saya pilih adalah yang saya buat sendiri. Anda boleh mengikut struktur yang di sediakan oleh skrip pemasangan.
       </p>
+
       <p>Dulu semasa saya belajar mengenai Debian ada orang menyebut tentang /exports, saya bengang apa yang dimaksudkan dengan folder exports ?
 	Saya mendapat tahu, dia menggunakan untuk mount point NFS server mereka. Struktur folder mereka berbeza dengan yang saya biasa
       </p>
 
       <h3>5 - Komponen OpenBSD</h3>
+
       <figure><img src="openbsd_notes/step_23.png" alt="Komponent OpenBSD">
 	<figcaption>Gambar 10 - Komponen OpenBSD</figcaption></figure>
+
       <p>Di sini kita memilih semua komponen kompenen OpenBSD yang ada
       </p>
+
       <ul>
 	<li>bsd - komponen kernel *perlu</li>
 	<li>bsd.mp - komponen kernel untuk muti prosessor</li>
@@ -333,16 +391,20 @@
       </ul>
 
       <h3>6 - Waktu tempatan</h3>
+	  
       <figure><img src="openbsd_notes/step_26.png" alt="waktu">
-	<figcaption>Gambar 11 - Waktu tempatan</figcaption>
-      </figure>
-      <p> Di sini sama memilih "Asia/Brunei" sebagai waktu tempatan dan tekan enter untuk sistem reboot.
+	  <figcaption>Gambar 11 - Waktu tempatan</figcaption>
+	  </figure>
+      
+	  <p> Di sini sama memilih "Asia/Brunei" sebagai waktu tempatan dan tekan enter untuk sistem reboot.
       </p>
 
       <h3>7 - Pertama kali Log Masuk ke OpenBSD</h3>
+
       <figure><img src="openbsd_notes/step_27_done.png" alt="Pertama kali Log Masuk">
-	<figcaption>Gambar 12 - Pertama kali Log Masuk</figcaption>
+	  <figcaption>Gambar 12 - Pertama kali Log Masuk</figcaption>
       </figure>
+
       <p>System anda sudah boot ke dalam perisai OpenBSD dan jika anda terlihat ada url tertera http://firmware.openbsd.org,
 	OpenBSD sedang memasang drivers proprietary untuk perkakas anda, dari gambar di atas menunjukkan OpenBSD memasang drivers
 	untuk perkakas Intel. Kalau tidak ada access internet anda boleh menggunakan fw_update untuk memasang drivers tersebut  apabila
@@ -353,6 +415,7 @@
       <p>OpenBSD dapat di akses dari luar. Maksud di sini kita log masuk ke sistem tidak berada di tempat sistem itu. kita
 	memerlukan alamat IP atau alamat penuh URL ( seperti computer1.webluar.net) . Selain itu menggunakan aplikasi utility seperti:-
       </p>
+      
       <ul>
 	<li><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a> - Aplikasi mudah terminal untuk
 	  <br>perisai * Microsoft Windows menggunakan protokol SSH.</li>
@@ -361,10 +424,13 @@
 	<li>ssh - Aplikasi tersebut tersedia di dalam perisai Linux, Apple macOS dan Microsoft Window 10 ke atas</li>
 	<li>scp - Aplikasi memindah file tersedia di dalam perisai Linux dan Windows menggunakan protokol SSH </li>
       </ul>
+
       <figure><img src="openbsd_notes/remote-login.png" alt="Akses dari luar">
 	<figcaption>Gambar 13 - Menggunakan PuTTY untuk log masuk ke OpenBSD</figcaption></figure>
+
       <p>SSHD atau SSH Daemon ada lah service yang membolehkan kita log masuk dari luar.
       </p>
+
     </article>
 
     <article class="home">
@@ -389,11 +455,13 @@
       </p>
 
       <h3>Shell</h3>
+
       <p>Secara ringkas, Shell adalah tempat kita berinteraksi dengan sistem OpenBSD dan seumpamanya. Shell yang disediakan adalah <b>Korn Shell</b>
 	atau nama singkatannya adalah <b>ksh</b>. kalau di dalam perisaian Windows adalah 'Command Prompt' atau 'PowerShell'.
       </p>
 
       <h3>Direktori Home Anda</h3>
+
       <p class="prompt">cheesysalmon$ pwd
 	<br>/home/badli
 	<br>cheesysalmon$ echo $HOME
@@ -404,6 +472,7 @@
       <p>Kita mulakan dengan menaip <b>pwd</b> (singkatan Print Working Directory)dan tekan 'Enter' untuk memastikan kita berada di dalam home folder.
 	Ia akan menunjukkan <b>/home/badli</b>.
       </p>
+
       <p>Satu lagi cari untuk memastikan di mana home folder kita ialah dengan menaip <b>echo $HOME</b>. $HOME ada lah home environment variable.
 	Setiap pengguna sistem ini mempunyaie berlainan home direktori.
       </p>
@@ -424,10 +493,14 @@
       <p>OpenBSD adalah sistem multi pengguna, beberapa pengguna dapat log masuk di dalam sistem tersebut secara serentak. Sebagai contoh saya akses
 	di depan computer dan ada orang log masuk melauie ssh dari luar.
       </p>
+
       <p>Di sini saya menggunakan arahan <b>whoami</b> untuk memastikan akaun saya betul. Setelah itu saya mengunakan who akan menunjukkan siapa yang
-	sedang masuk di dalam sistem.</p>
+	sedang masuk di dalam sistem.
+      </p>
+
       <p>Di sini <b>who</b> memberitahu yang dua pengguna telah masuk ke sistem, saya dan jane.
       </p>
+
       <p>Arahan <b>hostname</b> melihat kan nama sistem anda sahaja. tetapi <b>uname -a</b> akan memapar kan perisai yang di guna kan dan hostname
 	</p>
 
@@ -442,11 +515,14 @@
       
       <p>Taip <b>ls</b> (singkatan list) untuk melihat kandungan home direktori. Anda tidak nampak apa pun sama ada  file atau direktori home kamu.
       </p>
+      
       <p>Sekarang taip <b>ls -a</b> kita akan mendapati ada file dan direktori yang di sembunyikan sebelumnya. <b>-a</b> di sini bermaksud untuk melihat
 	semua file dan direktori walaupun ia di sembunyikan.
       </p>
+      
       <p>File dan direktori di sembunyikan tersebut adalah:-
       </p>
+      
       <ul>
 	<li>.Xdefaults</li>
 	<li>.cshrc</li>
@@ -475,19 +551,28 @@
 
       <p>Kita boleh tahu yang mana satu file dan directory dengan menaip <b>ls -al</b>. <b>-l</b> untuk menunjukkan butiran tersebut.
       </p>
-      <p>-rw-r--r--  1 badli  badli  212 Oct  1 04:00 .profile
-	<br>
-	<br><em>.profile adalah file kerana di arah permission (-rw-r--r--) tidak ada terdapat huruf <b>d</b> yang menunjukkan ia adalah direktori</em>
-      </p>
-      <p>drwx------  2 badli  badli  512 Feb 23  0344 .ssh
+
+      <p class="prompt">-rw-r--r--  1 badli  badli  212 Oct  1 04:00 .profile
 	<br>
       </p>
 
-      <p class="prompt">cheesysalmon$ file .profile
+      <p><b>.profile</b> adalah file kerana di arah permission (-rw-r--r--) tidak ada terdapat huruf <b>d</b> yang menunjukkan ia adalah direktori.
+      </p>
+
+      <p class="prompt">drwx------  2 badli  badli  512 Feb 23  0344 .ssh
+	<br>
+      </p>
+      
+      <p><b>.ssh</b> adalah directory kerana di arah permission (<b>d</b>rw<b>x</b>------) terdapat huruf <b>d</b> yang menunjukan ia direktori.
+	Kalau direktori ada huruf <b>x</b> ini membuatkan anda dapat memasuki direktori tersebut.
+	</p>
+
+      <p class="prompt">cheesysalmon$ file .profile 
 	<br>.profile: ASCII text
 	<br>cheesysalmon$ file .ssh
 	<br>.ssh: directory
       </p>
+      
       <p>Satu lagi kaedah untuk membeza di antara file dan directori adalah dengan menggunakan <b>file</b>. Dari contoh program telah membezakan
 	<b>.profile</b> adalah text file dan <b>.ssh</b> adalah folder.
       </p>
@@ -514,6 +599,7 @@
 	dapat dilihat. Sistem ini tidak akan membezakan lokasi dengan partitions atau perkakas storage. Seperti optical drive ia di akess /mnt/cdrom
 	direktori. 
       </p>
+      
       <p>Berbeza dengan Windows ia bermula dengan C:\. Jikalau ada partion kedua atau optical drive ia dinamakan D:\
       </p>
 
