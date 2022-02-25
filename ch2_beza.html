@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ms">
+  <head>
+    <link rel="stylesheet" href="openbsd_notes.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="openbsd, bsd, unix, opensource, Debian">
+    <meta name="description" content="Perbezaan OpenBSD denagn Debian GNU/Linux">
+  </head>
+
+  <title>Nota OpenBSD</title>
+
+  <body>
+    <header>
+      <h1>Nota OpenBSD</h1>
+      <p>penulis&nbsp;&nbsp;:&nbsp;Badli Al Rashid
+      <br>e-mel&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;badli.a.r@gmail.com
+      <br>tarikh&nbsp;&nbsp;&nbsp;:&nbsp;25 Februari 2022
+      <br>lesen&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Creative Commons
+      </p>
+    </header>
+
+    <article class="diff">
+      
+      <h2>Perbezaan Di Antara OpenBSD Dan Debian</h2>
+
+      <p>Pengguna OpenBSD berasal dari perisai yang lain. Saya menggunakan Microsoft Windows dan GNU/Linux.<a href="https://www.debian.org"> Debian</a>
+	kerana mereka adalah pengedar Linux yang sangat popular dan di uruskan oleh suka relawan seluruh dunia. Kedua kedua perisian ini
+	tidaklah begitu berbeza dari segi usia dan 'Look and feel' mereka.
+      </p>
+      
+      <p>Saya menggunakan Debian versi 11 dalam perbezaan ini. Perbezaannya tidak lah begitu mendalam.
+      </p>
+      
+      <table>
+	<tr>
+	  <th>Deskripsi</th>
+	  <th>OpenBSD</th>
+	  <th>Debian</th>
+	</tr>
+	<tr>
+	  <td> Keluarga Unix</td>
+	  <td><em>*&nbsp;</em>BSD</td>
+	  <td><em>**&nbsp;</em>GNU/Linux</td>
+	</tr>
+	<tr>
+	  <td> <em>***&nbsp;</em>Lessen</td>
+	  <td>BSD</td>
+	  <td>GPL</td>
+	</tr>
+	<tr>
+	  <td> Pengeluaran Perisai</td>
+	  <td> Satu <br>Kumpulan</td>
+	  <td><em>****&nbsp;</em>Integrasi</td>
+	</tr>
+	<tr>
+	  <td>Pemasangan</td>
+	  <td>text</td>
+	  <td>text dan graphical</td>
+	</tr>
+	<tr>
+	  <td>Lokasi Kernel</td>
+	  <td>/</td>
+	  <td> /boot</td>
+	</tr>
+	<tr>
+	  <td> Default Shell</td>
+	  <td> ksh</td>
+	  <td> bash</td>
+	</tr>
+	<tr>
+	  <td> Mengurus <br>Applikasi</td>
+	  <td> pkg_add</td>
+	  <td> apt</td>
+	</tr>
+	<tr>
+	  <td> Format <br>Applikasi Pakage</td>
+	  <td> .tgz</td>
+	  <td> .deb</td>
+	</tr>
+      </table>
+      
+      <p>Perbezaannya jelas dari sumber sumber asli kod, lessen penertinan yang digunakan oleh sumber kod
+	dan budaya "Open Source" mereka.
+      </p>
+
+      <h3> * BSD (Berkley Software Distribution)</h3>
+      
+      <p>OpenBSD tergolong dari keluarga BSD Unix, Sumber kod bercabang dari NetBSD, Kod NetBSD bercabang dari 386BSD.
+	Dan 386BSD bercabang dari kod 4.3 BSD Net/2 iaitu BSD (Berkley Software Distribution) yang di uruskan oleh Computer
+	System Research Group (CSRG), di University of California, Berkeley.
+      </p>
+      
+      <p>Kod kod CSRG ini berasal dari perisian 'at&amp;t' (American Telephone and Telegraph) Unix. Sumber kod tersebut di beri
+	oleh pihak at&amp;t untuk pihak Universiti. Di sini kod kod tersebut telah terdedah kepada guru dan pelajar pada era tujuh puluhan. </p>
+      <p>Pada mulanya mereka hanya membuat aplikasi. Tetapi Setelah selesa dengan kod dalaman mereka telah mengubah suai
+	(Hacking the code) bahagian dalaman kod Unix tersebut dan mengedar jenama Unix mereka melauie tape. Di sinilah mulanya
+	cabang atau Forking kod kod Unix tersebut dan permulaan "Open Source" di antara komuniti pengguna komputer.</p>
+      
+      <p>Tetapi pada tahun 1992 pihak UNIX System Laboratories (pemiliknya at&amp;t dan selepas itu Novell) telah menyaman pihak
+	Berkley Software Design Inc (BSDi) dan Regents of the University of Carlifornia atas sebab menyalahgunakan milik hak cipta.
+	Keputusan dari perbicaraan itu dibuat di luar mahkamah. Salah satu keputusan tersebut adalah mengeluarkan kod at&amp;t yang
+	dimaksudkan dari kod BSD. Kod yang dimaksudkan itu bukannya banyak tetapi ia adalah kod penting seperti kod boot dan seumpamanya.
+      </p>
+      
+      <p>Ini telah membuat perkembangan BSD setapak ke belakang. Namun sukarelawan BSD telah berjaya menghasilkan kod baru
+	untuk mengganti kod tersebut. Kod terakhir BSD adalah versi 4.4BSD-Lite Release 2 pada tahun 1995 dan keluarga BSD telah
+	mengassaskan kod tersebut.
+      </p>
+      
+      <p>Kod OpenBSD adalah cukup matang dan inovasinya menjadikan ia unik di kalang keluarga BSD Unix yang lain kerana tertumpu kepada sekuriti.
+      </p>
+
+      <h3>** Debian GNU/Linux </h3>
+      <p>Debian GNU/Linux tergolong dari keluarga semacam Unix.<a href="https://www.GNU.org">GNU</a> atau "GNU Not Unix" dan
+	Kernel <a href="https://www.kernel.org">Linux.</a>.
+      </p>
+      
+      <p>Populariti GNU tertumpu kepada aplikasi yang mereka ada. Pengasas utama GNU ialah Richard Stallman. Pada era sembilan puluhan
+	GNU tidak ada perisian untuk di edar dengan aplikasi popular mereka. Komponen penting itu adalah Kernel. Kernel adalah kod yang
+	mengatur dan mengurus sistem komputer.
+      </p>
+      
+      <p>Pada masa itu juga, Linus Trovalds penuntut di Universiti of Helsinki, Finland telah mempelawa salah sebuah ruangan "Newsgroup"
+	untuk maklum balas. Newsgroup semacam tapi bukan "Facebook" ala sembilan puluhan. Dari email tersebut tercetusnya revolusi digital
+	yang mengubah aluan "Open Source".
+      </p>
+      
+      <figure>
+	<img src="openbsd_notes/trovalds_email.png" alt="Trovalds email"></img>
+	<figcaption>email trovalds ke comp.os.minix pada August 1991 </figcaption>
+      </figure>
+      
+      <p>Debian adalah nama singkatan sempena nama "Debra Lyn" dan "Ian Murdock" pengasassnya. Pada masa itu mereka ada lah berpasangan.
+	Projek Debian telah menyumbang kepada kemajuan dan perkembangan Linux. Ia setanding dengan Linux komercial yang lainnya
+	seperti Redhat, Suse dan lain lain.
+      </p>
+
+      <h3>*** Lessen</h3>
+
+      <p> Lessen memainkan peranan penting di dalam pengedaran sumber sumber kod tersebut. Terdapat banyak jenis Lessen open source, kita akan
+	meliahat pada dua jenis lessen yang di pakai oleh keluarga Unix ini.
+      </p>
+
+      <h4>GPL (GNU General Public license)</h4>
+      
+      <p>Lessen GPL atau "GNU General Public license" adalah lessen Open Source. Secara amnya Lessen GPL menyatakan
+	bahawa file-file aplikasi yang diedarkan mestilah dapat di akses sumber kod kod kepada sesiapa sahaja. Jikalau sumber sumber kod di ubah
+	atau terdapat modifikasi, sumber kod kod tersebut mestilah juga di berikan akses untuk sesiapa sahaja mengkehendakinya.
+	Ini termasuk jugalah Linux Kommercial yang menggunakan kod kod tersebut.
+      </p>
+
+      <figure>
+	<img src="openbsd_notes/GPL_note.png" alt="Aplikasi GNU sed menggunakan GPL"></img>
+	<figcaption>Aplikasi GNU sed menggunakan GPL</figcaption>
+      </figure>
+
+      <h4>BSD license</h4>
+
+      <p>Berlainan dengan aplikasi aplikasi yang menggunakan lessen BSD (Berkley Software Distribution License).
+	Anda boleh mengedar aplikasi dan mengubah kod itu tanpa memberi sumber kod itu kepada sesiapapun
+	walaupun penulis asal sumber kod tersebut. Tetapi maklumat hakcipta aplikasi tersebut mestilah dipaparkan.
+	Ada perkhidmatan komercial mahupun bukan komercial suka lessen BSD ini.
+      </p>
+
+      <figure>
+	<img src="openbsd_notes/BSD_note.png" alt="aplikasi sed OpenBSD yang menggunakan BSD license"></img>
+	<figcaption>aplikasi sed OpenBSD yang menggunakan BSD license </figcaption>
+      </figure>
+
+      <p> Oleh kerana lesen lesen GPL and BSD ini berbeza dan ia tidak serasi. Sebagai contoh Keluarga Unix BSD
+	menggunakan komponen asas mereka sendiri tidak seperti Debian GNU/Linux yang menggunakan komponen dari pelbagai pihak.
+      </p>
+
+      <h3>**** Integrasi</h3>
+
+      <p>Pengurusan Userland tools dibuat oleh sukarelawan GNU dan Linux Kernel di uruskan oleh sukarelawan Linux.Sukarelawan Debian akan
+	menguruskan integrasi aplikasi dan menyumbang kepada pembaik pulih aplikasi kepada pengurusnya yang asal.
+      </p>
+
+      <p>Ini membuatkan pengurusan komponen GNU/Linux itu modular.
+
+    </article>
+
+    <footer>
+      <p><em><a href="https://creativecommons.org/licenses/by/4.0/"> <img src="openbsd_notes/cc-by.svg" alt="CC-BY-4.0"><a></em>
+      </p>
+    </footer>
+
+  </body>
+  
+</html>
