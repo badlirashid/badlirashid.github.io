@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ms">
+  <head>
+    <link rel="stylesheet" href="openbsd_notes.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="openbsd, bsd, unix, ksh">
+    <meta name="description" content="File, Directori dan Permission">
+  </head>
+
+  <title>Nota OpenBSD, File, Direktori dan Permission</title>
+
+  <body>
+    <header>
+      <h1>Nota OpenBSD</h1>
+      <p>penulis&nbsp;&nbsp;:&nbsp;Badli Al Rashid
+      <br>e-mel&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;badli.a.r@gmail.com
+      <br>tarikh&nbsp;&nbsp;&nbsp;:&nbsp;25 Februari 2022
+      <br>lesen&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Creative Commons
+      </p>
+    </header>
+
+    <article class="fdp">
+
+      <h2>File, Direktori dan Permission</h2>
+      
+      <h3>Sistem Unix Bermula Dengan &sol; </h3>
+
+      <p>Dalam sistem Unix dan yang semacamnya, permulaan bermula dengan <b>&sol;</b> atau <b>slash root</b>. Di sini semua direktori utama akan
+	bermula dan dapat dilihat. Sistem ini tidak membezakan lokasi dengan berasaskan partitions atau perkakas storage. Seperti pembaca
+	cakera padat ia dapat di akeses dengan &sol;mnt&sol;cdrom direktori.
+      </p>
+      
+      <p>Berbeza dengan Windows ia bermula dengan <b>C&colon;&bsol;</b> mahupun ia satu fisikal cakera keras atau satu partion. Jikalau ada partion
+	kedua atau pembaca cakera padat ia akaan di namakan sebagai <b>D&colon;&bsol;</b>.
+      </p>
+
+      <p>Jikalau saya melihat apa yang ada di <b>&sol;</b> ia akan menunjukan beberapa file dan direktori
+      </p>
+
+      <p class="prompt">-rw-r--r--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cshrc
+	<br>-rw-r--r--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.profile
+	<br>drwxr-xr-x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;altroot
+	<br>drwxr-xr-x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bin
+	<br>-rw-r--r--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boot
+	<br>-rwx------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bsd
+	<br>-rwx------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bsd.booted
+	<br>-rw-------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bsd.rd
+	<br>drwxr-xr-x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dev
+	<br>drwxr-xr-x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;etc
+	<br>drwxr-xr-x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;home
+	<br>drwxr-xr-x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mnt
+	<br>drwx------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;root
+	<br>drwxr-xr-x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sbin
+	<br>lrwxrwx---&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sys -> usr&bsol;src&bsol;sys
+	<br>drwxrwxrwt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tmp
+	<br>drwxr-xr-x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;usr
+	<br>drwxr-xr-x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var
+      </p>
+      
+
+      <table class="dirs">
+	<tr>
+	  <th>Direktori <br>dan file</th>
+	  <th>Deskripsi</th>
+	</tr>
+	<tr>
+	<tr>
+	  <td>/</td>
+	  <td>Tempat permulaan atau slash root</td>
+	</tr>
+	<tr>
+	  <td>.profile</td>
+	  <td>Dot profile ini dimilike oleh administrator, root </td>
+	</tr>
+	<tr>
+	  <td>.cshrc</td>
+	  <td> Dot cshrc ini dimiliki oleh administrator, root </td>
+	</tr>
+
+	<tr>
+	  <td>alroot</td>
+	  <td>folder</td>
+	</tr>
+	<tr>
+	  <td>bsd<br>bsd&period;booted<br>bsd&period;rd</td>
+	  <td>file ini di gunakan untuk boot sistem BSD anda</td>
+	</tr>
+	<tr>
+	  <td>sys</td>
+	  <td>Ia ada symlink atau shortcut ke &sol;usr&sol;src&sol;sys</td>
+	</tr>
+	<td>&sol;root</td>
+	  <td>Home direktori untuk akaun pentadbir root,
+	      <br>Direktori ini selalunya bersama dengan root partition ia itu &sol;</td>
+	</tr>
+	<tr>
+	  <td>&sol;etc</td>
+	  <td>Direktori sistem konfigurasi</td>
+	</tr>
+	<tr>
+	  <td>&sol;home</td>
+	  <td><p>Tempat direktori dan konfigurasi untuk akaun pengguna,
+	      <br>Direktori ini selalu berasing partition</p></td>
+	</tr>
+	<tr>
+	  <td>&sol;sbin</td>
+	  <td>File binari, Direktori ini selalu bersama dengan partition / </td>
+	</tr>
+	<tr>
+	  <td>&sol;bin</td>
+	  <td>Direktori ini selalu bersama dengan partition / </td>
+	</tr>
+	<tr>
+	  <td>&sol;usr</td>
+	  <td>usr folder</td>
+	</tr>
+	<tr>
+	  <td>&sol;usr&sol;src</td>
+	  <td>Sumber file kod asas perisai OpenBSD</td>
+	</tr>
+	<tr>
+	  <td>&sol;usr&sol;ports</td>
+	  <td>Direktori koleksi ports, ini adalah aplikasi extra. Bukan dari komponen asas OpenBSD.</td>
+	</tr>
+	<tr>
+	  <td>&sol;var</td>
+	  <td>Direktori ini selalu berasing dengan &sol; partition</td>
+	</tr>
+	<tr>
+	  <td>&sol;tmp</td>
+	  <td>Direktori ini selalu berasing &sol; partition</td>
+	</tr>
+      </table>
+    </article>
+
+    <footer>
+      <p><em><a href="https://creativecommons.org/licenses/by/4.0/"> <img src="openbsd_notes/cc-by.svg" alt="CC-BY-4.0"><a></em>
+      </p>
+    </footer>
+
+  </body>
+  
+</html>
