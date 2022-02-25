@@ -46,14 +46,23 @@
 	skrip skirp untuk anda lancar kan.
       </p>
 
-      <h3>Unix Shell</h3>
+      <h3>Korn Shell</h3>
 
-      <p>Secara ringkas, Shell Unix adalah tempat kita berinteraksi dengan sistem OpenBSD. Ia seumpamanya punat punat di kalkulator sedang
-	menunggu petikan anda untuk mengira kiraan anda yang akan di papar di skirin kalkulator itu. Unix Shell yang disediakan adalah <b>Korn Shell</b>
-	atau nama singkatannya adalah <b>ksh</b>. Kalau di dalam perisaian Windows ia adalah 'Command Prompt' atau 'PowerShell'.
+      <p>Secara ringkas, Shell Unix adalah tempat kita berinteraksi dengan sistem Unix. Ia seumpamanya punat punat di kalkulator sedang
+	menunggu petikan anda untuk mengira. Kiraan itu akan di paparkan di skirin kalkulator. Unix Shell yang di sediakan adalah <b>Korn Shell</b>
+	atau nama singkatannya adalah <b>ksh</b> atau <b>sh</b>. Kalau di dalam perisaian Windows ia adalah 'Command Prompt' atau 'PowerShell'.
       </p>
 
-      <h3>Direktori Home Anda</h3>
+      <p>Pengedaran Korn Shell OpenBSD ini berasaskan kod kod Public Domain Korn Shell. Selain ksh terdapat juga <b>C Shell</b> atau singkatan<csh>.
+	  Kedua dua shell tersebut adalah komponen assas OpenBSD. Shell tersebut boleh di automasi untuk melancarkan dan mempermudahkan kerja kerja
+	  anda.
+      </p>
+      
+      <p>Jikalau anda suka pada shell yang lain seperti <b>GNU Bash</b>, <b>Z shell</b> atau mana mana Unix Shell yang lain anda perlu lah memasang
+	Shell tersebut secara berasingan.
+      </p> 
+
+      <h3>Direktori Home Anda - pwd dan echo</h3>
 
       <p class="prompt">cheesysalmon$ pwd
 	<br>/home/badli
@@ -70,7 +79,7 @@
 	Setiap pengguna sistem ini mempunyaie berlainan home direktori.
       </p>
 
-      <h3>Nama host Dan Akaun</h3>
+      <h3>Nama host Dan Akaun - whoami, hostname dan uname</h3>
       
       <p class="prompt">cheesysalmon$ whoami
 	<br>badli
@@ -170,21 +179,108 @@
 	<b>.profile</b> adalah text file dan <b>.ssh</b> adalah folder.
       </p>
 
-      <p class="prompt">cheesysalmon$ file /sys
-	<br>/sys: broken symbolic link to 'usr/src/sys'
-	<br>cheesysalmon$ file /dev/sd0a
-	<br>/dev/sd1: block special (4/0)
-	<br>cheesysalmon$ file /bin/ls
-	<br>/bin/ls: ELF 64-bit LSB shared object, x86-64, version 1
+      <p class="prompt">cheesysalmon$ file &sol;sys
+	<br>&sol;sys: broken symbolic link to 'usr&sol;src&sol;sys'
+	<br>cheesysalmon$ file &sol;dev&sol;sd0a
+	<br>&sol;dev&sol;sd1: block special (4&sol;0)
+	<br>cheesysalmon$ file &sol;bin&sol;ls
+	<br>&sol;bin&sol;ls: ELF 64-bit LSB shared object, x86-64, version 1
       </p>
 
       <p>Program file juga dapat memberi tahu beberapa jenis file.</p>
 
       <ul>
-	<li>/sys - adalah symbolic link, sama seperti shortcut di dalam Windows</li>
-	<li>/dev/sd0a - Ini ada block device untuk cakera keras anda</li>
+	<li>&sol;sys - adalah symbolic link, sama seperti shortcut di dalam Windows</li>
+	<li>&sol;dev&sol;sd0a - Ini ada block device untuk cakera keras anda</li>
 	<li>ls - adalah file binari yang kita lacarkan dari shell anda</li>
       </ul>
+
+      <h3>Mengalihkan Keluaran Ke File - &gt;</h3>
+
+      <p>Kita alihkan keluaran yang di paparkan di skrin terus ke file dengan symbol &gt. Output ini tidak
+	akan tukar arah ke kiri kerana secara logik ia ke kanan.
+	</p>
+
+      <p class='prompt'>cheesysalmon$&nbsp;mkdir&nbsp;nota
+	<br>cheesysalmon$&nbsp;ls
+	<br>nota
+	<br>cheesysalmon$&nbsp;ls&nbsp;&dash;al&nbsp;&gt&nbsp;nota&sol;list.txt
+	<br>cheesysalmon$&nbsp;cat&nbsp;nota&sol;list.txt
+	<br>total&nbsp;40
+	<br>drwxr-xr-x&nbsp;&nbsp;4&nbsp;badli&nbsp;&nbsp;badli&nbsp;&nbsp;512&nbsp;Feb&nbsp;25&nbsp;19:28&nbsp;.
+	<br>drwxr-xr-x&nbsp;&nbsp;3&nbsp;root&nbsp;&nbsp;&nbsp;wheel&nbsp;&nbsp;512&nbsp;Feb&nbsp;25&nbsp;&nbsp;2022&nbsp;..
+	<br>-rw-r--r--&nbsp;&nbsp;1&nbsp;badli&nbsp;&nbsp;badli&nbsp;&nbsp;&nbsp;87&nbsp;Oct&nbsp;&nbsp;1&nbsp;04:00&nbsp;.Xdefaults
+	<br>-rw-r--r--&nbsp;&nbsp;1&nbsp;badli&nbsp;&nbsp;badli&nbsp;&nbsp;769&nbsp;Oct&nbsp;&nbsp;1&nbsp;04:00&nbsp;.cshrc
+	<br>-rw-r--r--&nbsp;&nbsp;1&nbsp;badli&nbsp;&nbsp;badli&nbsp;&nbsp;101&nbsp;Oct&nbsp;&nbsp;1&nbsp;04:00&nbsp;.cvsrc
+	<br>-rw-r--r--&nbsp;&nbsp;1&nbsp;badli&nbsp;&nbsp;badli&nbsp;&nbsp;359&nbsp;Oct&nbsp;&nbsp;1&nbsp;04:00&nbsp;.login
+	<br>-rw-r--r--&nbsp;&nbsp;1&nbsp;badli&nbsp;&nbsp;badli&nbsp;&nbsp;175&nbsp;Oct&nbsp;&nbsp;1&nbsp;04:00&nbsp;.mailrc
+	<br>-rw-r--r--&nbsp;&nbsp;1&nbsp;badli&nbsp;&nbsp;badli&nbsp;&nbsp;212&nbsp;Oct&nbsp;&nbsp;1&nbsp;04:00&nbsp;.profile
+	<br>drwx------&nbsp;&nbsp;2&nbsp;badli&nbsp;&nbsp;badli&nbsp;&nbsp;512&nbsp;Feb&nbsp;25&nbsp;&nbsp;2022&nbsp;.ssh
+	<br>drwxr-xr-x&nbsp;2&nbsp;badli&nbsp;&nbsp;badli&nbsp;&nbsp;512&nbsp;Feb&nbsp;25&nbsp;19:29&nbsp;nota
+      </p>
+      <p><b>mkdir nota</b> mkdir di sini bermaksud "make directory" ia itu membuat directori bernama nota
+      <br>
+      <br>Ini lah dia contoh arahan tersebut <b>&nbsp;ls&nbsp;&dash;al&nbsp;&gt&nbsp;nota&sol;list.txt</b> di mana pengeluaran dari <b>ls</b>
+      di alihkan atau simpan kedalam file list.txt.
+      <br><b>cat&nbsp;nota&sol;list.txt</b> arahan <b>cat</b> ini membaca file list.txt dan memaparkannya kepada skrin anda.
+      </p>
+      
+      <h3>masuk dan keluar folder</h3>
+	<p class="prompt">cheesysalmon$&nbsp;cd&nbsp;nota
+	  <br>cheesysalmon$&nbsp;rm&nbsp;list.txt
+	  <br>cheesysalmon$&nbsp;cd&nbsp;../
+	  <br>cheesysalmon$&nbsp;pwd
+	  <br>/home/badli
+	  <br>cheesysalmon$&nbsp;ls
+	  <br>nota
+	  <br>cheesysalmon$&nbsp;date&nbsp&gt;&nbsp;nota&sol;list&dot;txt
+	  <br>cheesysalmon$&nbsp;w&nbsp&gt;&gt;&nbsp;nota&sol;list&dot;txt
+	  <br>cheesysalmon$&nbsp;ls&nbsp;&gt;&gt;nota&sol;list&dot;txt
+	  <br>cheesysalmon$&nbsp;cat&nbsp;nota&sol;list&dot;txt
+	  <br>Fri&nbsp;Feb&nbsp;25&nbsp;21&colon;08&colon;59&nbsp;+08&nbsp;2022
+	  <br>&nbsp;9&colon;09PM&nbsp;&nbsp;up&nbsp;&nbsp;1&colon;44,&nbsp;2&nbsp;users,&nbsp;load&nbsp;averages&colon;&nbsp;0&dot;
+	  01,&nbsp;0&dot;01,&nbsp;0&dot;00
+	  <br>USER&nbsp;&nbsp;&nbsp;&nbsp;TTY&nbsp;FROM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  LOGIN@&nbsp;&nbsp;IDLE&nbsp;WHAT
+	  <br>root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C0&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;Sat03AM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;-ksh
+	  <br>badli&nbsp;&nbsp;&nbsp;&nbsp;p0&dot;192&dot;168&dot;56&dot;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&colon;27PM&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;0&nbsp;w
+	  <br>nota
+	</p>
+      <p><b>cd&nbsp;nota</b> arahan cd adalah singkata <b>change directory</b> untuk masuk ke dalam folder <b>nota</b>
+	<br><b>rm&nbsp;list&dot;txt</b> <b>rm</b> bermaksud <b>remove</b> atau memusnahkan file list&dot;txt tersebut.
+	<br><b>cd&nbsp;&dot;&dot;&sol;</b> kita keluar atau naik ke direktori indung.
+      </p>
+      
+      <p>Di sini kita memberi tiga arahan. Arahan arahan tersebut akan di simpan dan di gabung ke dalam satu file. 
+	<b>date&nbsp;&gt;&nbsp;nota&sol;list&dot;txt</b>&nbsp;arahan <b>date</b> adah untuk mengambil tarikh dan masa setempat
+	<br>
+	<br><b>w&nbsp;&gt;&gt;&nbsp;nota&sol;list&dot;txt</b>&nbsp;-&nbsp;<b>w</b>&nbsp bermaksud melihat siapa yang log masuk dan apa yang sedang mereka lakukan dan simpan mesej tersebut ke file list&dot;txt. Sekira nya kalau kita satu symbol <b>&gt;</b> ia tidak menyambung ke file tersebut bahkan menghilangkan yang lama dan simpan mesej itu sahaja.
+	<br>
+	<br><b>ls&nbsp;&gt;&gt;nota&sol;list&dot;txt</b>&nbsp;-&nbsp;<b>ls</b>&nbsp;simpan direktory list tersebut kedalam file 
+      </p>
+
+      
+      <p><b>cat&nbsp;nota&sol;list&dot;txt</b>&nbasp;memaparkan kotent file list&dot;txt tersebut yang telah di gabungkan.
+      </p>
+
+      <p class = "prompt">Fri&nbsp;Feb&nbsp;25&nbsp;21&colon;08&colon;59&nbsp;+08&nbsp;2022 &lt;&dash;&dash;&dash;Arahan dari <b>date</b>
+      </p>
+
+
+      <p class="prompt">&nbsp;9&colon;09PM&nbsp;&nbsp;up&nbsp;&nbsp;1&colon;44,&nbsp;2&nbsp;users,&nbsp;load&nbsp;averages&colon;&nbsp;0&dot;
+	  01,&nbsp;0&dot;01,&nbsp;0&dot;00 &lt;&dash;&dash;&dash; Arahan dari <b>w</b>
+	  <br>USER&nbsp;&nbsp;&nbsp;&nbsp;TTY&nbsp;FROM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  LOGIN@&nbsp;&nbsp;IDLE&nbsp;WHAT
+	  <br>root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C0&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;Sat03AM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;-ksh
+	  <br>badli&nbsp;&nbsp;&nbsp;&nbsp;p0&dot;192&dot;168&dot;56&dot;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&colon;27PM&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;0&nbsp;w
+      </p>
+      <p class="prompt">nota &lt; ini adalah paparan yang keluar dari <b>ls</b>.
+      </p>
+
 
     </article>
 
