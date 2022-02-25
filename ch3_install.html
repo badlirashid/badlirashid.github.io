@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ms">
+  <head>
+    <link rel="stylesheet" href="openbsd_notes.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="openbsd, bsd, unix, opensource">
+    <meta name="description" content="Nota OpenBSD, Permasangan">
+  </head>
+
+  <title>Nota OpenBSD, Permasangan</title>
+
+  <body>
+    <header>
+      <h1>Nota OpenBSD</h1>
+      <p>penulis&nbsp;&nbsp;:&nbsp;Badli Al Rashid
+	<br>e-mel&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;badli.a.r@gmail.com
+	<br>tarikh&nbsp;&nbsp;&nbsp;:&nbsp;25 Februari 2022
+	<br>lesen&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Creative Commons
+      </p>
+    </header>
+
+    <article class=install>
+      <h2>Permasangan OpenBSD</h2>
+      
+      <p>Sebelum anda memasang OpenBSD ke dalam Laptop, Desktop atau Server. Sebaiknya kita selidiki jikalau perkakas anda serasi dengan
+	OpenBSD. Maksud perkakas di sini ialah:-
+      </p>
+
+      <ul>
+	<li>Storage controller</li>
+	<li>Network Adapter</li>
+	<li>Wireless Adapter</li>
+	<li>Graphics Card</li>
+	<li>Audio Card</li>
+	<li>dan perkakas multimedia yang lain.</li>
+      </ul>
+
+      <p>Berbanding perkembangan Linux drivers, OpenBSD berada setapak di belakang. Kegunaan utama Perisai OpenBSD adalah digunakan
+	untuk Server, Router dan Firewall tetapi ada juga yang memasang untuk digunakan harian ke dalam Laptop dan Desktop mereka.
+      </p>
+
+      <h3> Virtualisasi </h3>
+      
+      <p>Sekiranya anda belum selesa dengan pemasang OpenBSD ke dalam Laptop, Desktop atau Server anda boleh memasang perisai tersebut
+	secara virtual. Contoh aplikasi virtualization yang ada adalah seperti berikut:-
+      </p>
+
+      <ul>
+	<li><a href="https://www.openbsd.org/faq/faq16.html">vmm</a></li>
+	<li><a href="https://bhyve.org">bhyve</a></li>
+	<li><a href="https://www.linux-kvm.org">Linux KVM</a></li>
+	<li><a href="https://xenproject.org">Xen Project</a></li>	
+	<li><a href="https://www.virtualbox.org">Oracle VirtualBox</a></li>
+	<li><a href="https://docs.microsoft.com">Microsoft Hyper-V</a></li>
+	<li><a href="https://www.vmware.com">dan VMware</a></li>
+      </ul>
+
+      <h3> Media Permasangan </h3>
+      
+      <p>Installation media boleh didapati dihalaman utama<a href="https://www.openbsd.org"> OpenBSD</a>. Media yang boleh digunakan
+	seperti USB Pendrive, Cakera Padat dan Floppy.
+      </p>
+
+      <p> Ada berapa versi media pemasangan yang tersedia mengikut jenis Processor. Saya cuma memilih tiga sahaja:-
+      </p>
+
+      <ul>
+	<li>i386 - Processor 32bit untuk Intel 386 arkitektur atau pun kompatibel.</li>
+	<li>amd64- Processor 64 bit Dari AMD atau yang kompatibel.</li>
+	<li>macppc - Processor Power PC telah digunakan oleh Apple sebelum mereka bertukar ke Intel Processor dahulu</li>
+      </ul>
+
+      <h3> Processor 64bit dan 32bit</h3>
+
+      <p>Sekiranya anda memasang drivers perkakas untuk sistem 32 bit, drivers itu tidak akan berfungsi ke sistem 64 bit dan begitu
+	juga sebaliknya. Aplikasi OpenBSD 32 bit tidak boleh dipakai host OpenBSD 64 bit dan aplikasi OpenBSD 64bit tidak boleh dipakai host OpenBSD 32bit.
+      </p>
+
+      <h3> Maklumat sebelum permasangan </h3>
+
+      <p>Sebelum memasang perisai ada beberapa maklumat anda perlu ada terlebih dahulu seperti:-
+      </p>
+
+      <ul>
+	<li>hostname ia itu nama komputer anda</li>
+	<li>IP address</li>
+	<li>IP address DNS</li>
+      </ul>
+
+      <p>Dokumentasi untuk memasang file-file permasangan OpenBSD ke dalam media yang anda pilih ada di dalam halaman utama mereka.
+	Masukkan media tersebut and mulakan pengembaraan awda ke dalam alam OpenBSD.
+      </p>
+
+      <h4>1 - Boot Dari Pemasangan Media</h4>
+
+      <p class="prompt">&gt;OpenBSD&bsol;amd64 CDBOOT 3&period;53
+	<br>boot&gt;
+      </p>
+
+      <p><em>boot Cakera Padat yang mengandugi file permasangan OpenBSD</em>
+      </p>
+			<!--
+			<figure><img src="openbsd_notes/boot_cd.png" alt="Boot Dari Pemasangan Media">
+				<figcaption>Gambar 06 - Boot dari Cakera Padat</figcaption>
+			</figure>
+			-->
+      <p>Sistem menanti arahan untuk membuat boot ke cakera padat OpenBSD. Tekan hanyan menekan "Enter" untuk meneruskan.
+      </p>
+
+      <h4>2 - Skrip pemasangan OpenBSD</h4>
+
+      <p class="prompt">scsibus1 at softraid0&colon; 256 targets
+	<br>root on rd0a swap on rd0b dump on rd0b
+	<br>WARNING&colon; CHECK AND RESET THE DATE&excl;
+	<br>erase &Hat;?, werase &Hat;W, kill &Hat;U, intr &Hat;C, status &Hat;T
+	<br>
+	<br>Welcome to the OpenBSD&bsol;amd64 7.0 installation program&period;
+	<br>&lpar;I&rpar;nstall, &lpar;U&rpar;pgrade, &lpar;A&rpar;utoinstall or &lpar;S&rpar;hell&quest;
+      </p>			
+			<!--
+			<figure><img src="openbsd_notes/step_1.png" alt="Skrip pemasangan OpenBSD">
+				<figcaption>Gambar 07 - 'i' untuk Install</figcaption>
+			</figure>
+			-->
+      <p>Semasa process Boot, ia akan menunjukkan perkakas yang ada terpasang di dalam sistem anda. Setelah selesai ia
+	menunjukkan beberapa pilihan. Tekan huruf "i" and tekan "Enter" untuk meneruskan.
+      </p>
+
+      <h4>3 - Akses Sistem melauie SSHD dan Akaun root</h4>
+
+      <p class="prompt">DNS domain name&quest; &lpar;e&period;g&period; &apos;example&period;com&apos;&rpar; &lsqb;my&period;domain&rsqb;
+	<br>DNS nameservers&quest; &lpar&IP address list or &apos;none&apos;&rpar; &lsqb;none&rsqb; none
+	<br>
+	<br>Password for root account&quest; &lpar;will not echo&rpar;
+	<br>Password for root account&quest; &lpar;again&rpar;
+	<br>Start sshd&lpar;8&rpar; by default&quest; &lsqb;yes&rsqb;
+	<br>Do you expect to run the X Window System&quest; &lsqb;yes&rsqb;
+	<br>Do you want the X Window System to be started by xenodm&lpar;1&rpar;&quest; &lsqb;no&rsqb;
+      </p>
+			<!--
+			<figure><img src="openbsd_notes/step_15.png" alt="Akses dan Root">
+				<figcaption>Gambar 08 - Akses dan Root</figcaption>
+			</figure>
+			-->
+      <P> Start sshd&lpar;8&rpar; by default&quest; &lsqb;yes&rsqb;
+	<br> Untuk mengakses sistem anda dari luar kita perlu mengaktifkan SSH daemon semasa boot. Sekiranya jika anda tidak mahu
+	<br>SSH daemon berfungsi anda boleh menjawab No &lpar;tidak&rpar;.
+      </p>
+
+      <p class="prompt">Allow root ssh login&quest; &lpar;yes, no, prohibit-password&rpar; &lsqb;no&rsqb;
+      </p>
+
+      <p>Kita menjawab No &lpar;tidak&rpar; di sini.
+      </p>
+
+      <h4>4 - Pembahagian Struktur Cakera Keras</h4>
+
+      <figure><img src="openbsd_notes/step_18.png" alt="Struktur Cakera Keras">
+	<figcaption>Struktur Cakera Keras</figcaption>
+      </figure>
+
+      <p>Struktur Cakera Keras yang saya pilih adalah yang saya buat sendiri. Anda boleh mengikut struktur yang di sediakan oleh skrip pemasangan.
+	Swap partition adalah memori virtual komputer. Ia membolehkan sistem akses lebih dari memori kemampuan sebenar. Kebesarannya swap akan
+	mengikut size fisikal memory atau dua kali ganda size fizikal.</p>
+
+      <p>Dulu semasa saya belajar mengenai Debian ada orang menyebut tentang /exports, saya bengang apa yang dimaksudkan dengan folder exports ?
+	Saya mendapat tahu, dia menggunakan untuk mount point NFS server mereka. Struktur folder mereka berbeza dengan yang saya biasa
+      </p>
+
+      <h4>5 - Komponen komponen OpenBSD</h4>
+
+      <figure><img src="openbsd_notes/step_23.png" alt="Komponen OpenBSD">
+	<figcaption>Komponen OpenBSD</figcaption></figure>
+
+      <p>Di sini kita memilih semua komponen kompenen OpenBSD yang ada untuk permasangan.
+      </p>
+
+      <ul>
+	<li>bsd - komponen kernel <b>*perlu</b></li>
+	<li>bsd.mp - komponen kernel untuk muti prosessor</li>
+	<li>bsd.rd - komponen kernel ramdisk</li>
+	<li>base70.tgz - komponen utama</li>
+	<li>etc.tgz - konfiguration sistem utama</li>
+	<li>comp70.tgz - sistem kompiler, file library dan sebagainya</li>
+	<li>game70.tgz - game teks </li>
+	<li>xetc70.tgz - kofiguration x11</li>
+	<li>xserv.tgz - komponen X11</li>
+	<li>xbase70.tgz - komponen utama X11</li>
+	<li>xshare70.tgz - file ini perlu untuk xbase</li>
+	<li>xfont70.tgz - font X11</li>
+      </ul>
+
+      <h4>6 - Waktu tempatan</h4>
+	  
+      <figure><img src="openbsd_notes/step_26.png" alt="waktu setempat">
+	  <figcaption>Waktu Setempat</figcaption>
+      </figure>
+
+      <p> Di sini saya memilih "Asia/Brunei" sebagai waktu tempatan saya dan tekan enter untuk meneruskan sistem reboot.
+      </p>
+
+      <h4>7 - Pertama kali Log Masuk ke OpenBSD</h4>
+
+      <figure><img src="openbsd_notes/step_27_done.png" alt="Pertama kali Log Masuk">
+	  <figcaption>Gambar 12 - Pertama kali Log Masuk</figcaption>
+      </figure>
+
+      <p>Sistem anda sudah boot ke dalam perisai OpenBSD dan jika anda terlihat ada url tertera http://firmware.openbsd.org,
+	OpenBSD sedang memasang drivers proprietary untuk perkakas anda. Dari gambar di atas menunjukkan OpenBSD hendak memasang drivers
+	untuk perkakas Intel. Kalau tidak ada access internet anda boleh menggunakan fw_update untuk memasang drivers tersebut apabila
+	mendapat access internet.</p>
+      
+      <p>Saya log masuk dengan pengguna root sistem mengeluar kan mesej penyata
+      </p>
+
+      <h4>8 - Log masuk dari luar</h4>
+      <p>OpenBSD dapat di akses dari luar. Maksud di sini kita log masuk ke sistem tidak berada di tempat sistem itu. kita
+	memerlukan alamat IP atau alamat penuh URL ( seperti computer1.webluar.net) . Selain itu menggunakan aplikasi utility seperti:-
+      </p>
+      
+      <ul>
+	<li><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a> - Aplikasi mudah terminal untuk
+	  <br>perisai * Microsoft Windows menggunakan protokol SSH.</li>
+	<li><a href="https://winscp.net">WinSCP</a> - Aplikasi untuk memudahkan memindah file menggunakan SSH untuk perisian
+	  <br>* Microsoft Windows menggunakan protokol SFTP, SCP. </li>
+	<li>ssh - Aplikasi tersebut tersedia di dalam perisai Linux, Apple macOS dan Microsoft Window 10 ke atas</li>
+	<li>scp - Aplikasi memindah file tersedia di dalam perisai Linux dan Windows menggunakan protokol SSH </li>
+      </ul>
+
+      <figure><img src="openbsd_notes/remote-login.png" alt="Akses dari luar">
+	<figcaption>Menggunakan Applikasi PuTTY untuk log masuk ke dalam OpenBSD</figcaption>
+      </figure>
+
+      <p>SSHD atau SSH Daemon ada lah service yang membolehkan kita log masuk dari luar.
+      </p>
+
+    </article>
+
+    <footer>
+      <p><em><a href="https://creativecommons.org/licenses/by/4.0/"> <img src="openbsd_notes/cc-by.svg" alt="CC-BY-4.0"><a></em>
+      </p>
+    </footer>
+
+  </body>
+  
+</html>
