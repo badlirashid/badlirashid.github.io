@@ -15,7 +15,7 @@
       <h1>Nota OpenBSD</h1>
       <p>penulis&nbsp;&nbsp;:&nbsp;Badli Al Rashid
       <br>e-mel&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;badli.a.r@gmail.com
-      <br>tarikh&nbsp;&nbsp;&nbsp;:&nbsp;26 Februari 2022
+      <br>tarikh&nbsp;&nbsp;&nbsp;:&nbsp;27 Februari 2022
       <br>lesen&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Creative Commons
       </p>
     </header>
@@ -210,9 +210,35 @@
 	<br>cheesysalmon#
       </p>
 
-      <p>Contoh di atas akan menukar akses dan kumpulan untuk file <b>index.html</b> tersebut. Prompt yang dulunya <b>&dollar;</b> betukar ke <b>&hash;</b>
+      <p>Contoh di atas akan menukar akses dan kumpulan untuk file <b>index.html</b> tersebut. Prompt yang dulunya <b>&dollar;</b> betukar ke <b>&num;</b>
 	kerana program program tersebut di jalankan dengan pengguna root.  
       </p>
+
+      <p class="prompt">cheesysalmon# ls -al
+	<br>drwxr-xr-x  2 badli  badli  512 Feb 26 19:59 direktori_website
+	<br>cheesysalmon# chown root.wheel direktori_website
+	<br>cheesysalmon# chmod 700 direktori_website
+	<br>cheesysalmon# ls -al
+	<br>cheesysalmon$ exit
+	<br>drwx------  2 root   wheel  512 Feb 26 19:59 direktori_website
+	<br>cheesysalmon$ cd direktori_website/
+	<br>ksh: cd: /var/www/direktori_website - Permission denied
+	<br>cheesysalmon$ su -
+	<br>Password:
+	<br>cheesysalmon# cd /var/www/htdocs
+	<br>cheesysalmon# chown badli.www direktori_website
+	<br>cheesysalmon# chmod 755 direktori_website
+	<br>cheesysalmon# ls -al
+	<br>drwxr-xr-x  2 badli  www    512 Feb 26 19:59 direktori_website
+	<br>cheesysalmon# exit
+	<br>cheesysalmon$ cheesysalmon$ cd /var/www/htdocs/direktori_website
+	<br>cheesysalmon$ mkdir test_dir
+	<br>cheesysalmon$
+      </p>
+
+      <p> Contoh di atas saya, mendapat telah <b>"Permission denied"</b> ketika memasuki <b>direktori_website</b>. Apabila saya merubah akses tersebut
+	saya dapat memasuki <b>direktori_website</b> dan boleh membuat direktori baru didalamnya bernama <b>test_dir</b>
+      </p> 
 
     </article>
 

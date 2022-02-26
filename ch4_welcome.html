@@ -15,7 +15,7 @@
       <h1>Nota OpenBSD</h1>
       <p>penulis&nbsp;&nbsp;:&nbsp;Badli Al Rashid
       <br>e-mel&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;badli.a.r@gmail.com
-      <br>tarikh&nbsp;&nbsp;&nbsp;:&nbsp;26 Februari 2022
+      <br>tarikh&nbsp;&nbsp;&nbsp;:&nbsp;27 Februari 2022
       <br>lesen&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Creative Commons
       </p>
     </header>
@@ -288,12 +288,14 @@
       </p>
 
       <h4>Sistem pertolongan <em>man</em></h4>
-      <p><b>man</b> bermaksud <b>"perlihatkan manual"</b>, program ini program assas sistem pertolong Unix. Jikalau anda pengguna user
-	anda mesti pernah meggunakan ia untuk mecari pilihan pilihan oleh program yang anda pakai. Dokumen dokumen yang disediakah adalah bermutu tinggi.</p>
+      <p><b>man</b> bermaksud <b>"perlihatkan manual"</b>, program ini program assas sistem pertolong Unix. Jikalau anda pengguna sistem Unix,
+	anda pasti pernah meggunakan man  untuk mecari pilihan oleh program yang anda pakai. Dokumen dokumen yang disediakah adalah bermutu tinggi.
+	Format arahan man seperti,<b>man program</b>. Contoh <b>man ls</b> untuk melihat manual untuk ls.
+      </p>
 
        <figure>
         <img src="openbsd_notes/manman.png " alt="running man man "></img>
-        <figcaption>Arahan <b>man man</b> menunjukan dokumentasi untuk <b>man</b></figcaption>
+        <figcaption>Arahan <b>man man</b> menunjukan dokumentasi untuk <b>man</b> sendiri</figcaption>
       </figure>
 
 
@@ -317,9 +319,9 @@
 	lanjut sekiranya  saya tak dapat mencari dari sistem bantuan atau kurang memahami dokumentasi.
       </p>
 
-      <h3>Lokasi Program</h3>
+      <h3>Program Dan Lokasinya</h3>
 
-      <p>Lokasi program itu berada didalam $PATH anda.</p> 
+      <p>Lokasi program berada didalam $PATH anda.</p> 
 
       
       <p class="prompt">cheesysalmon$ echo $PATH
@@ -334,11 +336,26 @@
 	<br>206
       </p>
 
-      <p>&dollar;PATH ada lah dimana kita akan mencari program program tersebut. 
-	</p>
-      <p>&pipe; ada lah symbol untuk mengambil <b>output</b> dari program <b>ls -l</b> itu and dijadikan <b>input</b> ke <b>wc</b>
-	untuk mengira berapa program yang terdapat didalam sistem OpenBSD anda
+      <p>&dollar;PATH ada lah tempat program program tersebut:-  
       </p>
+      
+      <ul>
+	<li>/home/badli/bin</li>
+	<li>/bin</li>
+	<li>/sbin</li>
+	<li>/usr/bin</li>
+	<li>/usr/sbin</li>
+	<li>/usr/X11R6/bin</li>
+	<li>/usr/local/bin</li>
+	<li>/usr/local/sbin</li>
+	<li>/usr/games</li>
+      </ul>
+      
+
+      <p><b>&brvbar;</b> adalah symbol untuk mengambil <b>output</b> dari program <b>ls -l</b> itu and dijadikan <b>input</b> ke <b>wc</b>
+	untuk mengira berapa program yang terdapat didalam sistem OpenBSD anda.
+      </p>
+
 
 
     </article>
