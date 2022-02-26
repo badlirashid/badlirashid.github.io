@@ -38,13 +38,45 @@ img {
 }
 
 .dirs table,th,td {
-	width: 10%;
+	width: 100%;
 	text-align: center;
 	padding: 5px;
 }
 
-.dirs td:nth-child(even) {
+/**
+.dirs th:nth-child(1n) {
 	text-align: left;
+}
+**/
+
+.dirs th:nth-child(1n) {
+    width:10%;
+    text-align: left;
+}
+
+.dirs td:nth-child(1n) {
+    width:10%;
+    text-align: center;
+}
+
+.dirs th:nth-child(2n) {
+    width:10%;
+    text-align: center;
+}
+
+.dirs td:nth-child(2n) {
+    width:10%;
+    text-align: left;
+}
+
+.dirs th:nth-child(3n) {
+    width:70%;
+    text-align: center;
+}
+
+.dirs td:nth-child(3n) {
+    width:70%;
+	text-align: right;
 }
 
 
