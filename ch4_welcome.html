@@ -317,6 +317,30 @@
 	lanjut sekiranya  saya tak dapat mencari dari sistem bantuan atau kurang memahami dokumentasi.
       </p>
 
+      <h3>Lokasi Program</h3>
+
+      <p>Lokasi program itu berada didalam $PATH anda.</p> 
+
+      
+      <p class="prompt">cheesysalmon$ echo $PATH
+	<br>/home/badli/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games
+	<br>cheesysalmon$ ls -l /bin | wc -l
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;42
+	<br>cheesysalmon$ ls -l /sbin | wc -l
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;75
+	<br>cheesysalmon$ ls -l /usr/bin | wc -l
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;345
+	<br>cheesysalmon$ ls -l /usr/sbin | wc -l
+	<br>206
+      </p>
+
+      <p>&dollar;PATH ada lah dimana kita akan mencari program program tersebut. 
+	</p>
+      <p>&pipe; ada lah symbol untuk mengambil <b>output</b> dari program <b>ls -l</b> itu and dijadikan <b>input</b> ke <b>wc</b>
+	untuk mengira berapa program yang terdapat didalam sistem OpenBSD anda
+      </p>
+
+
     </article>
 
     <footer>
