@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ms">
+  <head>
+    <link rel="stylesheet" href="openbsd_notes.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="openbsd, bsd, unix, ksh">
+    <meta name="description" content="Welcome to OpenBSD">
+  </head>
+
+  <title>Nota OpenBSD, Selamat Datang!</title>
+
+  <body>
+    <header>
+      <h1>Nota OpenBSD</h1>
+      <p>penulis&nbsp;&nbsp;:&nbsp;Badli Al Rashid
+      <br>e-mel&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;badli.a.r@gmail.com
+      <br>tarikh&nbsp;&nbsp;&nbsp;:&nbsp;26 Februari 2022
+      <br>lesen&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Creative Commons
+      </p>
+    </header>
+
+    <article class="home">
+
+      <h2>Selamat Datang Ke OpenBSD</h2>
+
+      <p>Tahniah kerana telah berjaya memasang OpenBSD ke dalam sistem anda. OpenBSD akan
+	memaparkan mesej kepada anda.
+	</p>
+
+      <p class="prompt">OpenBSD 7.0 (GENERIC) #5: Mon Jan 31 09:03:23 MST 2022
+	<br>
+	<br>Welcome to OpenBSD: The proactively secure Unix-like operating system.
+	<br>
+	<br>Please use the sendbug(1) utility to report bugs in the system.
+	<br>Before reporting a bug, please try to reproduce it with the latest
+	<br>version of the code.  With bug reports, please try to ensure that
+	<br>enough information to reproduce the problem is enclosed, and if a
+	<br>known fix for it exists, include that as well.
+	<br>
+	<br>cheesysalmon$
+      </p>
+
+      <p>Nama <b>cheesysalmon</b> adalah nama sistem dan <b> $ </b> adalah shell prompt. cheesysalmon sedang menunggu
+	arahan dari awak untuk di jalan kan di dalam sistem. Arahan berupa program program di dalam file binari ataupun
+	skrip skirp untuk anda lancar kan.
+      </p>
+
+      <h3>Korn Shell</h3>
+
+      <p>Secara ringkas, Shell Unix adalah tempat kita berinteraksi dengan sistem Unix. Ia seumpamanya punat punat di kalkulator sedang
+	menunggu petikan anda untuk mengira. Kiraan itu akan di paparkan di skirin kalkulator. Unix Shell yang di sediakan adalah <b>Korn Shell</b>
+	atau nama singkatannya adalah <b>ksh</b> atau <b>sh</b>. Kalau di dalam perisaian Windows ia adalah 'Command Prompt' atau 'PowerShell'.
+      </p>
+
+      <p>Pengedaran Korn Shell OpenBSD ini berasaskan kod kod Public Domain Korn Shell. Selain ksh terdapat juga <b>C Shell</b> atau singkatan<csh>.
+	  Kedua dua shell tersebut adalah komponen assas OpenBSD. Shell tersebut boleh di automasi untuk melancarkan dan mempermudahkan kerja kerja
+	  anda.
+      </p>
+      
+      <p>Jikalau anda suka pada shell yang lain seperti <b>GNU Bash</b>, <b>Z shell</b> atau mana mana Unix Shell yang lain anda perlu lah memasang
+	Shell tersebut secara berasingan.
+      </p> 
+
+      <h3>Direktori Home Anda - pwd dan echo</h3>
+
+      <p class="prompt">cheesysalmon$ pwd
+	<br>/home/badli
+	<br>cheesysalmon$ echo $HOME
+	<br>/home/badli
+	<br>cheesysalmon$
+      </p>
+
+      <p>Kita mulakan dengan menaip <b>pwd</b> (singkatan Print Working Directory)dan tekan 'Enter' untuk memastikan kita berada di dalam home folder.
+	Ia akan menunjukkan <b>/home/badli</b> di monitor andah.
+      </p>
+
+      <p>Satu lagi cari untuk memastikan di mana home folder kita ialah dengan menaip <b>echo $HOME</b>. <b>$HOME</b> ada lah home environment variable.
+	Setiap pengguna sistem ini mempunyaie berlainan home direktori.
+      </p>
+
+      <h3>Nama host Dan Akaun - whoami, hostname dan uname</h3>
+      
+      <p class="prompt">cheesysalmon$ whoami
+	<br>badli
+	<br>cheesysalmon$ who
+	<br>janes    ttyC0    Feb 23 21:58
+	<br>badli    ttyp0    Feb 23 22:10   (192.168.56.1)
+	<br>cheesysalmon$ hostname
+	<br>cheesysalmon.my.domain	
+	<br>cheesysalmon$ uname -a
+	<br>OpenBSD cheesysalmon.my.domain 7.0 GENERIC#5 amd64
+      </p>
+      
+      <p>OpenBSD adalah sistem multi pengguna, beberapa pengguna dapat log masuk di dalam sistem tersebut secara serentak. Sebagai contoh saya akses
+	di depan komputer dan ada orang log masuk melauie <b>ssh</b> dari luar.
+      </p>
+
+      <p>Di sini saya menggunakan program <b>whoami</b> untuk memastikan akaun saya betul. Setelah itu saya mengunakan who akan menunjukkan siapa yang
+	sedang masuk di dalam sistem.
+      </p>
+
+      <p>Di sini <b>who</b> memberitahu yang dua pengguna telah masuk ke sistem, saya dan jane.
+      </p>
+
+      <p>Program <b>hostname</b> melihat kan nama sistem anda sahaja. tetapi <b>uname -a</b> akan memapar kan perisai yang di guna kan dan hostname
+	</p>
+
+      <h3> File Dan Direktori Yang Disembunyikan </h3>
+
+      <p class="prompt">cheesysalmon$ ls
+	<br>cheesysalmon$ ls -a
+	<br>.          ..         .Xdefaults .cshrc     .cvsrc     .login     .mailrc    .profile   .ssh
+	<br>cheesysalmon$
+	<br>
+      </p>
+      
+      <p>Taip <b>ls</b> (singkatan list) untuk melihat kandungan home direktori. Anda tidak nampak apa pun sama ada  file atau direktori home kamu.
+      </p>
+      
+      <p>Sekarang taip <b>ls -a</b> kita akan mendapati ada file dan direktori yang di sembunyikan sebelumnya. <b>-a</b> di sini bermaksud untuk melihat
+	semua file dan direktori walaupun ia di sembunyikan.
+      </p>
+      
+      <p>File dan direktori di sembunyikan tersebut adalah:-
+      </p>
+      
+      <ul>
+	<li>.Xdefaults</li>
+	<li>.cshrc</li>
+	<li>.cvsrc</li>
+	<li>.login</li>
+	<li>.mailrc</li>
+	<li>.profile</li>
+	<li>.ssh</li>
+      </ul>
+
+      <h3> Butiran Penuh File Dan Direktori </h3>
+
+      <p class="prompt">cheesysalmon$ ls -al
+	<br>total 36
+	<br>drwxr-xr-x  3 badli  badli  512 Feb 23 09:22 .
+	<br>drwxr-xr-x  3 root   wheel  512 Feb 23 03:46 ..
+	<br>-rw-r--r--  1 badli  badli   87 Oct  1 04:00 .Xdefaults
+	<br>-rw-r--r--  1 badli  badli  769 Oct  1 04:00 .cshrc
+	<br>-rw-r--r--  1 badli  badli  101 Oct  1 04:00 .cvsrc
+	<br>-rw-r--r--  1 badli  badli  359 Oct  1 04:00 .login
+	<br>-rw-r--r--  1 badli  badli  175 Oct  1 04:00 .mailrc
+	<br>-rw-r--r--  1 badli  badli  212 Oct  1 04:00 .profile
+	<br>drwx------  2 badli  badli  512 Feb 23 03:44 .ssh
+	<br>
+      </p>
+
+      <p>Kita boleh tahu yang mana satu file dan direktori dengan menaip <b>ls -al</b>. <b>-l</b> untuk menunjukkan butiran tersebut.
+      </p>
+
+      <p class="prompt">-rw-r--r--  1 badli  badli  212 Oct  1 04:00 .profile
+	<br>
+      </p>
+
+      <p><b>.profile</b> adalah file kerana di arah permission (-rw-r--r--) tidak ada terdapat huruf <b>d</b> yang menunjukkan ia adalah direktori.
+      </p>
+
+      <p class="prompt">drwx------  2 badli  badli  512 Feb 23  0344 .ssh
+	<br>
+      </p>
+      
+      <p><b>.ssh</b> adalah direktori kerana di arah permission (<b>d</b>rw<b>x</b>------) terdapat huruf <b>d</b> yang menunjukan ia direktori.
+	Kalau direktori ada huruf <b>x</b> ini membuatkan anda dapat memasuki direktori tersebut.
+	</p>
+
+      <p class="prompt">cheesysalmon$ file .profile 
+	<br>.profile: ASCII text
+	<br>cheesysalmon$ file .ssh
+	<br>.ssh: directory
+      </p>
+      
+      <p>Satu lagi kaedah untuk membeza di antara file dan direktori adalah dengan menggunakan <b>file</b>. Dari contoh program telah membezakan
+	<b>.profile</b> adalah text file dan <b>.ssh</b> adalah folder.
+      </p>
+
+      <p class="prompt">cheesysalmon$ file &sol;sys
+	<br>&sol;sys: broken symbolic link to 'usr&sol;src&sol;sys'
+	<br>cheesysalmon$ file &sol;dev&sol;sd0a
+	<br>&sol;dev&sol;sd1: block special (4&sol;0)
+	<br>cheesysalmon$ file &sol;bin&sol;ls
+	<br>&sol;bin&sol;ls: ELF 64-bit LSB shared object, x86-64, version 1
+      </p>
+
+      <p>Program file juga dapat memberi tahu beberapa jenis file.</p>
+
+      <ul>
+	<li>&sol;sys - adalah symbolic link, sama seperti shortcut di dalam Windows</li>
+	<li>&sol;dev&sol;sd0a - Ini ada block device untuk cakera keras anda</li>
+	<li>ls - adalah file binari yang kita lacarkan dari shell anda</li>
+      </ul>
+
+      <h3>Mengalihkan Keluaran Ke File - &gt;</h3>
+
+      <p>Kita alihkan keluaran yang di paparkan di skrin terus ke file dengan symbol &gt. Output ini tidak
+	akan tukar arah ke kiri kerana secara logik ia ke kanan.
+	</p>
+
+      <p class='prompt'>cheesysalmon$&nbsp;mkdir&nbsp;nota
+	<br>cheesysalmon$&nbsp;ls
+	<br>nota
+	<br>cheesysalmon$&nbsp;ls&nbsp;&dash;al&nbsp;&gt&nbsp;nota&sol;list.txt
+	<br>cheesysalmon$&nbsp;cat&nbsp;nota&sol;list.txt
+	<br>total&nbsp;40
+	<br>drwxr-xr-x&nbsp;&nbsp;4&nbsp;badli&nbsp;&nbsp;badli&nbsp;&nbsp;512&nbsp;Feb&nbsp;25&nbsp;19:28&nbsp;.
+	<br>drwxr-xr-x&nbsp;&nbsp;3&nbsp;root&nbsp;&nbsp;&nbsp;wheel&nbsp;&nbsp;512&nbsp;Feb&nbsp;25&nbsp;&nbsp;2022&nbsp;..
+	<br>-rw-r--r--&nbsp;&nbsp;1&nbsp;badli&nbsp;&nbsp;badli&nbsp;&nbsp;&nbsp;87&nbsp;Oct&nbsp;&nbsp;1&nbsp;04:00&nbsp;.Xdefaults
+	<br>-rw-r--r--&nbsp;&nbsp;1&nbsp;badli&nbsp;&nbsp;badli&nbsp;&nbsp;769&nbsp;Oct&nbsp;&nbsp;1&nbsp;04:00&nbsp;.cshrc
+	<br>-rw-r--r--&nbsp;&nbsp;1&nbsp;badli&nbsp;&nbsp;badli&nbsp;&nbsp;101&nbsp;Oct&nbsp;&nbsp;1&nbsp;04:00&nbsp;.cvsrc
+	<br>-rw-r--r--&nbsp;&nbsp;1&nbsp;badli&nbsp;&nbsp;badli&nbsp;&nbsp;359&nbsp;Oct&nbsp;&nbsp;1&nbsp;04:00&nbsp;.login
+	<br>-rw-r--r--&nbsp;&nbsp;1&nbsp;badli&nbsp;&nbsp;badli&nbsp;&nbsp;175&nbsp;Oct&nbsp;&nbsp;1&nbsp;04:00&nbsp;.mailrc
+	<br>-rw-r--r--&nbsp;&nbsp;1&nbsp;badli&nbsp;&nbsp;badli&nbsp;&nbsp;212&nbsp;Oct&nbsp;&nbsp;1&nbsp;04:00&nbsp;.profile
+	<br>drwx------&nbsp;&nbsp;2&nbsp;badli&nbsp;&nbsp;badli&nbsp;&nbsp;512&nbsp;Feb&nbsp;25&nbsp;&nbsp;2022&nbsp;.ssh
+	<br>drwxr-xr-x&nbsp;2&nbsp;badli&nbsp;&nbsp;badli&nbsp;&nbsp;512&nbsp;Feb&nbsp;25&nbsp;19:29&nbsp;nota
+      </p>
+      <p><b>mkdir nota</b> mkdir di sini bermaksud <b>"make directory"</b> ia itu membuat directori bernama <b>"nota"</b>
+      <br>
+      <br>Ini lah dia contoh program tersebut <b>&nbsp;ls&nbsp;&dash;al&nbsp;&gt&nbsp;nota&sol;list.txt</b> di mana pengeluaran dari <b>ls</b>
+      di alihkan atau simpan kedalam file list.txt.
+      <br><b>cat&nbsp;nota&sol;list.txt</b> program <b>cat</b> ini membaca file list.txt dan memaparkannya kepada awdaa di skrin.
+      </p>
+      
+      <h3>Navigasi sistem,  Masuk Dan Keluar Folder</h3>
+	<p class="prompt">cheesysalmon$&nbsp;cd&nbsp;nota
+	  <br>cheesysalmon$&nbsp;rm&nbsp;list.txt
+	  <br>cheesysalmon$&nbsp;cd&nbsp;../
+	  <br>cheesysalmon$&nbsp;pwd
+	  <br>/home/badli
+	  <br>cheesysalmon$&nbsp;ls
+	  <br>nota
+	  <br>cheesysalmon$&nbsp;date&nbsp&gt;&nbsp;nota&sol;list&period;txt
+	  <br>cheesysalmon$&nbsp;w&nbsp&gt;&gt;&nbsp;nota&sol;list&period;txt
+	  <br>cheesysalmon$&nbsp;ls&nbsp;&gt;&gt;nota&sol;list&period;txt
+	  <br>cheesysalmon$&nbsp;cat&nbsp;nota&sol;list&period;txt
+	  <br>Fri&nbsp;Feb&nbsp;25&nbsp;21&colon;08&colon;59&nbsp;+08&nbsp;2022
+	  <br>&nbsp;9&colon;09PM&nbsp;&nbsp;up&nbsp;&nbsp;1&colon;44,&nbsp;2&nbsp;users,&nbsp;load&nbsp;averages&colon;&nbsp;0&period;
+	  01,&nbsp;0&period;01,&nbsp;0&period;00
+	  <br>USER&nbsp;&nbsp;&nbsp;&nbsp;TTY&nbsp;FROM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  LOGIN@&nbsp;&nbsp;IDLE&nbsp;WHAT
+	  <br>root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C0&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;Sat03AM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;-ksh
+	  <br>badli&nbsp;&nbsp;&nbsp;&nbsp;p0&period;192&period;168&period;56&period;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&colon;27PM&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;0&nbsp;w
+	  <br>nota
+	</p>
+      <p><b>cd&nbsp;nota</b> program cd adalah singkatan <b>"change directory"</b>. Fungsinya untuk masuk ke dalam folder <b>nota</b>
+	<br><b>rm&nbsp;list&period;txt</b> <b>rm</b> bermaksud <b>remove</b> atau memusnahkan file list&period;txt tersebut.
+	<br><b>cd&nbsp;&period;&period;&sol;</b> kita keluar atau naik ke direktori indung.
+      </p>
+      
+      <p>Di sini kita memberi tiga arahan. Arahan arahan tersebut akan di simpan dan di gabung ke dalam satu file. 
+	<b>date&nbsp;&gt;&nbsp;nota&sol;list&period;txt</b>&nbsp;Program pertama <b>date</b> ialah untuk mengambil tarikh dan masa setempat
+	<br>
+	<br><b>w&nbsp;&gt;&gt;&nbsp;nota&sol;list&period;txt</b>&nbsp;-&nbsp;<b>w</b>&nbsp bermaksud melihat siapa yang log masuk dan apa yang sedang mereka lakukan dan simpan mesej tersebut ke file list&period;txt. Sekira nya kalau kita satu symbol <b>&gt;</b> ia tidak menyambung ke file tersebut bahkan menghilangkan yang lama dan simpan mesej itu sahaja.
+	<br>
+	<br><b>ls&nbsp;&gt;&gt;nota&sol;list&period;txt</b>&nbsp;-&nbsp;<b>ls</b>&nbsp;simpan direktory list tersebut kedalam file 
+      </p>
+
+      
+      <p><b>cat&nbsp;nota&sol;list&period;txt</b>&nbasp;memaparkan kotent file list&period;txt tersebut yang telah di gabungkan.
+      </p>
+
+      <p class = "prompt">Fri&nbsp;Feb&nbsp;25&nbsp;21&colon;08&colon;59&nbsp;+08&nbsp;2022 &lt;&dash;&dash;&dash;Arahan dari <b>date</b>
+      </p>
+
+
+      <p class="prompt">&nbsp;9&colon;09PM&nbsp;&nbsp;up&nbsp;&nbsp;1&colon;44,&nbsp;2&nbsp;users,&nbsp;load&nbsp;averages&colon;&nbsp;0&period;
+	  01,&nbsp;0&period;01,&nbsp;0&period;00 &lt;&dash;&dash;&dash; Arahan dari <b>w</b>
+	  <br>USER&nbsp;&nbsp;&nbsp;&nbsp;TTY&nbsp;FROM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  LOGIN@&nbsp;&nbsp;IDLE&nbsp;WHAT
+	  <br>root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C0&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;Sat03AM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;-ksh
+	  <br>badli&nbsp;&nbsp;&nbsp;&nbsp;p0&period;192&period;168&period;56&period;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&colon;27PM&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;0&nbsp;w
+      </p>
+      <p class="prompt">nota &lt; ini adalah paparan yang keluar dari <b>ls</b>.
+      </p>
+
+      <h3>Membaca Dokumentasi Program program yang tersedia </h3>
+      
+      <p>Seperti sistem Unix yang lain nya anda boleh membaca dokumentasi program program atau arahan tersebut didalam OpenBSD sekiranya
+	anda telah memasang <b>man70.tgz</b> semasa permasangan. Kalau tidak di install anda boleh membuat permasang file tersebut.  
+      </p>
+
+      <h4>Sistem pertolongan <em>man</em></h4>
+      <p><b>man</b> bermaksud <b>"perlihatkan manual"</b>, program ini program assas sistem pertolong Unix. Jikalau anda pengguna user
+	anda mesti pernah meggunakan ia untuk mecari pilihan pilihan oleh program yang anda pakai. Dokumen dokumen yang disediakah adalah bermutu tinggi.</p>
+
+       <figure>
+        <img src="openbsd_notes/manman.png " alt="running man man "></img>
+        <figcaption>Arahan <b>man man</b> menunjukan dokumentasi untuk <b>man</b></figcaption>
+      </figure>
+
+
+      <p>Cara melihat dokumen tersebut adalah <b>menuggunakan butang arah</b> dan <b>page up dan page down</b> key yang tersediakan.
+	Selesai memakai program <b>man</b> anda tekan <b>q</b> untuk quit. untuk sistem  bantuan tekan <b>h</b> 
+      </p>
+
+      <h4>GNU <em>info</em> </h4>
+
+      <p><b>info</b> adalah program sistem pertolongan GNU. Dokumentasi mereka menggunakan info format dan kebanyakan di edarkan dengan aplikasi GNU.
+	Cara permakaian nya dengan <b>menggunakan butang arah</b> and <b>q</b> untuk quit</p>
+
+      <figure>
+      <img src="openbsd_notes/manman.png " alt="running man man "></img>
+      <figcaption><b>info info</b> menunjukan dokumentasi untuk <b>info</b></figcaption>
+      </figure>
+
+      <h4> Injin Carian </h4>
+
+      <p>Ada pada masanya, saya juga menggunakan Injin carian apabila saya tersangkut. Jawapan yang di beri sebagai buat rujukan yang lebih
+	lanjut sekiranya  saya tak dapat mencari dari sistem bantuan atau kurang memahami dokumentasi.
+      </p>
+
+      <h3>Lokasi Program</h3>
+
+      <p>Lokasi program itu berada didalam $PATH anda.</p> 
+
+      
+      <p class="prompt">cheesysalmon$ echo $PATH
+	<br>/home/badli/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games
+	<br>cheesysalmon$ ls -l /bin | wc -l
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;42
+	<br>cheesysalmon$ ls -l /sbin | wc -l
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;75
+	<br>cheesysalmon$ ls -l /usr/bin | wc -l
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;345
+	<br>cheesysalmon$ ls -l /usr/sbin | wc -l
+	<br>206
+      </p>
+
+      <p>&dollar;PATH ada lah dimana kita akan mencari program program tersebut. 
+	</p>
+      <p>&pipe; ada lah symbol untuk mengambil <b>output</b> dari program <b>ls -l</b> itu and dijadikan <b>input</b> ke <b>wc</b>
+	untuk mengira berapa program yang terdapat didalam sistem OpenBSD anda
+      </p>
+
+
+    </article>
+
+    <footer>
+      <p><em><a href="https://creativecommons.org/licenses/by/4.0/"> <img src="openbsd_notes/cc-by.svg" alt="CC-BY-4.0"><a></em>
+      </p>
+    </footer>
+
+  </body>
+  
+</html>
