@@ -37,10 +37,7 @@
 	<b>D&colon;&bsol;</b> (D Drive).
       </p>
 
-      <p>Jikalau saya melihat apa yang ada di <b>&sol;</b> ia akan menunjukan beberapa file dan direktori. File dan butiran
-	akses file dan folder seperti berikut:-
-
-      <p> Berikutnya menunjukan butiran file dan direktori yang ada didalam OpenBSD 7.0:-
+      <p> Berikutnya menunjukan butiran file dan direktori yang ada di dalam permasang OpenBSD 7.0 saya.
       </p>
       
       <table class="dirs">
@@ -67,7 +64,7 @@
 	<tr>
 	  <td>alroot</td>
 	  <td>drwxr-xr-x</td>
-	  <td>folder ini adalah untuk sistem backup &sol;etc</td>
+	  <td>folder ini adalah untuk Sistem Skrip, seperti backup &sol;etc direktori</td>
 	</tr>
 	<tr>
 	  <td>bsd<br>bsd&period;booted<br>bsd&period;rd</td>
@@ -77,7 +74,7 @@
 	<tr>
 	  <td>sys</td>
 	  <td>lrwxrwx---</td>
-	  <td>Ia ada symlink atau shortcut ke &sol;usr&sol;src&sol;sys</td>
+	  <td>Ia adalah symlink atau shortcut ke direktori <b>&sol;usr&sol;src&sol;sys</b></td>
 	</tr>
 	<tr>
 	<td>&sol;root</td>
@@ -88,12 +85,12 @@
 	<tr>
 	  <td>&sol;etc</td>
 	  <td>drwxr-xr-x</td>
-	  <td>Direktori sistem konfigurasi</td>
+	  <td>Direktori Sistem konfigurasi</td>
 	</tr>
 	<tr>
 	  <td>&sol;mnt</td>
 	  <td>drwxr-xr-x</td>
-	  <td> Direktori ini ada tempat menyimpan sistem <b>mount points</b></td>
+	  <td> Direktori ini ada tempat menyimpan sistem <b>mount points</b><br> Seperti pembaca cakera padat dan lain lain.</td>
 	</tr>
 
 	<tr>
@@ -111,7 +108,7 @@
 	<tr>
 	  <td>&sol;bin</td>
 	  <td>drwxr-xr-x</td>
-	  <td>Program dan skrip skrip yang dapat diakses oleh pengguna. Direktori ini selalu bersama dengan partition &sol; </td>
+	  <td>Program dan skrip skrip yang dapat diakses oleh semua pengguna. Direktori ini selalu bersama dengan partition &sol; </td>
 	</tr>
 	
 	<tr>
@@ -122,12 +119,12 @@
 	<tr>
 	  <td>&sol;usr&sol;src</td>
 	  <td>drwxrwxr-x</td>
-	  <td>Sumber file kod kod asas perisai OpenBSD</td>
+	  <td>Sumber file kod kod asas perisai OpenBSD. Sumber file rasmi tersebut boleh di perolehi halaman resmi atau halaman cermin OpenBSD.</td>
 	</tr>
 	<tr>
 	  <td>&sol;var</td>
 	  <td>drwxr-xr-x</td>
-	  <td>Sebaiknya berasing dengan &sol; partition</td>
+	  <td>Sebaiknya berasing dengan &sol; partition. Mengandung file log log sistem dan direktori halaman anda</td>
 	</tr>
 	<tr>
 	  <td>&sol;tmp</td>
@@ -139,53 +136,82 @@
       
       <h3> Akses </h3>
       
-      <p>Di dalam Unix Pengguna (Users) dan Kumpulan (Group) adalah cara kita membagi akses kepada file dan direktori.<p>
+      <p>Di dalam Unix, untuk membahagi Pengguna (Users) adalah mengikut Kumpulan (Group).<p>
 
-      <p>Akses yang boleh di bagi dalam Unix adalah 3 jenis iaitu:-</p>
+      <p>File dan direktori akses boleh di bahagi kepada tiga jenis iaitu:-</p>
       
 	<ul>
-	  <li>baca (read) </li>
+	  <li>baca (read)</li>
 	  <li>tulis (write)</li>
-	  <li>dan lancarkan (execute) program dan skrip</li>
+	  <li>dan lancarkan (execute) program atau skrip</li>
 	</ul>
 
-	<h4> Butiran File </h4>
+	<h4>Butiran File </h4>
 	
       <p class="prompt">cheesysalmon$ touch filesaya
 	<br>cheesysalmon$ ls -al filesaya
 	<br>-rw-r--r--  1 badli  badli  0 Feb 26 13:40 filesaya
       </p>
 	    
-      <p>Pertama saya memberi arah untuk membuat file kosong bernama <b>filesaya</b> dengan arahan <b>touch</b>.
+      <p>Pertama saya membuat file kosong bernama <b>filesaya</b> dengan program <b>touch</b>.
       </p>
       
-      <p>Menggunakan <b>ls -al</b>, akses <b>filesaya</b> ada lah seperti <b>-rw-r--r--</b>. Akses itu di beri kepada
+      <p>Dengan menggunakan <b>"ls -al"</b>, butiran akses <b>"filesaya"</b> ialah <b>"-rw-r--r--"</b>. Akses itu di beri kepada
 	tiga kategori iaitu  Pemilik (owner), Kumpulan (group) dan yang lain (others). Akses di baca dari kiri ke kanan,
-	dari numbor dua  dan di bagi kepada tiga kategori. Pemilik (owner) di beri baca dan tilis <b>(rw-)</b>,
-	sambil kumpulan akses baca sahaja <b>(r--)</b> dan yang lain di beri akses baca sahaja <b>(r--)</b>.
+	dari numbor dua  dan di bagi kepada tiga kategori.
+      </p>
+      <p>Pemilik (owner) di beri akses baca dan tulis <b>(rw-)</b>,
+	<br>kumpulan (group) di beri akses baca sahaja <b>(r--)</b>
+	<br>dan yang lain (others)di beri akses baca sahaja <b>(r--)</b>.
       </p>
 
       <p>
-	File filesaya itu di miliki oleh <b>badli</b> dan group file itu ada lah juga <b>badli</b>
+	File "filesaya" itu di miliki oleh <b>badli</b> dan group file itu ada lah juga <b>badli</b>. File ini di punyaie oleh saya dan akses kepada
+	yang lain adalah membaca.
       </p>
 
       <h4> Butiran Direktori </h4>
 
-      <p>Untuk membuat direktori baru pula, kita gunakan arahan <b>mkdir foldersaya</b>. Apa bila kita beri arahan <b>ls -al</b> butiran
+      <p>Untuk membuat direktori baru pula, kita gunakan arahan <b>"mkdir foldersaya"</b>. Apa bila kita beri arahan <b>ls -al</b> butiran
 	directori tersebut seperti berikut:-
 
       </p>
 
-      <p class="prompt">cheesysalmon$ mkdir foldersaya
-	<br>cheesysalmon$ ls -al
-	<br>drwxr-xr-x  2 <b>badli&nbsp;&nbsp;badli</b>  512 Feb 26 14:03 foldersaya
+      <p class="prompt">cheesysalmon&dollar;&nbsp;mkdir&nbsp;foldersaya
+	<br>cheesysalmon&dollar;&nbsp;ls&nbsp;&hyphen;al
+	<br>drwxr-xr-x&nbsp;&nbsp;2&nbsp;<b>badli&nbsp;&nbsp;badli</b>&nbsp;&nbsp;512&nbsp;Feb&nbsp;26&nbsp;14&colon;03&nbsp;foldersaya
       </p>
 
 
-      </p><b>d</b> bermaksud direktori dan ini mebezakan ia dengan file. Akses pemilik adalah baca, tulis dan lancarkan <b>rwx</b>,
-	kumpulan ada lah baca dan lancarkan <b>r-x</b>, dan yang lain ada baca dan lancarkan <b>r-x</b>.
-	<br><b>x</b> adalah penanda untuk membuat file skrip atau file binari dapat di lancarkan (dalam Windows klik icon dua kali).
-	Tetapi untuk folder pula, ia kita  dapat memasuki direktori tersebut.
+      </p><b>"d"</b> bermaksud direktori dan ini membezakan jenis dengan file.
+      <br>Akses pemilik adalah baca, tulis dan lancarkan <b>rwx</b>, untuk kumpulan ada lah baca dan lancarkan <b>r-x</b>,
+      dan yang lain adalah baca dan lancarkan <b>r-x</b>.
+      </p>
+      <p><b>"x"</b> adalah penanda untuk membuat program atau skrip dapat di lancarkan. Tetapi untuk direktori pula, ia di gunakan supaya kita dapat
+      memasuki direktori <b>"foldersaya"</b>.
+      </p>
+
+      <h4> Mengubah Butiran </h4>
+      <p>Untuk mengubah pemilik atau kumpulan kita menggunakan program <b>"chown"</b> maksud nya adalah <b>"change owner"</b>. Bagi
+	mengubah akses file pula kita akan mengunakan program <b>"chmod"</b> iaitu <b>"change mode"</b>.
+      </p>
+
+      <p>Untuk chmod kita menggunakan angka untuk menukar akses tersebut. 4 untuk akses baca, 2 untuk akses tulis and 1 untuk akses melancar.
+	Angka angka tersebut akan di campur untuk membagi akses file tersebut. Sebagai contoh untuk website kita akan tukar akeses file html
+	kepada akses baca kepada kumpulan dan lain lain.</p>
+      
+
+      <p class="prompt">cheesysalmon# ls -al index.html
+	<br>-rwxrwxrwx  1 badli  badli  0 Feb 26 19:59 index.html
+	<br>cheesysalmon# chmod 644 index.html
+	<br>cheesysalmon# chown badli.www index.html
+	<br>cheesysalmon# ls -al index.html
+	<br>-rw-r--r--  1 badli  www  0 Feb 26 19:59 index.html
+	<br>cheesysalmon#
+      </p>
+
+      <p>Contoh di atas akan menukar akses dan kumpulan untuk file <b>index.html</b> tersebut. Prompt yang dulunya <b>&dollar;</b> betukar ke <b>&hash;</b>
+	kerana program program tersebut di jalankan dengan pengguna root.  
       </p>
 
     </article>
