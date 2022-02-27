@@ -224,6 +224,10 @@
       di alihkan atau simpan kedalam file list.txt.
       <br><b>cat&nbsp;nota&sol;list.txt</b> program <b>cat</b> ini membaca file list.txt dan memaparkannya kepada awdaa di skrin.
       </p>
+      <p> Selain dari <b>cat</b> kita menggunakan <b>more</b> atau <b>less</b> untuk melihat kadungan file. Program <b>more</b> memaparkan satu skrin
+	dengan space bar sebagai navigasi dan dengan program <b>less</b> kita boleh bernavigasi meggunakan punat arrow bawah dan atas. Masa mula mula
+	memakai perisai Linux, saya gunakan <b>more</b> tetapi kawan saya menasihati mengunakan program <b>less</b>.
+      </p>
       
       <h3>Navigasi sistem,  Masuk Dan Keluar Folder</h3>
 	<p class="prompt">cheesysalmon$&nbsp;cd&nbsp;nota
@@ -251,7 +255,7 @@
       <p><b>cd&nbsp;nota</b> program cd adalah singkatan <b>"change directory"</b>. Fungsinya untuk masuk ke dalam folder <b>nota</b>
 	<br><b>rm&nbsp;list&period;txt</b> <b>rm</b> bermaksud <b>remove</b> atau memusnahkan file list&period;txt tersebut.
 	<br><b>cd&nbsp;&period;&period;&sol;</b> kita keluar atau naik ke direktori indung.
-      </p>
+      </p>	
       
       <p>Di sini kita memberi tiga arahan. Arahan arahan tersebut akan di simpan dan di gabung ke dalam satu file. 
 	<b>date&nbsp;&gt;&nbsp;nota&sol;list&period;txt</b>&nbsp;Program pertama <b>date</b> ialah untuk mengambil tarikh dan masa setempat
@@ -278,8 +282,32 @@
 	  <br>badli&nbsp;&nbsp;&nbsp;&nbsp;p0&period;192&period;168&period;56&period;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&colon;27PM&nbsp;&nbsp;&nbsp;
 	  &nbsp;&nbsp;0&nbsp;w
       </p>
-      <p class="prompt">nota &lt; ini adalah paparan yang keluar dari <b>ls</b>.
+      <p class="prompt">nota &lt;&dash;&dash; Ini adalah paparan yang keluar dari <b>ls</b>.
       </p>
+
+            <h3>tab completion</h3>
+      
+      <p>Dengan <b>"tab completion"</b> ia meringkas awda menaip program atau lokasi dengan arahan ke dalam <b>ksh</b> shell.</p>
+      
+      <p class="prompt">cheesysalmon$&nbsp;cd&nbsp;/usr/
+	<br>X11R6/&nbsp;&nbsp;&nbsp;&nbsp;games/&nbsp;&nbsp;&nbsp;&nbsp;lib/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;libexec/&nbsp;&nbsp;mdec/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sbin/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;src/
+	<br>bin/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;include/&nbsp;&nbsp;libdata/&nbsp;&nbsp;local/&nbsp;&nbsp;&nbsp;&nbsp;obj/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;share/&nbsp;&nbsp;&nbsp;&nbsp;xobj/
+      </p>
+
+      <p>Cara menggunakan <b>cd</b> dengan menggunakan <b>tab completion</b> adalah seperti di atas. <b>cd /u[tab]</b> (tekan [tab]) akan menempurnakan ke
+	<b>cd /usr</b> dan <b>cd /usr/[tab]</b> akan melihatkan apa direktori yang ada di dalam <b>/usr</b>.
+      </p>
+
+      <p class="prompt">cheesysalmon$ z
+	<br>zcat&nbsp;&nbsp;&nbsp;&nbsp;zdiff&nbsp;&nbsp;&nbsp;zegrep&nbsp;&nbsp;zforce&nbsp;&nbsp;zic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zmore&nbsp;&nbsp;&nbsp;zzz
+	<br>zcmp&nbsp;&nbsp;&nbsp;&nbsp;zdump&nbsp;&nbsp;&nbsp;zfgrep&nbsp;&nbsp;zgrep&nbsp;&nbsp;&nbsp;zless&nbsp;&nbsp;&nbsp;znew
+      </p>
+
+      <p>Kita juga boleh menggunakannya cara <b>tab completion</b> untuk <b>command completion</b>, contoh dengan menaip huruf z dan tekan tab. <b>z[tab]</b>.
+      </p>
+      <p>Seperti yang kita lihat di atas ia menunjukan program program yang bermula dengan huruf z.
+      </p>
+
 
       <h3>Membaca Dokumentasi Program program yang tersedia </h3>
       
@@ -356,7 +384,11 @@
 	untuk mengira berapa program yang terdapat didalam sistem OpenBSD anda.
       </p>
 
-
+      <h3>Kesimpulan</h3>
+      
+      <p>Kita tidak perlu menghafal ke semua program tersebut, Kita perlu membiasakan program yang penting sahaja untuk menggunakaan <b>ksh</b>
+	atau mana mana Unix shell yang anda selesa. Proficiency akan mula terasa apa bila kita biasa mengunakannya. 
+      </p>
 
     </article>
 
