@@ -8,7 +8,7 @@
     <meta name="description" content="Nota OpenBSD text editor vi dan mg">
   </head>
 
-  <title>Nota OpenBSD, editor teks vi dan mg</title>
+  <title>Nota OpenBSD, Aplikasi Penyunting Teks vi dan mg</title>
 
   <body>
     <header>
@@ -22,21 +22,21 @@
 
     <article class="edit file">
       
-      <h2>Edit text file</h2>
+      <h2>Aplikasi Penyunting Teks</h2>
 
-      <p>Text editor adalah aplikasi untuk edit text file di OpenBSD. Ianya penting kerana kofigarasi konfigarasi tersebut di simpan
-	dalam text format. Text Editor bukannya Word Processor seperti Libreoffice atau Microsoft office. Di dalam Windows ia adalah
-	aplikasi notepad. Kita boleh memakai dua program untuk edit text file di dalam OpenBSD, vi dan mg.
+      <p>Aplikasi Penyunting teks (Text editor) adalah penting kerana konfigarasi konfigarasi tersebut di simpan dalam file teks format di dalam OpenBSD.
+	Aplikasi ini bukan aplikasi Word Processor seperti Libreoffice atau Microsoft office. Di dalam Windows ia adalah aplikasi notepad.
+	Dua teks editor yang tersedia di dalam OpenBSD adalah <em>vi</em> dan <em>mg</em>.
       </p>
 
       <h3>vi</h3>
       
-      <p>Saya bukan pengguna vi yang asal pada awalnya saya cuma menggunakan pico editor. vi yang di edar bersama OpenBSD adalah CSRG vi
-	dan bukannya <a href="https://www.vim.org">Vim, the editor</a>. vi lebih banyak penguna kerana kebanyakan pegedar Unix atau
+      <p>Saya bukan pengguna vi yang asal, pada mulanya saya menggunakan pico editor. vi yang di edar bersama OpenBSD adalah CSRG vi
+	dan bukannya <a href="https://www.vim.org">Vim</a>. vi lebih banyak pengguna kerana kebanyakan pengedar Unix atau
 	semacamnya akan menyertakan aplikasi tersebut. 
       </p>
      
-      <p>Untuk melancarkan vi, Saya  menaip <b>vi</b> dan menekan <b>enter</b> selepas itu saya menaip <b>&colon;version</b> .Disini
+      <p>Untuk melancarkan vi, Saya menaip <b>vi</b> dan menekan <b>enter</b> selepas itu saya menaip <b>&colon;version</b> .Disini
 	Kita memberi arahan untuk vi menunjukan apakah versi aplikasi vi yang kita gunakan.
       </p>
       
@@ -45,24 +45,40 @@
 	<br>Version 1&period;79 &lpar;10&sol;23&sol;96&rpar; The CSRG&comma; University of California&comma; Berkeley&period;
       </p>
 
-      <p> Begerak dalam vi ia laah dengan <b>h</b>,<b>j</b>,<b>k</b>,<b>l</b> ia itu kiri,ke bawah, ke atas dan ke kanan. <b>i</b> adalah untuk
-	menulis atau <b>a</b> menulis  pada hujung barisan. <b>w</b> untuk simpan. Untuk pertolongan kita menggunakan <b>&colon;visuage</b> dan
-	<b>&colon;exusage</b> dan tekan enter. Escape ada lah untuk membatalkan arahan. 
+      <p> Versi vi adalah <b>1&period;79</b>. Begerak dalam vi kita menggunakan dengan huruf <b>h</b>,<b>j</b>,<b>k</b>,<b>l</b>
+	ia itu kiri,ke bawah, ke atas dan ke kanan. Untuk mula menyunting anda perlu tekan <b>i</b> atau tekan <b>a</b> untuk menulis  pada hujung barisan.
+	<b>w</b> untuk simpan. untuk membuka file kita boleh menggunakan arahan <b>&colon;open tab</b> untuk menunjukan file file yang ada.
       </p>
 
-      <p>Pertolongan lebih lanjut boleh di baca dari <b>man vi</b></p>
+      <p class="prompt">&tilde;
+	<br>&tilde;
+	<br>&tilde;
+	<br>&plus;&equals;&plus;&equals;&plus;&equals;&plus;&equals;&plus;&equals;&plus;&equals;&plus;&equals;&plus;&equals;
+	<br>file1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;folder1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;folder2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.html
+	<br>&colon;open
+      </p>
       
-      <p>Pada masa awal saya menggunakan vi, saya tidak tahu cara keluar dari applikasi tersebut. Cara keluar ialah menekan &colon;q&excl; untuk keluar
-	sahaja tampa simpan atau &colon;wq&excl; untuk keluar dan simpan
+
+      <p>Untuk pertolongan kita menggunakan <b>&colon;visuage</b> dan <b>&colon;exusage</b> dan tekan enter. Escape ada lah untuk membatalkan arahan.
+	Pertolongan lebih lanjut boleh di perolehi dari <b>man vi</b>
+      </p>
+      
+      <p>Pada mulanya saya menggunakan vi, saya tidak tahu cara keluar dari applikasi tersebut. Cara keluar ialah menekan &colon;q&excl; untuk keluar
+	sahaja tampa simpan atau <b>&colon;wq&excl;</b> untuk keluar dan simpan.
       </P>
 
       <p class="prompt">&tilde;
-	<br>&tilde;<br>&colon;q&excl;
+	<br>&tilde;
+	<br>&colon;q&excl;
       </p>
 
 
       <h3>mg</h3>
-      <p>mg adalah text editor seperti GNU zile. Cara permakaian nya adalah sama dengan emacs. Untuk melancarkannya kita menekan <b>mg</b></p>
+      
+      <p>mg adalah teks editor lebih seperti aplikasi GNU <a href="https://www.gnu.org/software/zile">zile</a>, aplikasi aplikasi ini semacam
+	GNU <a href="https://www.gnu.org/software/emacs">Emacs</a>. Untuk melancarkannya kita menaip <b>mg</b> and tekan enter. Berbeza dengan vi
+	kita tak perlu betukar kepada mod penyuntingan kerana kita boleh terus bekerja dengan teks documen tersebut.
+      </p>
 
       <p class=prompt><br>
 	<br>
@@ -70,11 +86,16 @@
 	<br>
       </p>
 
-      <p> Pegerakan mg adalah dengan menggunakan arrow keys dan C-s untuk carian.
-      </p> 
+      <p>  
 
-      <p>Untuk melihat pertolong tekan C-h C-h (Control h, Contol h), C-x C-s untuk simpan dan C-x C-c untuk keluar dari Aplikasi
-	</p>
+      <p>Pegerakan mg boleh di gunakan dengan arrow keys. Arahan mg selalu di gabungkan dengan control dan huruf. <b>C</b> di sini bermaksud
+	control key. Untuk melihat pertolong tekan C-h C-h (Control h, Contol h),C-x C-s untuk simpan, C-s adalah untuk carian dalam teks file,
+	untuk membuka file guna C-x C-f dan C-x C-c untuk keluar dari Aplikasi.
+      </p>
+
+      <figure><img src="openbsd_notes/CxCf.png" alt="C-x C-f Cari file untuk di buka">
+	<figcaption>C-x C-f untuk membuka teks file dalam aplikasi <b>mg</b> </figcaption>
+      </figure>
 
 
       
