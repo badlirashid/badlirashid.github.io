@@ -14,8 +14,8 @@
     <header>
       <h1>Nota OpenBSD</h1>
       <p>penulis&nbsp;&nbsp;:&nbsp;Badli Al Rashid
-	<br>e-mel&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;badli.a.r@gmail.com
-	<br>tarikh&nbsp;&nbsp;&nbsp;:&nbsp;25 Februari 2022
+	<br>e-mel&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;badli&period;a&period;r&commat;gmail&period;com
+	<br>tarikh&nbsp;&nbsp;&nbsp;:&nbsp;02 March 2022
 	<br>lesen&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Creative Commons
       </p>
     </header>
@@ -154,15 +154,24 @@
       <p>Kita menjawab No &lpar;tidak&rpar; di sini.
       </p>
 
+      <h5>root dan Pengguna biasa</h5>
+      <p>OpenBSD mempunyaie dua jenis pengguna, root akaun dan pengguna biasa. root akaun ini satu sahaja yang di sediakan dan ia di katakan
+	sebagai &quot;Super User&quot;. root ini selalu digunakan untuk mentabir sistem anda.
+      </p>
+
+      <p>Lain pula dengan penguna biasa, ia adalah akaun yang selalu di gunakan untuk membuat kerja kerja harian dan tidak perlu menggunakan
+	akses root.
+      </p> 
+
       <h4>4 - Pembahagian Struktur Cakera Keras</h4>
 
       <figure><img src="openbsd_notes/step_18.png" alt="Struktur Cakera Keras">
 	<figcaption>Struktur Cakera Keras</figcaption>
       </figure>
 
-      <p>Struktur Cakera Keras yang saya pilih adalah yang saya buat sendiri. Anda boleh mengikut struktur yang di sediakan oleh skrip pemasangan.
-	Swap partition adalah memori virtual komputer. Ia membolehkan sistem akses lebih dari memori kemampuan sebenar. Kebesarannya swap akan
-	mengikut size fisikal memory atau dua kali ganda size fizikal.</p>
+      <p>Struktur Cakera Keras yang saya pilih adalah yang saya buat sendiri. Anda boleh mengikut struktur yang di sediakan oleh skrip pemasangan
+	sebagai permulaan. Swap partition adalah memori virtual komputer. Ia membolehkan sistem akses lebih dari memori kemampuan sebenar.
+	Kebesarannya swap akan mengikut size fisikal memory atau dua kali ganda size fizikal.</p>
 
       <p>Dulu semasa saya belajar mengenai Debian ada orang menyebut tentang /exports, saya bengang apa yang dimaksudkan dengan folder exports ?
 	Saya mendapat tahu, dia menggunakan untuk mount point NFS server mereka. Struktur folder mereka berbeza dengan yang saya biasa
