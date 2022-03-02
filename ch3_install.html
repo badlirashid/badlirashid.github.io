@@ -13,13 +13,13 @@
       <h1>Nota OpenBSD</h1>
       <p>penulis&nbsp;&nbsp;:&nbsp;Badli Al Rashid
 	<br>e-mel&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;badli&period;a&period;r&commat;gmail&period;com
-	<br>tarikh&nbsp;&nbsp;&nbsp;:&nbsp;02 March 2022
+	<br>tarikh&nbsp;&nbsp;&nbsp;:&nbsp;03 Mac 2022
 	<br>lesen&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Creative Commons
       </p>
     </header>
 
     <article class=install>
-      <h2>Permasangan OpenBSD</h2>
+      <h2>Pemasangan OpenBSD</h2>
       
       <p>Sebelum anda memasang OpenBSD ke dalam Laptop, Desktop atau Server. Sebaiknya kita selidiki jikalau perkakas anda serasi dengan
 	OpenBSD. Maksud perkakas di sini ialah:-
@@ -56,7 +56,7 @@
 
       <h3> Media Permasangan </h3>
       
-      <p>Installation media boleh didapati dihalaman utama<a href="https://www.openbsd.org"> OpenBSD</a>. Media yang boleh digunakan
+      <p>Installation media boleh didapati di halaman utama<a href="https://www.openbsd.org"> OpenBSD</a>. Media yang boleh digunakan
 	seperti USB Pendrive, Cakera Padat dan Floppy.
       </p>
 
@@ -64,8 +64,8 @@
       </p>
 
       <ul>
-	<li>i386 - Processor 32bit untuk Intel 386 arkitektur atau pun kompatibel.</li>
-	<li>amd64- Processor 64 bit Dari AMD atau yang kompatibel.</li>
+	<li>i386 - Processor 32bit untuk Intel i386 atau yang sebanding dengannya.</li>
+	<li>amd64- Processor 64 bit Dari AMD64 atau yang sebanding dengannya.</li>
 	<li>macppc - Processor Power PC telah digunakan oleh Apple sebelum mereka bertukar ke Intel Processor dahulu</li>
       </ul>
 
@@ -75,7 +75,7 @@
 	juga sebaliknya. Aplikasi OpenBSD 32 bit tidak boleh dipakai host OpenBSD 64 bit dan aplikasi OpenBSD 64bit tidak boleh dipakai host OpenBSD 32bit.
       </p>
 
-      <h3> Maklumat sebelum permasangan </h3>
+      <h3> Maklumat sebelum pemasangan </h3>
 
       <p>Sebelum memasang perisai ada beberapa maklumat anda perlu ada terlebih dahulu seperti:-
       </p>
@@ -86,8 +86,8 @@
 	<li>IP address DNS</li>
       </ul>
 
-      <p>Dokumentasi untuk memasang file-file permasangan OpenBSD ke dalam media yang anda pilih ada di dalam halaman utama mereka.
-	Masukkan media tersebut and mulakan pengembaraan awda ke dalam alam OpenBSD.
+      <p>Dokumentasi untuk memasang file-file pemasangan OpenBSD ke dalam media yang anda pilih ada di dalam halaman utama mereka.
+	Masukkan media tersebut and mulakan pengembaraan anda ke dalam alam OpenBSD.
       </p>
 
       <h4>1 - Boot Dari Pemasangan Media</h4>
@@ -103,7 +103,7 @@
 				<figcaption>Gambar 06 - Boot dari Cakera Padat</figcaption>
 			</figure>
 			-->
-      <p>Sistem menanti arahan untuk membuat boot ke cakera padat OpenBSD. Tekan hanyan menekan "Enter" untuk meneruskan.
+      <p>Sistem menanti arahan untuk membuat boot ke cakera padat OpenBSD. Tekan hanya menekan "Enter" untuk meneruskan.
       </p>
 
       <h4>2 - Skrip pemasangan OpenBSD</h4>
@@ -153,11 +153,11 @@
       </p>
 
       <h5>root dan Pengguna biasa</h5>
-      <p>OpenBSD mempunyaie dua jenis pengguna, root akaun dan pengguna biasa. root akaun ini satu sahaja yang di sediakan dan ia di katakan
-	sebagai &quot;Super User&quot;. root ini selalu digunakan untuk mentabir sistem anda.
+      <p>OpenBSD mempunyai dua jenis pengguna, root akaun dan pengguna biasa. root akaun ini satu sahaja yang di sediakan dan ia di katakan
+	sebagai &quot;Super User&quot;. root ini selalu digunakan untuk mentadbir sistem anda.
       </p>
 
-      <p>Lain pula dengan penguna biasa, ia adalah akaun yang selalu di gunakan untuk membuat kerja kerja harian dan tidak perlu menggunakan
+      <p>Lain pula dengan pengguna biasa, ia adalah akaun yang selalu di gunakan untuk membuat kerja kerja harian dan tidak perlu menggunakan
 	akses root.
       </p> 
 
@@ -169,7 +169,7 @@
 
       <p>Struktur Cakera Keras yang saya pilih adalah yang saya buat sendiri. Anda boleh mengikut struktur yang di sediakan oleh skrip pemasangan
 	sebagai permulaan. Swap partition adalah memori virtual komputer. Ia membolehkan sistem akses lebih dari memori kemampuan sebenar.
-	Kebesarannya swap akan mengikut size fisikal memory atau dua kali ganda size fizikal.</p>
+	Kebesarannya swap akan mengikut size fizikal memory atau dua kali ganda size fizikal.</p>
 
       <p>Dulu semasa saya belajar mengenai Debian ada orang menyebut tentang /exports, saya bengang apa yang dimaksudkan dengan folder exports ?
 	Saya mendapat tahu, dia menggunakan untuk mount point NFS server mereka. Struktur folder mereka berbeza dengan yang saya biasa
@@ -180,7 +180,7 @@
       <figure><img src="openbsd_notes/step_23.png" alt="Komponen OpenBSD">
 	<figcaption>Komponen OpenBSD</figcaption></figure>
 
-      <p>Di sini kita memilih semua komponen kompenen OpenBSD yang ada untuk permasangan.
+      <p>Di sini kita memilih semua komponen komponen OpenBSD yang ada untuk permasangan.
       </p>
 
       <ul>
@@ -188,10 +188,10 @@
 	<li>bsd.mp - komponen kernel untuk muti prosessor</li>
 	<li>bsd.rd - komponen kernel ramdisk</li>
 	<li>base70.tgz - komponen utama</li>
-	<li>etc.tgz - konfiguration sistem utama</li>
+	<li>etc.tgz - file konfigurasi sistem utama</li>
 	<li>comp70.tgz - sistem kompiler, file library dan sebagainya</li>
 	<li>game70.tgz - game teks </li>
-	<li>xetc70.tgz - kofiguration x11</li>
+	<li>xetc70.tgz - file konfigurasi x11</li>
 	<li>xserv.tgz - komponen X11</li>
 	<li>xbase70.tgz - komponen utama X11</li>
 	<li>xshare70.tgz - file ini perlu untuk xbase</li>
@@ -257,7 +257,7 @@
 	  </a>
 	</li>
 	<li>
-	  <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%253A%252F%252Fbadlirashid.github.io%252Fopenbsd_notes.css">
+	  <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbadlirashid.github.io%252Fopenbsd_notes.css">
 	    <img src="openbsd_notes/vcss.gif" alt="W3C VCSS">
 	  </a>
 	</li>

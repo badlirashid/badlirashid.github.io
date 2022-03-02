@@ -15,7 +15,7 @@
       <h1>Nota OpenBSD</h1>
       <p>penulis&nbsp;&nbsp;:&nbsp;Badli Al Rashid
       <br>e-mel&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;badli&period;a&period;r&commat;gmail&period;com
-      <br>tarikh&nbsp;&nbsp;&nbsp;:&nbsp;02 March 2022
+      <br>tarikh&nbsp;&nbsp;&nbsp;:&nbsp;03 Mac 2022
       <br>lesen&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Creative Commons
       </p>
     </header>
@@ -43,18 +43,18 @@
 
       <p>Nama <b>cheesysalmon</b> adalah nama sistem dan <b> $ </b> adalah shell prompt. cheesysalmon sedang menunggu
 	arahan dari awak untuk di jalan kan di dalam sistem. Arahan berupa program program di dalam file binari ataupun
-	skrip skirp untuk anda lancar kan.
+	skrip untuk anda lancar kan.
       </p>
 
       <h3>Korn Shell</h3>
 
       <p>Secara ringkas, Shell Unix adalah tempat kita berinteraksi dengan sistem Unix. Ia seumpamanya punat punat di kalkulator sedang
-	menunggu petikan anda untuk mengira. Kiraan itu akan di paparkan di skirin kalkulator. Unix Shell yang di sediakan adalah <b>Korn Shell</b>
+	menunggu petikan anda untuk mengira. Kiraan itu akan di paparkan di skrin kalkulator. Unix Shell yang di sediakan adalah <b>Korn Shell</b>
 	atau nama singkatannya adalah <b>ksh</b> atau <b>sh</b>. Kalau di dalam perisaian Windows ia adalah 'Command Prompt' atau 'PowerShell'.
       </p>
 
       <p>Pengedaran Korn Shell OpenBSD ini berasaskan kod kod Public Domain Korn Shell. Selain ksh terdapat juga <b>C Shell</b> atau singkatan <b>csh</b>.
-	  Kedua dua shell tersebut adalah komponen assas OpenBSD. Shell tersebut boleh di automasi untuk melancarkan dan mempermudahkan kerja kerja
+	  Kedua dua shell tersebut adalah komponen asas OpenBSD. Shell tersebut boleh di automasi untuk melancarkan dan mempermudahkan kerja kerja
 	  anda.
       </p>
       
@@ -76,7 +76,7 @@
       </p>
 
       <p>Satu lagi cari untuk memastikan di mana home folder kita ialah dengan menaip <b>echo $HOME</b>. <b>$HOME</b> ada lah home environment variable.
-	Setiap pengguna sistem ini mempunyaie berlainan home direktori.
+	Setiap pengguna sistem ini mempunyai berlainan home direktori.
       </p>
 
       <h3>Nama host Dan Akaun - whoami, hostname dan uname</h3>
@@ -93,10 +93,10 @@
       </p>
       
       <p>OpenBSD adalah sistem multi pengguna, beberapa pengguna dapat log masuk di dalam sistem tersebut secara serentak. Sebagai contoh saya akses
-	di depan komputer dan ada orang log masuk melauie <b>ssh</b> dari luar.
+	di depan komputer dan ada orang log masuk dari <b>ssh</b>.
       </p>
 
-      <p>Di sini saya menggunakan program <b>whoami</b> untuk memastikan akaun saya betul. Setelah itu saya mengunakan who akan menunjukkan siapa yang
+      <p>Di sini saya menggunakan program <b>whoami</b> untuk memastikan akaun saya betul. Setelah itu saya menggunakan who akan menunjukkan siapa yang
 	sedang masuk di dalam sistem.
       </p>
 
@@ -165,7 +165,7 @@
 	<br>
       </p>
       
-      <p><b>.ssh</b> adalah direktori kerana di arah permission (<b>d</b>rw<b>x</b>------) terdapat huruf <b>d</b> yang menunjukan ia direktori.
+      <p><b>.ssh</b> adalah direktori kerana di arah permission (<b>d</b>rw<b>x</b>------) terdapat huruf <b>d</b> yang menunjukkan ia direktori.
 	Kalau direktori ada huruf <b>x</b> ini membuatkan anda dapat memasuki direktori tersebut.
 	</p>
 
@@ -193,7 +193,7 @@
       <ul>
 	<li>&sol;sys - adalah symbolic link, sama seperti shortcut di dalam Windows</li>
 	<li>&sol;dev&sol;sd0a - Ini ada block device untuk cakera keras anda</li>
-	<li>ls - adalah file binari yang kita lacarkan dari shell anda</li>
+	<li>ls - adalah file binari yang kita lancarkan dari shell anda</li>
       </ul>
 
       <h3>Mengalihkan Keluaran Ke File - &gt;</h3>
@@ -223,8 +223,8 @@
       <p><b>mkdir nota</b> mkdir di sini bermaksud <b>"make directory"</b> ia itu membuat directori bernama <b>"nota"</b>
       <br>
       <br>Ini lah dia contoh program tersebut <b>&nbsp;ls&nbsp;&dash;al&nbsp;&gt;&nbsp;nota&sol;list.txt</b> di mana pengeluaran dari <b>ls</b>
-      di alihkan atau simpan kedalam file list.txt.
-      <br><b>cat&nbsp;nota&sol;list.txt</b> program <b>cat</b> ini membaca file list.txt dan memaparkannya kepada awdaa di skrin.
+      di alihkan atau simpan ke dalam file list.txt.
+      <br><b>cat&nbsp;nota&sol;list.txt</b> program <b>cat</b> ini membaca file list.txt dan memaparkannya kepada anda di skrin.
       </p>
       
       <p> Selain dari <b>cat</b> kita menggunakan <b>more</b> atau <b>less</b> untuk melihat kadungan file. Program <b>more</b> memaparkan satu skrin
@@ -267,7 +267,7 @@
 	<br>
 	<br><b>w&nbsp;&gt;&gt;&nbsp;nota&sol;list&period;txt</b>&nbsp;-&nbsp;<b>w</b>&nbsp; bermaksud melihat siapa yang log masuk dan apa yang sedang mereka lakukan dan simpan mesej tersebut ke file list&period;txt. Sekira nya kalau kita satu symbol <b>&gt;</b> ia tidak menyambung ke file tersebut bahkan menghilangkan yang lama dan simpan mesej itu sahaja.
 	<br>
-	<br><b>ls&nbsp;&gt;&gt;nota&sol;list&period;txt</b>&nbsp;-&nbsp;<b>ls</b>&nbsp;simpan direktory list tersebut kedalam file 
+	<br><b>ls&nbsp;&gt;&gt;nota&sol;list&period;txt</b>&nbsp;-&nbsp;<b>ls</b>&nbsp;simpan direktori list tersebut ke dalam file 
       </p>
 
       
@@ -300,7 +300,7 @@
 	<br>bin/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;include/&nbsp;&nbsp;libdata/&nbsp;&nbsp;local/&nbsp;&nbsp;&nbsp;&nbsp;obj/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;share/&nbsp;&nbsp;&nbsp;&nbsp;xobj/
       </p>
 
-      <p>Cara menggunakan <b>cd</b> dengan menggunakan <b>tab completion</b> adalah seperti di atas. <b>cd /u[tab]</b> (tekan [tab]) akan menempurnakan ke
+      <p>Cara menggunakan <b>cd</b> dengan menggunakan <b>tab completion</b> adalah seperti di atas. <b>cd /u[tab]</b> (tekan [tab]) akan menyempurnakan ke
 	<b>cd /usr</b> dan <b>cd /usr/[tab]</b> akan melihatkan apa direktori yang ada di dalam <b>/usr</b>.
       </p>
 
@@ -317,13 +317,13 @@
       <h3>Membaca Dokumentasi Program program yang tersedia </h3>
       
       <p>Seperti sistem Unix yang lain nya anda boleh membaca dokumentasi program program atau arahan tersebut didalam OpenBSD sekiranya
-	anda telah memasang <b>man70.tgz</b> semasa permasangan. Kalau tidak di install anda boleh membuat permasang file tersebut.  
+	anda telah memasang <b>man70.tgz</b> semasa pemasangan. Kalau tidak di install anda boleh membuat permasang file tersebut.  
       </p>
 
       <h4>Sistem pertolongan <em>man</em></h4>
       
-      <p><b>man</b> bermaksud <b>"perlihatkan manual"</b>, program ini program assas sistem pertolong Unix. Jikalau anda pengguna sistem Unix,
-	anda pasti pernah meggunakan man  untuk mecari pilihan oleh program yang anda pakai. Dokumen dokumen yang disediakah adalah bermutu tinggi.
+      <p><b>man</b> bermaksud <b>"perlihatkan manual"</b>, program ini program asas sistem pertolongan Unix. Jikalau anda pengguna sistem Unix,
+	anda pasti pernah menggunakan man  untuk mecari pilihan oleh program yang anda pakai. Dokumen dokumen yang di sediakah adalah bermutu tinggi.
 	Format arahan man seperti,<b>man program</b>. Contoh <b>man ls</b> untuk melihat manual untuk ls.
       </p>
 
@@ -333,7 +333,7 @@
       </figure>
 
 
-      <p>Cara melihat dokumen tersebut adalah <b>menuggunakan butang arah</b> dan <b>page up dan page down</b> key yang tersediakan.
+      <p>Cara melihat dokumen tersebut adalah <b>menggunakan butang arah</b> dan <b>page up dan page down</b> key yang tersedia.
 	Selesai memakai program <b>man</b> anda tekan <b>q</b> untuk quit. untuk sistem  bantuan tekan <b>h</b> 
       </p>
 
@@ -344,23 +344,23 @@
 
       <figure>
       <img src="openbsd_notes/manman.png " alt="running man man ">
-      <figcaption><b>info info</b> menunjukan dokumentasi untuk <b>info</b></figcaption>
+      <figcaption><b>info info</b> menunjukkan dokumentasi untuk <b>info</b></figcaption>
       </figure>
 
-      <h4> Injin Carian </h4>
+      <h4> Enjin Carian </h4>
 
       <p>Sebelum injin carian mungkin baik kita melihat kepada OpenBSD FAQ. FAQ adalah tempat yang paling baik untuk melihat kerana ia akan memberi jawapan
-	kepada soalan soalan lazim di jawap. Selain halaman mereka mempunyaie muka surat man.
+	kepada soalan soalan lazim di jawap. Selain halaman mereka mempunyai muka surat man.
       </p>
 
       <p>Ada pada masanya, saya menggunakan Injin carian apabila saya tersangkut. Jawapan yang di beri sebagai buat rujukan yang lebih
 	lanjut sekiranya  saya tak dapat mencari dari sistem bantuan atau kurang memahami dokumentasi. Di sini terdapat banyak sumber yang
-	awda boleh baca.
+	anda boleh baca.
       </p>
 
       <h3>Program Dan Lokasinya</h3>
 
-      <p>Lokasi program berada didalam $PATH anda.
+      <p>Lokasi program berada di dalam $PATH anda.
       </p> 
 
       
@@ -398,8 +398,8 @@
 
       <h3>Kesimpulan</h3>
       
-      <p>Kita tidak perlu menghafal ke semua program tersebut, Kita perlu membiasakan program yang penting sahaja untuk menggunakaan <b>ksh</b>
-	atau mana mana Unix shell yang anda selesa. Proficiency akan mula terasa apa bila kita biasa mengunakannya. 
+      <p>Kita tidak perlu menghafal ke semua program tersebut, Kita perlu membiasakan program yang penting sahaja untuk menggunakan <b>ksh</b>
+	atau mana mana Unix shell yang anda selesa. Proficiency akan mula terasa apa bila kita biasa menggunakannya. 
       </p>
 
     </article>
@@ -417,7 +417,7 @@
 	  </a>
 	</li>
 	<li>
-	  <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%253A%252F%252Fbadlirashid.github.io%252Fopenbsd_notes.css">
+	  <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbadlirashid.github.io%252Fopenbsd_notes.css">
 	    <img src="openbsd_notes/vcss.gif" alt="W3C VCSS">
 	  </a>
 	</li>
