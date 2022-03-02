@@ -53,7 +53,7 @@
 	atau nama singkatannya adalah <b>ksh</b> atau <b>sh</b>. Kalau di dalam perisaian Windows ia adalah 'Command Prompt' atau 'PowerShell'.
       </p>
 
-      <p>Pengedaran Korn Shell OpenBSD ini berasaskan kod kod Public Domain Korn Shell. Selain ksh terdapat juga <b>C Shell</b> atau singkatan <b>csh<b>.
+      <p>Pengedaran Korn Shell OpenBSD ini berasaskan kod kod Public Domain Korn Shell. Selain ksh terdapat juga <b>C Shell</b> atau singkatan <b>csh</b>.
 	  Kedua dua shell tersebut adalah komponen assas OpenBSD. Shell tersebut boleh di automasi untuk melancarkan dan mempermudahkan kerja kerja
 	  anda.
       </p>
@@ -187,7 +187,8 @@
 	<br>&sol;bin&sol;ls: ELF 64-bit LSB shared object, x86-64, version 1
       </p>
 
-      <p>Program file juga dapat memberi tahu beberapa jenis file.</p>
+      <p>Program file juga dapat memberi tahu beberapa jenis file.
+      </p>
 
       <ul>
 	<li>&sol;sys - adalah symbolic link, sama seperti shortcut di dalam Windows</li>
@@ -218,16 +219,19 @@
 	<br>drwx------&nbsp;&nbsp;2&nbsp;badli&nbsp;&nbsp;badli&nbsp;&nbsp;512&nbsp;Feb&nbsp;25&nbsp;&nbsp;2022&nbsp;.ssh
 	<br>drwxr-xr-x&nbsp;2&nbsp;badli&nbsp;&nbsp;badli&nbsp;&nbsp;512&nbsp;Feb&nbsp;25&nbsp;19:29&nbsp;nota
       </p>
+      
       <p><b>mkdir nota</b> mkdir di sini bermaksud <b>"make directory"</b> ia itu membuat directori bernama <b>"nota"</b>
       <br>
       <br>Ini lah dia contoh program tersebut <b>&nbsp;ls&nbsp;&dash;al&nbsp;&gt;&nbsp;nota&sol;list.txt</b> di mana pengeluaran dari <b>ls</b>
       di alihkan atau simpan kedalam file list.txt.
       <br><b>cat&nbsp;nota&sol;list.txt</b> program <b>cat</b> ini membaca file list.txt dan memaparkannya kepada awdaa di skrin.
       </p>
+      
       <p> Selain dari <b>cat</b> kita menggunakan <b>more</b> atau <b>less</b> untuk melihat kadungan file. Program <b>more</b> memaparkan satu skrin
 	dengan space bar sebagai navigasi dan dengan program <b>less</b> kita boleh bernavigasi meggunakan punat arrow bawah dan atas. Masa mula mula
 	memakai perisai Linux, saya gunakan <b>more</b> tetapi kawan saya menasihati mengunakan program <b>less</b>.
       </p>
+	
       
       <h3>Navigasi sistem,  Masuk Dan Keluar Folder</h3>
 	<p class="prompt">cheesysalmon$&nbsp;cd&nbsp;nota
@@ -252,6 +256,7 @@
 	  &nbsp;&nbsp;0&nbsp;w
 	  <br>nota
 	</p>
+	
       <p><b>cd&nbsp;nota</b> program cd adalah singkatan <b>"change directory"</b>. Fungsinya untuk masuk ke dalam folder <b>nota</b>
 	<br><b>rm&nbsp;list&period;txt</b> <b>rm</b> bermaksud <b>remove</b> atau memusnahkan file list&period;txt tersebut.
 	<br><b>cd&nbsp;&period;&period;&sol;</b> kita keluar atau naik ke direktori indung.
@@ -282,6 +287,7 @@
 	  <br>badli&nbsp;&nbsp;&nbsp;&nbsp;p0&period;192&period;168&period;56&period;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&colon;27PM&nbsp;&nbsp;&nbsp;
 	  &nbsp;&nbsp;0&nbsp;w
       </p>
+      
       <p class="prompt">nota &lt;&dash;&dash; Ini adalah paparan yang keluar dari <b>ls</b>.
       </p>
 
@@ -315,6 +321,7 @@
       </p>
 
       <h4>Sistem pertolongan <em>man</em></h4>
+      
       <p><b>man</b> bermaksud <b>"perlihatkan manual"</b>, program ini program assas sistem pertolong Unix. Jikalau anda pengguna sistem Unix,
 	anda pasti pernah meggunakan man  untuk mecari pilihan oleh program yang anda pakai. Dokumen dokumen yang disediakah adalah bermutu tinggi.
 	Format arahan man seperti,<b>man program</b>. Contoh <b>man ls</b> untuk melihat manual untuk ls.
@@ -353,7 +360,8 @@
 
       <h3>Program Dan Lokasinya</h3>
 
-      <p>Lokasi program berada didalam $PATH anda.</p> 
+      <p>Lokasi program berada didalam $PATH anda.
+      </p> 
 
       
       <p class="prompt">cheesysalmon$ echo $PATH
