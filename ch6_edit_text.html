@@ -24,20 +24,20 @@
       
       <h2>Aplikasi Penyunting Teks</h2>
 
-      <p>Aplikasi Penyunting teks (Text editor) adalah penting kerana konfigarasi konfigarasi tersebut di simpan dalam file teks format di dalam OpenBSD.
-	Aplikasi ini bukan aplikasi Word Processor seperti Libreoffice atau Microsoft office. Di dalam Windows ia adalah aplikasi notepad.
-	Dua teks editor yang tersedia di dalam OpenBSD adalah <em>vi</em> dan <em>mg</em>.
+      <p>Aplikasi penyunting teks (Text editor) adalah penting kerana file konfigarasi konfigarasi di simpan dalam file teks format di dalam OpenBSD.
+	Aplikasi penyunting ini bukan aplikasi Word Processor seperti Libreoffice atau Microsoft office. Penyunting teks tersedia di dalaam Windows
+	adalah notepad. Dua teks editor yang tersedia di dalam OpenBSD adalah semacam vi, <b><em>vi</em></b> dan semacam emacs, <b><em>mg</em></b>.
       </p>
 
       <h3>vi</h3>
       
-      <p>Saya bukan pengguna vi yang asal, pada mulanya saya menggunakan pico editor. vi yang di edar bersama OpenBSD adalah CSRG vi
-	dan bukannya <a href="https://www.vim.org">Vim</a>. vi lebih banyak pengguna kerana kebanyakan pengedar Unix atau
-	semacamnya akan menyertakan aplikasi tersebut. 
+      <p>Walaupun vi amat popular pada para pengguna, penyunting yang saya mula gunakan adalah <b>pico</b> dan <b>nano</b>. Saya hanya bermula
+	menggunakan vi setelah sekian lama. vi yang di edar bersama OpenBSD adalah CSRG vi dan bukannya <a href="https://www.vim.org">Vim</a> yang
+	selalu tersedia di dalam GNU/Linux.
       </p>
      
       <p>Untuk melancarkan vi, Saya menaip <b>vi</b> dan menekan <b>enter</b> selepas itu saya menaip <b>&colon;version</b> .Disini
-	Kita memberi arahan untuk vi menunjukan apakah versi aplikasi vi yang kita gunakan.
+	Kita memberi arahan untuk vi menunjukan apakah versi aplikasi vi yang kita gunakan.	
       </p>
       
       <p class="prompt">&tilde;
@@ -46,15 +46,21 @@
       </p>
 
       <p> Versi vi adalah <b>1&period;79</b>. Begerak dalam vi kita menggunakan dengan huruf <b>h</b>,<b>j</b>,<b>k</b>,<b>l</b>
-	ia itu kiri,ke bawah, ke atas dan ke kanan. Untuk mula menyunting anda perlu tekan <b>i</b> atau tekan <b>a</b> untuk menulis  pada hujung barisan.
-	<b>w</b> untuk simpan. untuk membuka file kita boleh menggunakan arahan <b>&colon;open tab</b> untuk menunjukan file file yang ada.
+	ia itu ke kiri,ke bawah, ke atas dan ke kanan. Untuk mula menyunting anda perlu tekan <b>i</b> atau tekan <b>a</b> untuk menulis pada
+	hujung barisan. <b>w</b> untuk simpan.
       </p>
+
+      <p> Vi boleh membuka file teks secara lansung dengan <b>vi index.html</b> untuk membuka file teks atau di dalam vi, <b>&colon;open tab</b>
+	untuk menunjukan file file yang ada
+      </p>
+
 
       <p class="prompt">&tilde;
 	<br>&tilde;
 	<br>&tilde;
 	<br>&plus;&equals;&plus;&equals;&plus;&equals;&plus;&equals;&plus;&equals;&plus;&equals;&plus;&equals;&plus;&equals;
-	<br>file1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;folder1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;folder2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.html
+	<br>file1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;folder1&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;folder2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.html
 	<br>&colon;open
       </p>
       
@@ -75,28 +81,30 @@
 
       <h3>mg</h3>
       
-      <p>mg adalah teks editor lebih seperti aplikasi GNU <a href="https://www.gnu.org/software/zile">zile</a>, aplikasi aplikasi ini semacam
-	GNU <a href="https://www.gnu.org/software/emacs">Emacs</a>. Untuk melancarkannya kita menaip <b>mg</b> and tekan enter. Berbeza dengan vi
-	kita tak perlu betukar kepada mod penyuntingan kerana kita boleh terus bekerja dengan teks documen tersebut.
+      <p>mg adalah aplikasi penyunting teks yang lebih seperti GNU <a href="https://www.gnu.org/software/zile">zile</a>. Aplikasi aplikasi ini semacam
+	GNU <a href="https://www.gnu.org/software/emacs">Emacs</a>. Untuk melancarkannya kita menaip <b>mg</b> and tekan enter. Berbeza dengan vi, mg
+	tak perlu betukar kepada mod penyuntingan kerana kita terus bekerja dengan teks documen tersebut.
       </p>
 
-      <p class=prompt><br>
+      <p class="prompt"><br>
 	<br>
-	<br>-----Mg:&nbsp;*scratch*:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lpar;fundamental&rpar;--L1---------------------------------------------------
+	<br>-----Mg:&nbsp;*scratch*:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lpar;fundamental&rpar;--L1-----------------------------
+	----------------------
 	<br>
+      </p> 
+
+      <p>Arahan mg selalu di gabungkan dengan control dan huruf. <b>C</b> di sini bermaksud control key dan <b>M</b> bermaksud alt atau meta key.
+	Pegerakan mg boleh menggunakan arrow keys atau, <b>M-v</b> untuk ke atas dan <b>C-v</b> untuk ke bawah. Tekan <b>C-x C-s </b>untuk simpan.
+	Untuk mecari ayat dalam teks file kita guna <b>C-s</b>. untuk membuka file guna <b>C-x C-f</b> dan <b>C-x C-c</b>
+	untuk keluar dari mg.
       </p>
 
-      <p>  
-
-      <p>Pegerakan mg boleh di gunakan dengan arrow keys. Arahan mg selalu di gabungkan dengan control dan huruf. <b>C</b> di sini bermaksud
-	control key. Untuk melihat pertolong tekan C-h C-h (Control h, Contol h),C-x C-s untuk simpan, C-s adalah untuk carian dalam teks file,
-	untuk membuka file guna C-x C-f dan C-x C-c untuk keluar dari Aplikasi.
-      </p>
+      <p>Untuk mengakses sistem pertolongan di dalam mg kita menekan <b>C-h C-h</b>. Kalau di dalam shell kita boleh menggunakan <b>man mg</b>
+	di luar aplikasi.</p> 
 
       <figure><img src="openbsd_notes/CxCf.png" alt="C-x C-f Cari file untuk di buka">
 	<figcaption>C-x C-f untuk membuka teks file dalam aplikasi <b>mg</b> </figcaption>
       </figure>
-
 
       
     </article>
