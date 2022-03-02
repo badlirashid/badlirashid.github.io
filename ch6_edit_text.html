@@ -14,8 +14,8 @@
     <header>
       <h1>Nota OpenBSD</h1>
       <p>penulis&nbsp;&nbsp;:&nbsp;Badli Al Rashid
-      <br>e-mel&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;badli.a.r@gmail.com
-      <br>tarikh&nbsp;&nbsp;&nbsp:&nbsp;27 Februari 2022
+      <br>e-mel&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;badli&period;a&period;r&commat;gmail&period;com
+      <br>tarikh&nbsp;&nbsp;&nbsp:&nbsp;02 March 2022
       <br>lesen&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Creative Commons
       </p>
     </header>
@@ -24,17 +24,59 @@
       
       <h2>Edit text file</h2>
 
-      <p>Text editor adalah Aplikasi untuk edit text file di dalam sebuah perisian. Ia nya penting kerana kofigarasi konfigarasi tersebut di simpan
-	dalam text format di dalam OpenBSD. Text Editor bukannya Word Processor seperti Libreoffice atau Microsoft office. Di dalam Windows ia
-	aplikasi notepad. Kita boleh memakai dua program untuk edit text file didalam OpenBSD,  vi dan mg.
+      <p>Text editor adalah aplikasi untuk edit text file di OpenBSD. Ianya penting kerana kofigarasi konfigarasi tersebut di simpan
+	dalam text format. Text Editor bukannya Word Processor seperti Libreoffice atau Microsoft office. Di dalam Windows ia adalah
+	aplikasi notepad. Kita boleh memakai dua program untuk edit text file di dalam OpenBSD, vi dan mg.
       </p>
 
       <h3>vi</h3>
-      <p>vi yang di edar bersama OpenBSD adalah BSD vi dan bukannya vim [vim improve]. User vi lebih banyak kerana kebanyakan pegedar Unix atau
-      semacamnya akana menyertakan Aplikasi tersebut.</p> 
+      
+      <p>Saya bukan pengguna vi yang asal pada awalnya saya cuma menggunakan pico editor. vi yang di edar bersama OpenBSD adalah CSRG vi
+	dan bukannya <a href="https://www.vim.org">Vim, the editor</a>. vi lebih banyak penguna kerana kebanyakan pegedar Unix atau
+	semacamnya akan menyertakan aplikasi tersebut. 
+      </p>
+     
+      <p>Untuk melancarkan vi, Saya  menaip <b>vi</b> dan menekan <b>enter</b> selepas itu saya menaip <b>&colon;version</b> .Disini
+	Kita memberi arahan untuk vi menunjukan apakah versi aplikasi vi yang kita gunakan.
+      </p>
+      
+      <p class="prompt">&tilde;
+	<br>&tilde;
+	<br>Version 1&period;79 &lpar;10&sol;23&sol;96&rpar; The CSRG&comma; University of California&comma; Berkeley&period;
+      </p>
+
+      <p> Begerak dalam vi ia laah dengan <b>h</b>,<b>j</b>,<b>k</b>,<b>l</b> ia itu kiri,ke bawah, ke atas dan ke kanan. <b>i</b> adalah untuk
+	menulis atau <b>a</b> menulis  pada hujung barisan. <b>w</b> untuk simpan. Untuk pertolongan kita menggunakan <b>&colon;visuage</b> dan
+	<b>&colon;exusage</b> dan tekan enter. Escape ada lah untuk membatalkan arahan. 
+      </p>
+
+      <p>Pertolongan lebih lanjut boleh di baca dari <b>man vi</b></p>
+      
+      <p>Pada masa awal saya menggunakan vi, saya tidak tahu cara keluar dari applikasi tersebut. Cara keluar ialah menekan &colon;q&excl; untuk keluar
+	sahaja tampa simpan atau &colon;wq&excl; untuk keluar dan simpan
+      </P>
+
+      <p class="prompt">&tilde;
+	<br>&tilde;<br>&colon;q&excl;
+      </p>
+
 
       <h3>mg</h3>
-      <p>mg adalah text editor seperti GNU emacs, tetapi lebih ringan.</p>  
+      <p>mg adalah text editor seperti GNU zile. Cara permakaian nya adalah sama dengan emacs. Untuk melancarkannya kita menekan <b>mg</b></p>
+
+      <p class=prompt><br>
+	<br>
+	<br>-----Mg:&nbsp;*scratch*:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lpar;fundamental&rpar;--L1---------------------------------------------------
+	<br>
+      </p>
+
+      <p> Pegerakan mg adalah dengan menggunakan arrow keys dan C-s untuk carian.
+      </p> 
+
+      <p>Untuk melihat pertolong tekan C-h C-h (Control h, Contol h), C-x C-s untuk simpan dan C-x C-c untuk keluar dari Aplikasi
+	</p>
+
+
       
     </article>
 
