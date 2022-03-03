@@ -11,11 +11,26 @@
   <body>
     <header>
       <h1>Nota OpenBSD</h1>
-      <p>penulis&nbsp;&nbsp;:&nbsp;Badli Al Rashid
-      <br>e-mel&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;badli&period;a&period;r&commat;gmail&period;com
-      <br>tarikh&nbsp;&nbsp;&nbsp;:&nbsp;03 Mac 2022
-      <br>lesen&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Creative Commons
-      </p>
+
+      <table class="author">
+	<tr>
+	  <td>penulis</td>
+	  <td>Badli Al Rashid</td>
+	</tr>
+	<tr>
+	  <td>emel</td>
+	  <td>badli&period;a&period;r&commat;gmail&period;com</td>
+	</tr>
+	<tr>
+	  <td>tarikh</td>
+	  <td>03 Mac 2022</td>
+	</tr>
+	<tr>
+	  <td>lesen</td>
+	  <td>Atribusi 4.0 Antarabangsa</td>
+	</tr>
+      </table>
+      
     </header>
 
     <article class="fdp">
@@ -191,9 +206,12 @@
 
 
       <p><b>"d"</b> bermaksud direktori dan ini membezakan jenis dengan file.
-      <br>Akses pemilik adalah baca, tulis dan lancarkan <b>rwx</b>, untuk kumpulan ada lah baca dan lancarkan <b>r-x</b>,
+      </p>
+      
+      <p>Akses pemilik adalah baca, tulis dan lancarkan <b>rwx</b>, untuk kumpulan ada lah baca dan lancarkan <b>r-x</b>,
       dan yang lain adalah baca dan lancarkan <b>r-x</b>.
       </p>
+      
       <p><b>"x"</b> adalah penanda untuk membuat program atau skrip dapat di lancarkan. Tetapi untuk direktori pula, ia di gunakan supaya kita dapat
       memasuki direktori <b>"foldersaya"</b>.
       </p>
@@ -205,7 +223,8 @@
 
       <p>Untuk chmod kita menggunakan angka untuk menukar akses tersebut. 4 untuk akses baca, 2 untuk akses tulis and 1 untuk akses melancar.
 	Angka angka tersebut akan di campur untuk membagi akses file tersebut. Sebagai contoh untuk website kita akan tukar akses file html
-	kepada akses baca kepada kumpulan dan lain lain.</p>
+	kepada akses baca kepada kumpulan dan lain lain.
+      </p>
       
 
       <p class="prompt">cheesysalmon# ls -al index.html

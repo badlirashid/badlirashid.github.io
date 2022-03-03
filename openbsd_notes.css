@@ -19,64 +19,81 @@ img {
 	width: 75%;
 }
 
-.diff table,th,td {
+
+table.author td {
+    table-layout: auto;
+    width: 55%;
+    border: none;
+    white-space: nowrap;
+    padding: 0px;
+
+}
+
+
+table.author td:nth-child(odd) {
+    width: 20%;
+    text-align: left;
+}
+
+table.author td:nth-child(even) {
+    text-align: left;
+}
+
+
+
+
+table.diff ,th,td {
 	width: 100%;
 	border: 1px solid black;
 	text-align: center;
 	padding: 5px;
-
 }
 
-.diff td:nth-child(1n) {
+table.diff td:nth-child(1n) {
 	text-align: left;
 }
 
-.diff td:nth-child(2n) {
+table.diff td:nth-child(2n) {
 	text-align: center;
 }
 
-.diff td:nth-child(3n) {
+table.diff td:nth-child(3n) {
 	text-align: center;
 }
 
-.dirs table,th,td {
+table.dirs table,th,td {
 	width: 100%;
 	text-align: center;
 	padding: 5px;
 }
 
-/**
-.dirs th:nth-child(1n) {
-	text-align: left;
-}
-**/
 
-.dirs th:nth-child(1n) {
+table.dirs th:nth-child(1n) {
     width:10%;
     text-align: left;
 }
 
-.dirs td:nth-child(1n) {
+table.dirs td:nth-child(1n) {
     width:10%;
     text-align: center;
 }
 
-.dirs th:nth-child(2n) {
+table.dirs th:nth-child(2n) {
     width:10%;
     text-align: center;
 }
 
-.dirs td:nth-child(2n) {
+table.dirs td:nth-child(2n) {
     width:10%;
     text-align: left;
 }
 
-.dirs th:nth-child(3n) {
+table.dirs th:nth-child(3n) {
     width:70%;
     text-align: center;
 }
 
-.dirs td:nth-child(3n) {
+table.dirs td:nth-child(3n) {
     width:70%;
 	text-align: right;
 }
