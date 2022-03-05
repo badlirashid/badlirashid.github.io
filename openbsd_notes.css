@@ -20,6 +20,11 @@ img {
 }
 
 
+img.fourfive {
+    width: 45%;
+
+}
+
 table.author td {
     table-layout: auto;
     width: 55%;

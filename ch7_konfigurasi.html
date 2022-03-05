@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="kxd">
+  <head>
+    <link rel="stylesheet" href="openbsd_notes.css">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="openbsd, bsd, unix, opensource">
+    <meta name="description" content="Konfigurasi OpenBSD">
+    <title>Konfigurasi OpenBSD</title>
+  </head>
+  <body>    
+    <header>
+      <h1>Nota OpenBSD</h1>
+      <table class="author">
+	<tr>
+	  <td>penulis</td>
+	  <td>Badli Al Rashid</td>
+	</tr>
+	<tr>
+	  <td>emel</td>
+	  <td>badli&period;a&period;r&commat;gmail&period;com</td>
+	</tr>
+	<tr>
+	  <td>tarikh</td>
+	  <td>05 Mac 2022</td>
+	</tr>
+	<tr>
+	  <td>lesen</td>
+	  <td>Atribusi 4.0 Antarabangsa</td>
+	</tr>
+      </table>
+
+    </header>
+
+    <article class="openbsdkonf">
+      
+      <h2>Konfigurasi OpenBSD</h2>
+      <p>Selesai sahaja pemasang, kita akan membuat beberapa perubahan konfigurasi untuk OpenBSD.
+
+	<h3>doas pengganti sudo</h3>
+
+      <p>Aplikasi <b>doas</b> membolehkan kita untuk melancarkan program program yang hanya dapat di lancar dari <b>root</b> dari pengguna biasa.
+	<b>doas</b> mula di perkenalkan di dalam versi OpenBSD 5&period;8 sebagai pengganti applikasi <b>sudo</b>. Fungsinya mirip seperti <b>Run As</b>
+	Microsofot Windows.
+      </p>
+
+      <figure>
+	<img class="fourfive" src="openbsd_notes/wrunas.png" alt="Run As didalam Microsoft Windows 11">
+	  <figcaption>Run As di dalam Microsoft Windows 11</figcaption>
+      </figure>
+
+
+      <p class='prompt'>cheesysalmon$ chown www&periodwww index&period;html
+	<br>chown: index&period;html&colon; Operation not permitted
+	<br>cheesysalmon$ su -
+	<br>Password&colon;
+	<br>cheesysalmon# echo&nbsp;'permit persist keepenv badli'&nbsp;&gt;&nbsp;&sol;etc&sol;doas&period;conf
+	<br>cheesysalmon# cat &sol;etc&sol;doas&period;conf
+	<br>permit persist keepenv badli
+	<br>exit
+	<br>cheesysalmon$ doas chown www&period;www index&period;html
+	<br>doas (badli@cheesysalmon&period;my&period;domain) password&colon;
+	<br>cheesysalmon$ ls -al index&periodhtml
+	<br>-rw-r--r--&nbsp;&nbsp;1 www&nbsp;&nbsp;www&nbsp;&nbsp;0 Mar&nbsp;&nbsp;5 12&colon;03 index&period;html
+      </p>
+
+      <p> File <b>doas&period;conf</b> telah di buat dengan teks untuk membolehkan saya melancarkan program <b>chown</b> sebagai pengguna <b>root</b>. 
+      </p>
+
+
+	<h3>rujukan</h3>
+	<ul>
+	  <li>https://www.openbsd.org</li>
+	  <li>https://www.c0ffee.net/blog/openbsd-on-a-laptop/#initial-configuration</li>
+	  <li>https://www.romanzolotarev.com</li>
+	</ul>
+      
+    </article>
+
+    <footer>
+      <ul>
+	<li>
+	  <a href="https://creativecommons.org/licenses/by/4.0/">
+	    <img src="openbsd_notes/cc-by.svg" alt="CC-BY-4.0">
+	  </a>
+	</li>
+	<li>
+	  <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fbadlirashid.github.io%2Fch7_konfigurasi.html">
+	    <img src="openbsd_notes/HTML5_Logo_64.png" alt="W3C Nu Html Checker">
+	  </a>
+	</li>
+	<li>
+	  <a href="https://jigsaw.w3.org/css-validator/validator?uri=badlirashid.github.io%2Fch7_konfigurasi.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">
+	    <img src="openbsd_notes/vcss.gif" alt="W3C CSS Validation Service">
+	  </a>
+	</li>
+      </ul>
+    </footer>
+
+  </body>
+  
+</html>
