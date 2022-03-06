@@ -124,6 +124,11 @@
 	Google tentang adoptasi IPv6 https://www.google.com/intl/en/ipv6/statistics.html sebagai lebih lanjut. 
       </p>
 
+      <p> Di era digital yang semakin IoT (Internet Of Things), IPv6 memainkan peranan penting kerana semua perkakas perkakas boleh di sambungkan
+	ke arah jalur lebar. Kita boleh memiliki rangkaian kita sendiri dan dapat segala informasi di hujung jari. Rangkain CCTV rumah, automasi rumah,
+	sistem automobil dan mesyauarat mesyarat kita dapat di sambungkan secara langsung ke telephone bimbit.
+	</p>
+
       <h4>Alamat IP Secara Automatik, Protokol DHCP</h4>
       
       <p>Untuk menerima alamat IPv4 dan v6 secara automatik iaitu DHCP, Di dalam  &sol;etc&sol;hostname&period;em0 iaitu file <b>hostname&period;if</b>
@@ -155,8 +160,26 @@
       <h4>Alamat IP Secara Manual</h4>
 
       <p>Untuk secara manual pula kita akan memasukkan butiran kita ke dalam file <b>myname</b>, iaitu nama hos FQDN. File <b>mygate</b>
-	untuk alamat IPv4 atau IPv6 gateway utama yang kita gunakan menyambung ke rangkaian lain seperti Internet. File <b>hostname.if</b> adalah
-	untuk konfigurasi IPv4 atau IPv6 atau kedua dua nya sekali. Dan kita memasukkan maklumat FQDN and alamat IP ke dalam <b>hosts</b> file.
+	untuk alamat IPv4 atau IPv6 gateway utama yang kita gunakan menyambung ke rangkaian lain seperti Internet.
+      </p>
+
+      <p>File <b>hostname.if</b> adalah untuk konfigurasi IPv4 atau IPv6 atau kedua duanya sekali. Butiran alamat IP and subnet mask di perlukan
+	untuk melengkapi konfigurasi tersebut. Sebagai contoh file <b>hostname&period;if</b> yang hanya ada konfigurasi IPv4 sahaja. Pastikan alamat
+	IP anda tidak bertembung dengan perkakas perkakas yang ada di rangkaian anda atau pun di Internet. Kerana alamat IP ini mesti unik untuk
+	sesuatu perkakas sahaja di dalam rangkaiannya.
+      </p>
+
+      <p class="prompt">inet&nbsp;192&period;168&period;43&period;211&nbsp;255&period;255&period;255&period;0
+      </p>
+      
+
+      <p>Kita memasukkan maklumat FQDN and alamat IP ke dalam <b>hosts</b> file. File hosts ini di gunakan untuk resolusi nama hos ke alamat
+	ip address kita tanpa menggunakan DNS server. 
+      </p>
+      
+      <p class="prompt">127&period;0&period;0&period;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;localhost
+	<br>&colon;&colon;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;localhost
+	<br>192&period;168&period;43&period;211&nbsp;cs&period;my&period;domain&nbsp;cs
       </p>
 
       <p>File <b>resolv</b> iaitu <b>&sol;etc&sol;resolv&period;conf</b> berguna untuk resolusi nama Domain daripada nama Domain penuh ke alamat IP.
@@ -171,7 +194,7 @@
 	sever. Amalan terbaik adalah untuk memasukkan tidak lebih daripada tiga alamat DNS server ke dalam resolv file.
       </p>
 
-      <h4>Aplikasi untuk  menyelesaikan masaalah rangkaian</h4>
+      <h4>Aplikasi Yang Di Gunakan Untuk Menyelesaikan Masaalah Rangkaian</h4>
       
       <p>Di antara aplikasi aplikasi asas yang sering di gunakan untuk menyelesaikan masaalah rangkaian adalah:-</p> 
       <ul>
@@ -195,6 +218,7 @@
 	<p>Di antara rujukan rujukan yang saya ambil ialah seperti berikut:-</p> 
 	<ul>
 	  <li><a href ="https://www.openbsd.org">https://www.openbsd.org</a></li>
+	  <li><a href ="https://www.kame.net">https://www.kame.net</a></li>
 	  <li><a href ="https://www.c0ffee.net/blog/openbsd-on-a-laptop/#initial-configuration">https://www.c0ffee.net/blog/openbsd-on-a-laptop/#initial-configuration</a></li>
 	  <li><a href ="https://www.romanzolotarev.com">https://www.romanzolotarev.com</a></li>
 	  <li><a href ="https://www.tcpipguide.org">https://www.tcpipguide.org</a></li>
