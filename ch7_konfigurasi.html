@@ -22,7 +22,7 @@
 	</tr>
 	<tr>
 	  <td>tarikh</td>
-	  <td>05 Mac 2022</td>
+	  <td>06 Mac 2022</td>
 	</tr>
 	<tr>
 	  <td>lesen</td>
@@ -39,9 +39,9 @@
 
 	<h3>doas pengganti sudo</h3>
 
-      <p>Aplikasi <b>doas</b> membolehkan kita untuk melancarkan program program yang hanya dapat di lancar dari <b>root</b> dari pengguna biasa.
+      <p>Aplikasi <b>doas</b> membolehkan kita untuk melancarkan program program yang hanya dapat di lancarkan dari <b>root</b> untuk pengguna biasa.
 	<b>doas</b> mula di perkenalkan di dalam versi OpenBSD 5&period;8 sebagai pengganti aplikasi <b>sudo</b>. Fungsinya mirip seperti <b>Run As</b>
-	Microsofot Windows.
+	Microsoft Windows.
       </p>
 
       <figure>
@@ -67,7 +67,7 @@
       <p> File <b>doas&period;conf</b> telah di buat dengan teks untuk membolehkan saya melancarkan program <b>chown</b> sebagai pengguna <b>root</b>. 
       </p>
 
-      <h3>Menukar Masa dan Haribulan</h3>
+      <h3>Menukar Masa dan Tarikh</h3>
 
       <p>Penukaran tarikh dan masa boleh di buat dengan menggunakan aplikasi <b>date</b>. Cara menggunakan ia ialah dengan
 	<b>date yymmddHHMM</b> .Sebagai contoh cara menukar kepada 5 Mac 2022 jam 5 petang adalah <b>date 2203051700</b> .
@@ -97,39 +97,106 @@
       
 
       <h3>Menukar Alamat IP, Subnet Mask Dan Gateway</h3>
+
+      <h4> Alamat IPv4</h4>
       
-      <p>Ada terdapat 2 jenis alamat IP yang di gunakan sekarang iaitu versi 4 dan 6. IPv4 mula di usahakan pada 1970'an. Request for Comment (RFC) pertama
-	adalah RFC 791, Internet Protocol September 1981. Alamat IPv4 adalah 32 bit panjang dan boleh menampung sebanyak <b>4,294,967,296</b> secara teori
-	tetapi bukan kesemua alamat IPv4 ini dapat dipakai.
+      <p>Terdapat 2 jenis alamat IP yang di gunakan sekarang iaitu versi 4 dan 6. IPv4 mula di usahakan pada 1970'an. Request for Comment (RFC) pertama
+	di buat adalah RFC 791, Internet Protocol pada September 1981. Alamat IPv4 adalah 32 bit panjang atau <b>2 <sup>32</sup></b> dan boleh menampung
+	sebanyak <b>4,294,967,296</b> secara teori tetapi bukan kesemua alamat alamat IPv4 ini dapat di pakai.
       </p>
 
-      <p>Pengganti IPv4 adalah IPv6, populariti Internet makin meningkat pada 1990'an dan IPv4 dijangka bekurangan. IPv6 adalah 128 bit panjang dan
-	boleh menampung sebanyak <b>340,282,366,920,938,463,463,374,607,431,768,211,465</b> alamat. Bermula dengan beberapa RFC yang telah di terbitkan
-	pada tahun 1998 RFC 2460 (IPv6), 2461 (ipv6 Neighbour Discovery) dan 2463 (icmpv6).
+      <p>Sebagai contoh alamat www.kame.net ke IPv4 <b>210&period;155&period;141&period;200</b>.
+      </p>
+
+      
+      <h4> Alamat IPv6</h4>      
+      <p>Pengganti IPv4 adalah IPv6, populariti Internet pertengahan pada 1990'an dan IPv4 di jangka berkurangan. IPv6 adalah 128 bit panjang atau
+	<b>2 <sup>128</sup></b> dan boleh menampung sebanyak <b>340,282,366,920,938,463,463,374,607,431,768,211,465</b> alamat. Bermula dengan beberapa RFC
+	yang telah di terbitkan pada tahun 1998 RFC 2460 (IPv6), 2461 (ipv6 Neighbour Discovery) dan 2463 (icmpv6).
+      </p>
+
+      <p>Sebagai contoh alamat www.kame.net mempunyaie IPv6 <b>2001&colon;2f0&colon;0&colon;8800&colon;226&colon;2dff&colon;fe0b&colon;4311</b>.
       </p>
 
       <p>IPv4 dan IPv6 adalah komponen komponen asas sistem rangkaian OpenBSD kerana BSD Unix adalah sistem operasi yang menjayakan IPv4 untuk ARPANET,
-	dan OpenBSD telah di gunakan untuk menjayakan IPv6 untuk KAME projek. Transisi dari IPv4 dan IPv6 sedang giat diusahakan. Ini adalah report dari 
-	google mengenaie adoptasi IPv6 https://www.google.com/intl/en/ipv6/statistics.html 
+	dan OpenBSD telah di gunakan untuk menjayakan IPv6 untuk KAME projek. Transisi dari IPv4 dan IPv6 sedang diusahakan. Ini adalah report dari 
+	Google tentang adoptasi IPv6 https://www.google.com/intl/en/ipv6/statistics.html sebagai lebih lanjut. 
       </p>
 
-      <h4>Automatik Megunakan DHCP</h4>
+      <h4>Alamat IP Secara Automatik,Protokol DHCP</h4>
       
-      <p>inet dan inet6 mestilah terdapat didalam file /etc/hostname.em0</p>
+      <p>Untuk menerima alamat IPv4 dan v6 secara automatik iaitu DHCP, Di dalam  &sol;etc&sol;hostname&period;em0 iaitu file <b>hostname&period;if</b>
+	konfigurasi seperti berikut&colon;&hyphen;
+      </p>
 
-      <h4>Secara Manual</h4>
+      <p class="prompt">inet autoconf
+	<br>inet6 autoconf
+      </p>
 
+      <p>File <b>&sol;etc&sol;myname</b> hendaklah di isi dengan FQDN nama hos sahaja <b>cs&period;my&period;domain</b>. Sementara <b>&sol;etc&sol;hosts</b>
+	tidak ada hos <b>cs&period;my&period;domain</b> dan hanya ada <b>localhost</b>. Sama ada kita lancarkan <b>netstart</b> atau setelah selesai kita
+	hendaklah reboot sistem untuk mendapatkan alamat IP yang baru. Kita guna <b>ifconfig</b> untuk melihat alamat IP tersebut.
+      </p>
+
+      <figure>
+	<img src="openbsd_notes/ifconfig.png" alt="Melihat alamat IP yang baru diterima melaluie ifconfig">
+	  <figcaption>arahan <b>ifconfig</b> untuk melihat alamat IP yang baru</figcaption>
+      </figure>
+
+      <p>Butiran DNS server akan di terima secara automatik. Butiran tersebut dapat di lihat di dalam file <b>resolv</b> iaitu
+	<b>&sol;etc&sol;resolv&period;conf</b>. Ini berguna untuk resolusi nama Domain daripada nama Domain penuh ke alamat IP. Sekiranya
+	DNS server itu tidak berfungsi kita boleh memasukkan alamat IP DNS server lain. Formatnya seperti berikut:-
+      </p>
+
+      <p class="prompt">nameserver 8.8.8.8
+      </p> 
+
+      <h4>Alamat IP Secara Manual</h4>
+
+      <p>Untuk secara manual pula kita akan memasukkan butiran kita ke dalam file <b>myname</b>, iaitu nama hos FQDN. File <b>mygate</b>
+	untuk alamat IPv4 atau IPv6 gateway utama yang kita gunakan menyambung ke rangkaian lain seperti Internet. File <b>hostname.if</b> adalah
+	untuk konfigurasi IPv4 atau IPv6 atau kedua dua nya sekali. Dan kita memasukkan maklumat FQDN and alamat IP ke dalam <b>hosts</b> file.
+      </p>
+
+      <p>File <b>resolv</b> iaitu <b>&sol;etc&sol;resolv&period;conf</b> berguna untuk resolusi nama Domain daripada nama Domain penuh ke alamat IP.
+	Sekiranya DNS server itu tidak berfungsi kita boleh memasukkan alamat IP DNS server lain. Formatnya seperti berikut:-
+      </p>
       
+      <p class="prompt">nameserver 8.8.8.8
+	<br>nameserver 1.1.1.1
+      </p>
+
+      <p>Sebagai contoh konfigurasi yang kita pakai adalah <b>Google DNS</b> dan <b>Cloudflare DNS</b>. Kita boleh memasukkan satu alamat DNS
+	sever. Amalan terbaik adalah untuk memasukkan tidak lebih daripada tiga alamat DNS server ke dalam resolv file.
+      </p>
+
+      <h4>Aplikasi untuk  menyelesaikan masaalah rangkaian</h4>
       
-      <h3>Menukar resolv.conf</h3>
+      <p>Di antara aplikasi aplikasi asas yang sering di gunakan untuk menyelesaikan masaalah rangkaian adalah:-</p> 
+      <ul>
+	<li>arp - lihat alamat IP4 ke alamat perkakas yang di gunakan</li>
+	<li>ndp - lihatkan alamat IPv6 ke alamat perkakas</li>
+	<li>ping atau ping6 - sama ada host itu hidup didalam network. ping6 untuk IPv6</li>
+	<li>host - dari nama ke ip address</li>
+	<li>route- melihatkan routing</li>
+	<li>alamat DNS server pihak ke tiga - kita boleh memilih di antara bermacam macam DNS server yang tersedia <b>Google DNS 8.8.8.8</b>,
+	  <b>Clourflare 1.1.1.1</b> atau <b>Quad9 9.9.9.9</b>. Ini tertakluk kepada terma dan syarat syarat pembekal perkhidmatan.</li>  
+      </ul>
+
+      <figure>
+	<img src="openbsd_notes/route-show.png" alt="Melancarkan route show">
+	  <figcaption>Dengan <b>route show</b> kita boleh melihat alamat IP gateway utama kita</figcaption>
+      </figure>
 
 
 	<h3>Rujukan</h3>
+	
+	<p>Di antara rujukan rujukan yang saya ambil ialah seperti berikut:-</p> 
 	<ul>
-	  <li>https://www.openbsd.org</li>
-	  <li>https://www.c0ffee.net/blog/openbsd-on-a-laptop/#initial-configuration</li>
-	  <li>https://www.romanzolotarev.com</li>
-	  <li>www.tcpipguide.org</li>
+	  <li><a href ="https://www.openbsd.org">https://www.openbsd.org</a></li>
+	  <li><a href ="https://www.c0ffee.net/blog/openbsd-on-a-laptop/#initial-configuration">https://www.c0ffee.net/blog/openbsd-on-a-laptop/#initial-configuration</a></li>
+	  <li><a href ="https://www.romanzolotarev.com">https://www.romanzolotarev.com</a></li>
+	  <li><a href ="https://www.tcpipguide.org">https://www.tcpipguide.org</a></li>
 	</ul>
       
     </article>
