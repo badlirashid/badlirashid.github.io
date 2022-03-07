@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="kxd">
+  <head>
+    <link rel="stylesheet" href="openbsd_notes.css">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="openbsd, bsd, unix, opensource, aplikasi rangkaian">
+    <meta name="description" content="Nota OpenBSD">
+    <title>Aplikasi Rangkaian</title>
+  </head>
+
+  <body>
+    <header>      
+      <h1>Nota OpenBSD</h1>
+      
+      <table class="author">
+	<tr>
+	  <td>penulis</td>
+	  <td>Badli Al Rashid</td>
+	</tr>
+	<tr>
+	  <td>emel</td>
+	  <td>badli&period;a&period;r&commat;gmail&period;com</td>
+	</tr>
+	<tr>
+	  <td>tarikh</td>
+	  <td>08 Mac 2022</td>
+	</tr>
+	<tr>
+	  <td>lesen</td>
+	  <td>Atribusi 4.0 Antarabangsa</td>
+	</tr>
+      </table>
+    </header>
+
+    <article class="intro">
+      
+      <h2>Aplikasi Rangkaian</h2>
+
+      <h3>ifconfig</h3>
+      <p><b>ifconfig</b> adalah untuk melihat status perkakas kad rangkaian, perkakas modem dan kofigurasi perkakas rangkaian tersebut. Di dalam windows ia di panggil <b>ipconfig</b>.
+      </p>
+      
+      <p class="prompt">cs#&nbsp;ifconfig
+	<br>lo0&colon; flags=8049&lt;UP,LOOPBACK,RUNNING,MULTICAST&gt; mtu 32768
+	  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index 3 priority 0 llprio 3
+	  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groups&colon; lo
+	  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inet6 &colon;&colon;1 prefixlen 128
+	  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inet6 fe80&colon;&colon;1%lo0 prefixlen 64 scopeid 0x3
+	  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inet 127.0.0.1 netmask 0xff000000
+	  <br><span class="blue">em0</span>&colon;&nbsp;flags&equals;248843&lt;UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST,AUTOCONF6TEMP,<span class="blue">AUTOCONF6</span>&gt;&nbsp;mtu&nbsp;1500
+	  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lladdr <span class="blue">08&colon;00&colon;27&colon;2e&colon;b0&colon;c4</span>
+	  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index 1 priority 0 llprio 3
+	  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groups&colon; egress
+	  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;media&colon; <span class="blue">Ethernet autoselect (1000baseT full-duplex)</span>
+	  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;status&colon; <span class="blue">active</span>
+	  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inet6 <span class="blue">fe80&colon;&colon;a00&colon;27ff&colon;fe2e&colon;b0c4</span>%em0 prefixlen 64 scopeid 0x1
+	  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inet <span class="blue">192.168.56.101</span> netmask 0xffffff00 broadcast 192.168.56.255
+	  <br>enc0&colon; flags=0&lt;&gt;
+	  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index 2 priority 0 llprio 3
+	  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groups&colon; enc
+	  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;status&colon; active
+	  <br>pflog0&colon; flags=141&lt;UP,RUNNING,PROMISC&gt; mtu 33136
+	  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index 4 priority 0 llprio 3
+	  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groups&colon; pflog
+      </p>
+
+      <p>Dari <b>ifconfig</b> boleh menujukan bebrapa butiran tentang perkakas kad rangkaian, font berwarna biru menunjukan butiran seperti:-
+      </p>
+
+      <ul>
+	<li>kad rangkaian yang bernama <b>em0</b>&period;</li>
+	<li>Kad in berstatus <b>active</b></li>
+	<li>IPv6 telah di konfigure dengan <b>AUTOCONF6&period;</b>;</li>
+	<li>Alamat MAC perkakas ini adalah <b>08&colon;00&colon;27&colon;2e&colon;b0&colon;c4</b>&period; </li>
+	<li>Rangkaian kita bejalan dengan rangkaian Gigabit,&nbsp;<b>Ethernet autoselect (1000baseT full-duplex)</b></li>
+	<li>Alamat IPv6 kita adalah <b>fe80::a00:27ff:fe2e:b0c</b></li>
+	<li>Dan alamat IPv4 kita adalah <b>192&period;168&period;56&period;101</b>.</li>
+      </ul>
+
+
+      <h3>route</h3>
+      <p><b>route</b> adalah aplikasi yang melihatkan di mana packet packet network kita akan di salurkan. Selain itu <b>route</b> juga dapat memanupilasi
+	route table kita seperti menambah, menghapuskan dan mengubah routing table tersebut. Di dalam Openbsd route utama dapat di lihat di dalam
+	file <b>&sol;etc&sol;mygate</b> sekiranya kita menggunakan protokol DHCP kita pakai <b>route show</b>. 
+      </p>
+
+      <figure>
+	<img src="openbsd_notes/route-show.png" alt="Melancarkan route show">
+	<figcaption>Dengan <b>route show</b> kita boleh melihat alamat IP gateway utama kita</figcaption>
+      </figure>
+
+      <p><b>route show</b> menunjukan bahawa semua rangkaian packet di salurankan ke saluran utama iaitu Gateway yang beralamat
+	<b>192&period;168&period;56&period;1</b>. Sekiranya perkataan <b>Default</b> dari pada <b>Destinasi</b> tidak ada di dalam routing table lihat
+	IP yang beralamatkan <b>0&period;0&period;0&period;0</b>.   
+      </p>
+
+      <h3>ping dan ping6</h3>
+      <p><b>ping</b> boleh membantu dalam melihat sekiranya perkakas kita berada dan hidup di dalam rangkaian.
+	Cara permakaian ping adalah dengan ping nama hos atau ping alamat hos.</p>
+      
+      <p class='prompt'>cs$ ping -c 4 192.168.131.11
+	<br>PING 192.168.131.11 (192.168.131.11): 56 data bytes
+	<br>64 bytes from 192.168.131.11: icmp_seq=0 ttl=255 time=1.328 ms
+	<br>64 bytes from 192.168.131.11: icmp_seq=1 ttl=255 time=0.762 ms
+	<br>64 bytes from 192.168.131.11: icmp_seq=2 ttl=255 time=0.832 ms
+	<br>64 bytes from 192.168.131.11: icmp_seq=3 ttl=255 time=0.382 ms
+	<br>
+	<br>--- 192.168.131.11 ping statistics ---
+	<br>4 packets transmitted, 4 packets received, 0.0% packet loss
+	<br>round-trip min/avg/max/std-dev = 0.382/0.826/1.328/0.337 ms
+      </p>
+
+      <p><b>ping</b> IPv4 menunjukan tiada packet yang hilang semasa membuat empat ping.
+      </p> 
+
+      <p class='prompt'>cs$ ping6 -c 4 fe80::a00:27ff:fe79:3428<span class="blue">%em0</span>
+	<br>PING fe80::a00:27ff:fe79:3428%em0 (fe80::a00:27ff:fe79:3428%em0): 56 data bytes
+	<br>64 bytes from fe80::a00:27ff:fe79:3428%em0: icmp_seq=0 hlim=64 time=2.627 ms
+	<br>64 bytes from fe80::a00:27ff:fe79:3428%em0: icmp_seq=1 hlim=64 time=0.755 ms
+	<br>64 bytes from fe80::a00:27ff:fe79:3428%em0: icmp_seq=2 hlim=64 time=0.682 ms
+	<br>64 bytes from fe80::a00:27ff:fe79:3428%em0: icmp_seq=3 hlim=64 time=0.728 ms
+	<br>
+	<br>--- fe80::a00:27ff:fe79:3428%em0 ping statistics ---
+	<br>4 packets transmitted, 4 packets received, 0.0% packet loss
+	<br>round-trip min/avg/max/std-dev = 0.682/1.198/2.627/0.826 ms
+      </p>
+
+      <p><b>ping6</b> menggunakan alamat IPv6 dan kad rangkaian. Seperti contoh di atas font bewarna biru,
+	ia adalaah <b>%</b> dan kad rangkaian <b>em0</b> selepas alamat IPv6.
+      </p>
+
+      <h3>arp dan ndp</h3>
+      
+      <p><b>arp</b> adalah untuk IPv4 dan ndp adalah untuk IPv6. Dua program yang sama fungsi ia menunjukan alamat IP ke
+	alamat MAC dan boleh mengubah mapping table tersebut</p>
+
+      <p class="prompt">cs$ arp -a
+	<br>Host&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ethernet Address&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;Netif&nbsp;Expire&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flags
+	<br>192.168.131.11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;08:00:27:79:34:28&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;em0&nbsp;&nbsp;&nbsp;11m57s
+	<br>192.168.131.50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;08:00:27:2e:b0:c4&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;em0&nbsp;&nbsp;&nbsp;permanent&nbsp;&nbsp;&nbsp;l
+      </p>
+
+      <p>Contoh menggunakan <b>arp</b>, resolusi alamat IPv4 ke alamat MAC</p> 
+
+
+      <p class="prompt">cs$ ndp -a
+	<br>Neighbor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	Linklayer&nbsp;Address&nbsp;&nbsp;&nbsp;&nbsp;Netif&nbsp;Expire&nbsp;&nbsp;&nbsp&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;S&nbsp;Flags
+	<br>fe80::a00:27ff:fe2e:b0c4%em0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	08:00:27:2e:b0:c4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;em0&nbsp;&nbsp;permanent&nbsp;&nbsp;&nbsp;&nbsp;
+	R&nbsp;l
+	<br>fe80::a00:27ff:fe79:3428%em0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	08:00:27:79:34:28&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;em0&nbsp;&nbsp;23h56m18s&nbsp;&nbsp;&nbsp;S
+      </p>
+
+      <p>Contoh menggunakan program <b>ndp</b>, resolusi alamat IPv6 ke alamat MAC</p>
+
+      
+    </article>
+
+    <footer>
+      <ul>
+	<li>
+	  <a href="https://creativecommons.org/licenses/by/4.0/">
+	    <img src="openbsd_notes/cc-by.svg" alt="CC-BY-4.0">
+	  </a>
+	</li>
+	<li>
+	  <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fbadlirashid.github.io%2Fopenbsd_notes.html">
+	    <img src="openbsd_notes/HTML5_Logo_64.png" alt="W3C Nu Html Checker">
+	  </a>
+	</li>
+	<li>
+	  <a href="https://jigsaw.w3.org/css-validator/validator?uri=badlirashid.github.io%2Fopenbsd_notes.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">
+	    <img src="openbsd_notes/vcss.gif" alt="W3C CSS Validation Service">
+	  </a>
+	</li>
+      </ul>
+    </footer>
+
+  </body>
+  
+</html>
