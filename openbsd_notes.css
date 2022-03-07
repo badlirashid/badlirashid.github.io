@@ -104,6 +104,9 @@ table.dirs td:nth-child(3n) {
 }
 
 
+span.blue{
+    color: blue;
+}
 
 p.prompt{
 	color: black;

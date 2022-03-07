@@ -22,7 +22,7 @@
 	</tr>
 	<tr>
 	  <td>tarikh</td>
-	  <td>06 Mac 2022</td>
+	  <td>07 Mac 2022</td>
 	</tr>
 	<tr>
 	  <td>lesen</td>
@@ -35,11 +35,11 @@
     <article class="konf">
       
       <h2>Konfigurasi OpenBSD</h2>
-      <p>Selesai sahaja pemasang, kita akan membuat beberapa perubahan konfigurasi untuk OpenBSD yang lazim di buat.
+      <p>Ada beberapa perubahan konfigurasi untuk OpenBSD yang lazim di buat, setelah selesai pemasangan.
 
 	<h3>doas pengganti sudo</h3>
 
-      <p>Aplikasi <b>doas</b> membolehkan kita untuk melancarkan program program yang hanya dapat di lancarkan dari <b>root</b> untuk pengguna biasa.
+      <p>Aplikasi <b>doas</b> membolehkan kita untuk melancarkan program program yang hanya dapat di lancarkan dari <b>root</b> dari pengguna biasa.
 	<b>doas</b> mula di perkenalkan di dalam versi OpenBSD 5&period;8 sebagai pengganti aplikasi <b>sudo</b>. Fungsinya mirip seperti <b>Run As</b>
 	Microsoft Windows.
       </p>
@@ -50,7 +50,7 @@
       </figure>
 
 
-      <p class='prompt'>cheesysalmon&dollar; chown www&periodwww index&period;html
+      <p class='prompt'>cheesysalmon&dollar; chown www&period;www index&period;html
 	<br>chown: index&period;html&colon; Operation not permitted
 	<br>cheesysalmon&dollar; su &hyphen;
 	<br>Password&colon;
@@ -94,34 +94,37 @@
 	boleh sama nama hos di rangkaian yang sama domain. Tetapi dua hos yang sama nama, berlainan rangkaian Internet domain ia ada lah berbeza. Contoh
 	www.openbsd.org dan www.netbsd.org nama hos <b>www</b> sama tetapi <b>nama domain</b> berbeza.
       </p>
+
+      <p>File <b>&sol;etc&sol;hosts</b> ini di gunakan untuk resolusi nama hos ke alamat IP address. Sebelum adanya Sistem Nama Domain, hosts file inilah
+	yang di gunakan untuk resolusi nama.</p>
       
 
       <h3>Menukar Alamat IP, Subnet Mask Dan Gateway</h3>
 
-      <p>Terdapat 2 jenis alamat IP yang di gunakan sekarang iaitu IP Versi 4 dan IP Versi 6. IP bermaksud Internet Protokol. </p>
+      <p>Terdapat dua jenis alamat IP yang di gunakan sekarang iaitu IP Versi 4 dan IP Versi 6. IP bermaksud Internet Protokol. </p>
       
       <h4>Alamat IPv4</h4>
       
       <p>IPv4 mula di usahakan pada 1970'an. Request for Comment (RFC) pertama di buat adalah RFC 791, Internet Protocol pada September 1981. Alamat
-	IPv4 adalah 32 bit panjang atau <b>2 <sup>32</sup></b> dan boleh menampung sebanyak <b>4,294,967,296</b> secara teori tetapi bukan kesemua
+	IPv4 adalah 32 bit panjang atau <b>2<sup>32</sup></b> dan boleh menampung sebanyak <b>4,294,967,296</b> secara teori tetapi bukan kesemua
 	alamat alamat IPv4 ini dapat di pakai.
       </p>
 
-      <p>Sebagai contoh alamat www.kame.net ke IPv4 <b>210&period;155&period;141&period;200</b>.
+      <p>Alamat IPv4 www&period;kame&period;net <b>210&period;155&period;141&period;200</b>.
       </p>
       
       <h4>Alamat IPv6</h4>      
       <p>Pengganti IPv4 adalah IPv6, populariti Internet pertengahan pada 1990'an dan IPv4 di jangka berkurangan. IPv6 adalah 128 bit panjang atau
-	<b>2 <sup>128</sup></b> dan boleh menampung sebanyak <b>340,282,366,920,938,463,463,374,607,431,768,211,465</b> alamat. Bermula dengan beberapa RFC
+	<b>2<sup>128</sup></b> dan boleh menampung sebanyak <b>340,282,366,920,938,463,463,374,607,431,768,211,465</b> alamat. Bermula dengan beberapa RFC
 	yang telah di terbitkan pada tahun 1998 RFC 2460 (IPv6), 2461 (ipv6 Neighbour Discovery) dan 2463 (icmpv6).
       </p>
 
-      <p>Sebagai contoh alamat www.kame.net mempunyaie IPv6 <b>2001&colon;2f0&colon;0&colon;8800&colon;226&colon;2dff&colon;fe0b&colon;4311</b>.
+      <p>Sebagai contoh alamat IPv6 www&period;kame&period;net ialah <b>2001&colon;2f0&colon;0&colon;8800&colon;226&colon;2dff&colon;fe0b&colon;4311</b>.
       </p>
 
       <p>IPv4 dan IPv6 adalah komponen komponen asas sistem rangkaian OpenBSD kerana BSD Unix adalah sistem operasi yang menjayakan IPv4 untuk ARPANET,
 	dan OpenBSD telah di gunakan untuk menjayakan IPv6 untuk KAME projek. Transisi dari IPv4 dan IPv6 sedang diusahakan. Ini adalah report dari 
-	Google tentang adoptasi IPv6 https://www.google.com/intl/en/ipv6/statistics.html sebagai lebih lanjut. 
+	Google tentang adoptasi IPv6 <b>https://www.google.com/intl/en/ipv6/statistics.html</b> lebih lanjut. 
       </p>
 
       <p> Di era digital yang semakin IoT (Internet Of Things), IPv6 memainkan peranan penting kerana semua perkakas perkakas boleh di sambungkan
@@ -140,7 +143,7 @@
       </p>
 
       <p>File <b>&sol;etc&sol;myname</b> hendaklah di isi dengan FQDN nama hos sahaja <b>cs&period;my&period;domain</b>. Sementara <b>&sol;etc&sol;hosts</b>
-	tidak ada hos <b>cs&period;my&period;domain</b> dan hanya ada <b>localhost</b>. Sama ada kita lancarkan <b>netstart</b> atau setelah selesai kita
+	tidak ada hos <b>cs&period;my&period;domain</b> dan hanya ada <b>localhost</b>. Sama ada kita lancarkan <b>sh &sol;etc&sol;netstart</b> atau setelah selesai kita
 	hendaklah reboot sistem untuk mendapatkan alamat IP yang baru. Kita guna <b>ifconfig</b> untuk melihat alamat IP tersebut.
       </p>
 
@@ -173,8 +176,7 @@
       </p>
       
 
-      <p>Kita memasukkan maklumat FQDN and alamat IP ke dalam <b>hosts</b> file. File hosts ini di gunakan untuk resolusi nama hos ke alamat
-	ip address kita tanpa menggunakan DNS server. 
+      <p>Kita memasukkan maklumat FQDN and alamat IP ke dalam <b>&sol;etc&sol;hosts</b> file. 
       </p>
       
       <p class="prompt">127&period;0&period;0&period;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;localhost
@@ -220,6 +222,7 @@
 	  <li><a href ="https://www.kame.net">The KAME project 1998&period;4 &hyphen; 2006&period;3 https://www.kame.net</a></li>
 	  <li><a href ="https://www.c0ffee.net/blog/openbsd-on-a-laptop/#initial-configuration">Cullum Smith https://www.c0ffee.net/blog/openbsd-on-a-laptop/#initial-configuration</a></li>
 	  <li><a href ="https://www.romanzolotarev.com">Roman Zolotarev https://www.romanzolotarev.com</a></li>
+	  <li><a href ="https://www.google.com/intl/en/ipv6/statistics.html">https://www.google.com/intl/en/ipv6/statistics.html</a></li>
 	  <li><a href ="https://www.tcpipguide.org">The TCP&sol;IP GUIDE by Charles M&period; Kozierok https://www.tcpipguide.org</a></li>
 	</ol>
       
