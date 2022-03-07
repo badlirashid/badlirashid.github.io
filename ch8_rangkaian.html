@@ -37,8 +37,11 @@
       
       <h2>Aplikasi Rangkaian</h2>
 
+      <p>Aplikasi aplikasi rangkaian ini adalah yang terdapat di dalam OpenBSD 7.0. Penjelasan hanya ringkas sahaja, kalau hendak lebih butiran lanjut
+	kita boleh mengunakan aplikasi <b>man</b> untuk melihat dokumentasi tersebut.</p>
+
       <h3>ifconfig</h3>
-      <p><b>ifconfig</b> adalah untuk melihat status perkakas kad rangkaian, perkakas modem dan kofigurasi perkakas rangkaian tersebut. Di dalam windows ia di panggil <b>ipconfig</b>.
+      <p><b>ifconfig</b> adalah untuk melihat status perkakas kad rangkaian, perkakas modem dan konfigurasi perkakas rangkaian tersebut. Di dalam windows ia di panggil <b>ipconfig</b>.
       </p>
       
       <p class="prompt">cs#&nbsp;ifconfig
@@ -71,16 +74,16 @@
       <ul>
 	<li>kad rangkaian yang bernama <b>em0</b>&period;</li>
 	<li>Kad in berstatus <b>active</b></li>
-	<li>IPv6 telah di konfigure dengan <b>AUTOCONF6&period;</b>;</li>
+	<li>IPv6 telah di konfigurasi dengan <b>AUTOCONF6&period;</b>;</li>
 	<li>Alamat MAC perkakas ini adalah <b>08&colon;00&colon;27&colon;2e&colon;b0&colon;c4</b>&period; </li>
-	<li>Rangkaian kita bejalan dengan rangkaian Gigabit,&nbsp;<b>Ethernet autoselect (1000baseT full-duplex)</b></li>
+	<li>Rangkaian kita berjalan dengan rangkaian Gigabit,&nbsp;<b>Ethernet autoselect (1000baseT full-duplex)</b></li>
 	<li>Alamat IPv6 kita adalah <b>fe80::a00:27ff:fe2e:b0c</b></li>
 	<li>Dan alamat IPv4 kita adalah <b>192&period;168&period;56&period;101</b>.</li>
       </ul>
 
 
       <h3>route</h3>
-      <p><b>route</b> adalah aplikasi yang melihatkan di mana packet packet network kita akan di salurkan. Selain itu <b>route</b> juga dapat memanupilasi
+      <p><b>route</b> adalah aplikasi yang melihatkan di mana packet packet network kita akan di salurkan. Selain itu <b>route</b> juga dapat memanipulasi
 	route table kita seperti menambah, menghapuskan dan mengubah routing table tersebut. Di dalam Openbsd route utama dapat di lihat di dalam
 	file <b>&sol;etc&sol;mygate</b> sekiranya kita menggunakan protokol DHCP kita pakai <b>route show</b>. 
       </p>
@@ -92,12 +95,12 @@
 
       <p><b>route show</b> menunjukan bahawa semua rangkaian packet di salurankan ke saluran utama iaitu Gateway yang beralamat
 	<b>192&period;168&period;56&period;1</b>. Sekiranya perkataan <b>Default</b> dari pada <b>Destinasi</b> tidak ada di dalam routing table lihat
-	IP yang beralamatkan <b>0&period;0&period;0&period;0</b>.   
+	IP yang beralamat kan <b>0&period;0&period;0&period;0</b>.   
       </p>
 
       <h3>ping dan ping6</h3>
       <p><b>ping</b> boleh membantu dalam melihat sekiranya perkakas kita berada dan hidup di dalam rangkaian.
-	Cara permakaian ping adalah dengan ping nama hos atau ping alamat hos.</p>
+	Cara menggunakan ping adalah dengan ping nama hos atau ping alamat hos.</p>
       
       <p class='prompt'>cs$ ping -c 4 192.168.131.11
 	<br>PING 192.168.131.11 (192.168.131.11): 56 data bytes
@@ -111,7 +114,7 @@
 	<br>round-trip min/avg/max/std-dev = 0.382/0.826/1.328/0.337 ms
       </p>
 
-      <p><b>ping</b> IPv4 menunjukan tiada packet yang hilang semasa membuat empat ping.
+      <p><b>ping</b> IPv4 tidak ada packet yang hilang semasa membuat empat ping.
       </p> 
 
       <p class='prompt'>cs$ ping6 -c 4 fe80::a00:27ff:fe79:3428<span class="blue">%em0</span>
@@ -126,14 +129,14 @@
 	<br>round-trip min/avg/max/std-dev = 0.682/1.198/2.627/0.826 ms
       </p>
 
-      <p><b>ping6</b> menggunakan alamat IPv6 dan kad rangkaian. Seperti contoh di atas font bewarna biru,
-	ia adalaah <b>%</b> dan kad rangkaian <b>em0</b> selepas alamat IPv6.
+      <p><b>ping6</b> menggunakan alamat IPv6 dan kad rangkaian. Seperti contoh di atas font berwarna biru,
+	ia adalah <b>%</b> dan kad rangkaian <b>em0</b> selepas alamat IPv6.
       </p>
 
       <h3>arp dan ndp</h3>
       
-      <p><b>arp</b> adalah untuk IPv4 dan ndp adalah untuk IPv6. Dua program yang sama fungsi ia menunjukan alamat IP ke
-	alamat MAC dan boleh mengubah mapping table tersebut</p>
+      <p><b>arp</b> adalah untuk IPv4 dan ndp adalah untuk IPv6. Ke dua dua aplikasi ini sama fungsinya iaitu menunjukkan alamat IP ke
+	alamat MAC dan boleh mengubah mapping table tersebut.</p>
 
       <p class="prompt">cs$ arp -a
 	<br>Host&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -165,6 +168,44 @@
       </p>
 
       <p>Contoh menggunakan program <b>ndp</b>, resolusi alamat IPv6 ke alamat MAC</p>
+
+      <h3>traceroute dan traceroute6</h3>
+      
+      <p>Fungsi aplikasi traceroute ini adalah untuk melihat di mana laluan packets yang kita hantar berjalan di dalam rangkaian untuk menuju
+	ke destinasinya.</p> 
+
+      <p class="prompt">cs$ traceroute 192.168.141.1
+	<br>traceroute to 192.168.141.1 (192.168.141.1), 64 hops max, 40 byte packets
+	<br>&nbsp;1&nbsp;&nbsp;router&nbsp;(192.168.131.11)&nbsp;&nbsp;2.011&nbsp;ms&nbsp;&nbsp;0.675&nbsp;ms&nbsp;&nbsp;0.551&nbsp;ms
+	<br>&nbsp;2&nbsp;&nbsp;router&nbsp;(192.168.131.11)&nbsp;&nbsp;0.483&nbsp;ms&nbsp;!H&nbsp;&nbsp;0.637&nbsp;ms&nbsp;!H&nbsp;&nbsp;0.337&nbsp;ms&nbsp;!H
+      </p>
+
+      <p>Di atas menunjukan traceroute untuk IPv4.
+      </p>
+
+      <p class="prompt">cs$&nbsp;traceroute6&nbsp;fe80::a00:27ff:fe79:3428%em0
+	<br>traceroute6&nbsp;to&nbsp;fe80::a00:27ff:fe79:3428%em0&nbsp;(fe80::a00:27ff:fe79:3428%em0),&nbsp;64&nbsp;hops&nbsp;max,&nbsp;60&nbsp;byte&nbsp;packets
+	<br>&nbsp;1&nbsp;&nbsp;router&nbsp;(fe80::a00:27ff:fe79:3428%em0)&nbsp;&nbsp;4.735&nbsp;ms&nbsp;&nbsp;0.743&nbsp;ms&nbsp;&nbsp;0.708&nbsp;ms
+      </p>
+
+      <p>Di atas menunujukan traceroute untuk IPv6</p>
+
+      <h3>host</h3>
+      <p>Aplikasi ini menunjukan nama penuh domain ke alamat IP sahaja. Contoh <b>host www.yahoo.com</b>.</p> 
+
+      <h3>nslookup</h3>
+      <p>Aplikasi ini adalah untuk melihat butiran rekord domain di DNS server. Sekiranya kalau di gunakan secara lansung ia akan menunjukkan nama domain
+	penuh ke alamat IP. Contoh <b>nslookup www.yahoo.com</b>.</p>  
+
+      <h3>netstat</h3>
+      <p><b>netstat</b> adalah aplikasi untuk melihat status rangkaian kita yang sedang aktif.
+      </p>
+
+      <h3>&sol;etc&sol;hosts</h3>
+      <p>Bukannya aplikasi atau skrip, file hosts ini mengadungi nama hos ke alamat IP secara manual.
+      </p> 
+      
+
 
       
     </article>

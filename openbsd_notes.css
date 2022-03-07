@@ -112,6 +112,7 @@ p.prompt{
 	color: black;
 	border: 1px solid black;
 	padding: 5px;
+	overflow-x: scroll;
 }
 
 
