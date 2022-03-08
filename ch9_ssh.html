@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="kxd">
+  <head>
+    <link rel="stylesheet" href="openbsd_notes.css">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="openbsd, openssh, bsd, unix, opensource">
+    <meta name="description" content="Nota OpenBSD, OpenSSH, Akses Login dan Membuat Salinan">
+    <title>OpenSSH</title>
+  </head>
+
+  <body>
+    <header>      
+      <h1>Nota OpenBSD</h1>
+      
+      <table class="author">
+	<tr>
+	  <td>penulis</td>
+	  <td>Badli Al Rashid</td>
+	</tr>
+	<tr>
+	  <td>emel</td>
+	  <td>badli&period;a&period;r&commat;gmail&period;com</td>
+	</tr>
+	<tr>
+	  <td>tarikh</td>
+	  <td>10 Mac 2022</td>
+	</tr>
+	<tr>
+	  <td>lesen</td>
+	  <td>Atribusi 4.0 Antarabangsa</td>
+	</tr>
+      </table>
+    </header>
+
+    <article class="openssh">
+      
+      <h2>Akses Login Jauh dan Membuat Salinan File</h2>
+
+      <h3>Pengenalan</h3>
+
+      <p>Program ini membolehkan kita membuat akses kepada Shell Server dari jauh, membuat salinan file dan membuat terowong rangkaian rahsia.
+	Kesemua transmisi data data di rahsiakan. Versi aplikasi bagi OpenBSD 7&period;0 ketika menulis ini adalah <b>OpenSSH 8&period;8</b> dengan
+	<b>LibreSSL 3&period;4&period;1</b>&period; OpenSSH dan LibreSSL ini turut  di edarkan dengan sistem operasi Windows 11.</p>
+      
+      <p>OpenSSH terbahagi kepada dua jenis aplikasi, <b>OpenSSH&nbsp;client</b> atau singkata <b>ssh</b> dan <b>OpenSSH&nbsp;Daemon</b> atau
+	sinkatan <b>sshd</b>. Daemon adalah nama lain bagi Server. OpenSSH adalah program yang di kembangkan majukan oleh  <b>Aaron Campbell</b>,
+	<b>Bob Beck</b>, <b>Markus Friedl</b>, <b>Niels Provos</b>, <b>Theo de Raadt</b> dan <b>Dug Song</b>. Ia berasaskan dari aplikasi percuma
+	<b>ssh&nbsp;1&period;2&period;12</b> yang di keluarkan oleh <b>Tatu Ylonen</b>.
+      </p>
+
+
+      <h3>OpenSSH Klient</h3>
+      
+      <p>Ada dua aplikasi asas untuk OpenSSH Klient iaitu <b>ssh</b> dan <b>scp</b>. Saya akan menggunakan OpenBSD dan Windows kerana cara permakaian
+	aplikasi ini sama sahaja</p>
+
+
+      <h4>ssh, akses login</h4>
+      <p> Cara menggunakan ssh klient ini ada lah dengan format <b>ssh</b> <b>Nama&period;Login@Alamat&period;Server</b>. Nama login adalah nama anda di
+	dalam server tersebut. Alamat Server kita boleh memakai alamat IP atau nama penuh hos.</p>
+
+      <p class="prompt">C&colon;&bsol;Users&bsol;badli&gt;ssh badli@192.168.144.2
+	<br>The authenticity of host '192.168.144.2 (192.168.144.2)' can't be established.
+	<br>ECDSA key fingerprint is <span class="blue">SHA256:f/IxY4SmUwJ0i5/sLVhF81QBfAvhGtmSPgivatgWBDE.</span>
+	<br>Are you sure you want to continue connecting (yes/no/[fingerprint])?
+      </p>
+
+      <p>ssh yang di lancarkan di dalam Sistem Operasi Windows 11
+      </p>
+
+      <p class="prompt">router$ ssh badli@192.168.131.50
+	<br>The authenticity of host '192.168.131.50 (192.168.131.50)' can't be established.
+	<br>ED25519 key fingerprint is <span class="blue">SHA256:90rSTSDCCjePuHEn/fdHvXbNxKKX9c14LU1upOY6sYA.</span>
+	<br>This key is not known by any other names
+	<br>Are you sure you want to continue connecting (yes/no/[fingerprint])?
+      </p>
+
+      <p>ssh yang di lancar di dalam shell OpenBSD.</p>
+
+      <p>Klient ssh akan berhubung dengan server, server itu akan memberi maklumat tentang identifikasinya contoh di atas bewarna biru. Sekiranya
+	Server itu berubah atau identifikasi baru dibuat,  identifikasi itu akan berubah. Identifikasi identifikasi ini akan di simpan
+	di dalam folder tersembunyi bernama <b>ssh</b> dan file bernama <b>known_hosts</b> <b>&period;ssh&sol;known_hosts</b>.
+      </p>
+
+      <p>Penerangan boleh di lihat dalam <b>man ssh</b> dan <b>ssh_config</b>. 
+      </p>
+
+      <h4>scp, membuat salinan</h4>
+      
+      <p><b>scp</b> atau <b>secure copy</b> berasaskan aplikasi <b>rcp</b> atau <b>remote copy</b>.Ia adalah untuk membuat salinan file dari hos ke hos
+	dan data transmisi ini di rashiakan. 
+      </p>
+
+      <p>Format permakaiannya ialah seperti berikut <b>scp&colon;&sol;&sol;[user@]host[:port][&sol;path]</b></p>
+      
+      <p class="prompt">C&colon;&bsol;Users&bsol;badli&bsol;Desktop&gt;scp debian.iso badli@192.168.144.2:
+	<br>badli@192.168.144.2's password:
+	<br>debian.iso&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11%&nbsp;&nbsp;&nbsp;78MB&nbsp;&nbsp;13.8MB/s&nbsp;&nbsp;&nbsp;00:45&nbsp;ETA
+      </p>
+
+      <p><b>scp</b> sedang membuat salinan file <b>debian.iso</b> ke arah server <b>192.168.144.2</b>. Format ini sama sahaja mahupun di OpenBSD
+	atau pun Windows. Penerangan lebih lanjut boleh di dapati dalam <b>man scp</b>.  
+      </p>
+      
+      <h3>sshd </h3>
+      
+      <p><b>OpenSSH Daemon</b> atau <b>sshd</b> adalah aplikasi yang mendengar permitaan login daripada klient ssh ataupun scp. Versi OpenSSH yang
+	tersedia hanya menerima SSH protokol versi 2.
+      </p>
+
+      <p>Konfigurasi sshd ini terdapat di <b>&sol;etc&sol;ssh&sol;sshd_config</b>. Antara pilihan yang selalu di ubah suai adalah:- </p>
+
+      <ol>
+	<li>Port - Adalah numbor port ssh konnect. Port 22 ialah selalunya di pakai, kita boleh menggunakan numbor port yang lebih tinggi</li>
+	<li>listenAddress  - Jika ada beberapa alamat, kita boleh set alamat mana yang kita pakai.</li>
+	<li>PermitRootLogin - Jika root boleh login secara langsung atau tidak. Default is no.</li>
+      </ol>
+
+
+      <p>Dokumentasi lebih lanjut boleh di lihat dalam <b>man sshd</b> dan <b>sshd_config</b>.
+
+
+	
+    </article>
+
+    <footer>
+      <ul>
+	<li>
+	  <a href="https://creativecommons.org/licenses/by/4.0/">
+	    <img src="openbsd_notes/cc-by.svg" alt="CC-BY-4.0">
+	  </a>
+	</li>
+	<li>
+	  <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fbadlirashid.github.io%2Fch9_ssh.html.">
+	    <img src="openbsd_notes/HTML5_Logo_64.png" alt="W3C Nu Html Checker">
+	  </a>
+	</li>
+	<li>
+	  <a href="https://jigsaw.w3.org/css-validator/validator?uri=badlirashid.github.io%2Fch9_ssh.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">
+	    <img src="openbsd_notes/vcss.gif" alt="W3C CSS Validation Service">
+	  </a>
+	</li>
+      </ul>
+    </footer>
+
+  </body>
+  
+</html>
