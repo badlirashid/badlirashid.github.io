@@ -41,7 +41,8 @@
 
       <p>Program ini membolehkan kita membuat akses kepada Shell Server dari jauh, membuat salinan file dan membuat terowong rangkaian rahsia.
 	Kesemua transmisi data data di rahsiakan. Versi aplikasi bagi OpenBSD 7&period;0 ketika menulis ini adalah <b>OpenSSH 8&period;8</b> dengan
-	<b>LibreSSL 3&period;4&period;1</b>&period; OpenSSH dan LibreSSL ini turut  di edarkan dengan sistem operasi Windows 11.</p>
+	<b>LibreSSL 3&period;4&period;1</b>&period; OpenSSH dan LibreSSL ini turut  di edarkan dengan sistem operasi Windows 11.
+      </p>
       
       <p>OpenSSH terbahagi kepada dua jenis aplikasi, <b>OpenSSH&nbsp;client</b> atau singkata <b>ssh</b> dan <b>OpenSSH&nbsp;Daemon</b> atau
 	sinkatan <b>sshd</b>. Daemon adalah nama lain bagi Server. OpenSSH adalah program yang di kembangkan majukan oleh  <b>Aaron Campbell</b>,
@@ -49,16 +50,15 @@
 	<b>ssh&nbsp;1&period;2&period;12</b> yang di keluarkan oleh <b>Tatu Ylonen</b>.
       </p>
 
-
       <h3>OpenSSH Klient</h3>
       
       <p>Ada dua aplikasi asas untuk OpenSSH Klient iaitu <b>ssh</b> dan <b>scp</b>. Saya akan menggunakan OpenBSD dan Windows kerana cara permakaian
 	aplikasi ini sama sahaja</p>
 
-
       <h4>ssh, akses login</h4>
       <p> Cara menggunakan ssh klient ini ada lah dengan format <b>ssh</b> <b>Nama&period;Login@Alamat&period;Server</b>. Nama login adalah nama anda di
-	dalam server tersebut. Alamat Server kita boleh memakai alamat IP atau nama penuh hos.</p>
+	dalam server tersebut. Alamat Server kita boleh memakai alamat IP atau nama penuh hos.
+      </p>
 
       <p class="prompt">C&colon;&bsol;Users&bsol;badli&gt;ssh badli@192.168.144.2
 	<br>The authenticity of host '192.168.144.2 (192.168.144.2)' can't be established.
@@ -66,7 +66,7 @@
 	<br>Are you sure you want to continue connecting (yes/no/[fingerprint])?
       </p>
 
-      <p>ssh yang di lancarkan di dalam Sistem Operasi Windows 11
+      <p>Prompt di atas menunjukan ssh yang di lancarkan di dalam Sistem Operasi Windows 11
       </p>
 
       <p class="prompt">router$ ssh badli@192.168.131.50
@@ -76,7 +76,7 @@
 	<br>Are you sure you want to continue connecting (yes/no/[fingerprint])?
       </p>
 
-      <p>ssh yang di lancar di dalam shell OpenBSD.</p>
+      <p>Prompt di atas menunnjukan ssh yang di lancar di dalam shell OpenBSD.</p>
 
       <p>Klient ssh akan berhubung dengan server, server itu akan memberi maklumat tentang identifikasinya contoh di atas bewarna biru. Sekiranya
 	Server itu berubah atau identifikasi baru dibuat,  identifikasi itu akan berubah. Identifikasi identifikasi ini akan di simpan
@@ -100,8 +100,29 @@
       </p>
 
       <p><b>scp</b> sedang membuat salinan file <b>debian.iso</b> ke arah server <b>192.168.144.2</b>. Format ini sama sahaja mahupun di OpenBSD
-	atau pun Windows. Penerangan lebih lanjut boleh di dapati dalam <b>man scp</b>.  
+	atau pun Windows. Penerangan lebih lanjut boleh di dapati dalam <b>man scp</b>.   
       </p>
+
+      <h4>sftp untuk urusan direcktori dari jauh</h4>
+
+      <p>Selain scp kita boleh menggunakan <b>sftp</b> yang menggunakan aplikasi <b>sftp</b> (secure file transfer protokol  kerana sshd ada
+	sub sistem sftp server yang menggunakan protokol sftp. Fungsi sftp ini sama dengan ftp tetapi segala transmisi di buat di atas talian
+	di rashiakan.</p>
+
+      <p class="prompt">router# sftp badli@192,168.144.2
+	<br>The authenticity of host 'localhost (192.168.144.2)' can't be established.
+	<br>ED25519 key fingerprint is SHA256:1beQE7hruUphs8SumEVeGaz8FTnr/+oZ59DbHXA1qtY.
+	<br>This key is not known by any other names
+	<br>Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+	<br>Warning: Permanently added 'localhost' (ED25519) to the list of known hosts.
+	<br>badli@192.168.144.2's password:
+	<br>Connected to 192.168.144.2.
+      </p>
+      
+      <p>Setelah bersambung dengan server, kita boleh membuat arahan ftp. Jikalau anda belum pernah cuba mula dengan <b>help</b>. Ia akan
+	melihatkan arahan yang boleh di buat di dalam server tersebut. Selalunya kita membuat arahan <b>put</b> dan <b>get</b>,
+	arahan begerak dan melihat direktori dan boleh buat sambungan put dan get jika ada.</p> 
+	
       
       <h3>sshd </h3>
       
@@ -117,9 +138,19 @@
 	<li>PermitRootLogin - Jika root boleh login secara langsung atau tidak. Default is no.</li>
       </ol>
 
+      <p>Dokumentasi lebih lanjut boleh di lihat dalam <b>man sshd</b> dan <b>sshd_config</b>.</p>
 
-      <p>Dokumentasi lebih lanjut boleh di lihat dalam <b>man sshd</b> dan <b>sshd_config</b>.
+      <h4> Cara Menggunakan sshd</h4>
 
+      <p>Aplikasi sshd mengunakan aplikasi <b>rcctl</b> untuk melancarkan atau menamatkan sshd tersebut. Selain daripad itu ia juga boleh melihat status
+	aplikasi sshd. Prompt di bawah menunjukan aplikasi tersebut berstatus okey kerana kita telah memberi arahan <b>check sshd</b>.</p> 
+
+      <p class="prompt">router# rcctl check sshd
+	<br>sshd(ok)
+      </p>
+
+      <p> Arahan <b>start</b> dan <b>stop</b> boleh di buat untuk melancarkan dan mematikan daemon tersebut. Sekiranya mahu di aktifkan sshd semasa
+	boot kita buat <b>enable</b> dan <b>disable</b>.</p>
 
 	
     </article>
