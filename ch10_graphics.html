@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="kxd">
+  <head>
+    <link rel="stylesheet" href="openbsd_notes.css">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="openbsd, bsd, unix, opensource, xenocara">
+    <meta name="description" content="Nota OpenBSD">
+    <title>Mana Window nya ?</title>
+  </head>
+
+  <body>
+    <header>      
+      <h1>Nota OpenBSD</h1>
+      
+      <table class="author">
+	<tr>
+	  <td>penulis</td>
+	  <td>Badli Al Rashid</td>
+	</tr>
+	<tr>
+	  <td>emel</td>
+	  <td>badli&period;a&period;r&commat;gmail&period;com</td>
+	</tr>
+	<tr>
+	  <td>tarikh</td>
+	  <td>10 Mac 2022</td>
+	</tr>
+	<tr>
+	  <td>lesen</td>
+	  <td>Atribusi 4.0 Antarabangsa</td>
+	</tr>
+      </table>
+    </header>
+
+    <article class="graphics">
+      
+      <h2>Sistem X Windows</h2>
+
+      <h3>startx untuk mula</h3>
+      
+      <p>Saya mulakan dengan memberi arahan <b>startx</b> dalam shell, tetapi saya berhadapan dengan server error.</p>
+
+      <figure><img src="openbsd_notes/startx.png" alt="Melancarkan startx menemuie kegagalan">
+	<figcaption>Saya melancarkan <b>startx</b> tetapi saya mendapat kegagalan.</figcaption>
+      </figure>
+
+      <h3>xenodm</h3>
+
+      <p>Setelah membaca FAQ (Pertanyaan Lazim) OpenBSD untuk sistem X Windows. Saya membuat file konfigurasi pengguna <b>.xsession</b> dan saya mencuba
+	dengan mengaktifkan <b>xenodm</b> ketika boot, dengan aplikasi <b>rcctl</b>.
+      </p>
+
+      <p class="prompt">cs$ cat .xsession
+	<br>export ENV=$HOME&sol;.kshrc
+	<br>xsetroot -solid grey &
+	<br>xterm -bg black -fg white +sb &amp;
+      </p>
+
+      <p> Kandungan file konfigurasi pengguna <b>.xsession</b> di dalam direktori home pengguna.
+      </p>
+
+      
+      <p class="prompt">cs# rcctl enable xenodm
+	<br>cs# rcctl start xenodm
+	<br>xenodm(ok)
+      </p>
+
+      <p><b>rcctl</b> untuk mengaktifkan <b>xenodm</b> ketika boot and melancarkan xenodm secara terus.
+      </p>
+
+      <p>Saya reboot sistem OpenBSD dan sistem xenodm boleh di jalankan lancar. Saya memasukkan butiran saya dan log masuk di arah penyambut sistem.
+	Secara ringkas saya telah membuat konfigurasi xsession dan telah menukar run level dari <b>init 3</b> ke <b>init 5</b>. init 3 merupakan
+	sistem  multi pengguna dengan rangkaian tanpa menggunakan Sistem X Windows kepada init 3 iaitu system init 3 bersama sama dengan sistem X Windows.  
+      </p>
+
+      <figure><img src="openbsd_notes/xenodm.png" alt="Log masuk kedalam OpenBSD secara graphical">
+	<figcaption>Skrin sistem penyambut xenodm.</figcaption>
+      </figure>
+
+      <p>OpenBSD menggunakan sistem <a href="https://www.xenocara.org"><b>Xenocara</b></a>, sistem ini adalah sistem X Windows dari <b>X.org</b> yang
+	telah di ubah suai oleh pihak OpenBSD. Sistem X.org adalah cabang sistem graphic <b>XFree86</b> yang di sediakan secara percuma untuk
+	sistem operasi semacam Unix. Sekiranya anda ragu ragu untuk memasang kerana khuatir perkakas graphic tidak di sokong anda boleh mencuba dengan
+	Sistem live dari pihak ketiga seperti <a href="http://fuguita.org"><b>fuguita</b></a> kerana fuguita menyediakan sistem OpenBSD live
+	tanpa memasang arah desktop anda. Untuk para pembaca saya cuma pernah memakai system live dari PCBSD dan Ubuntu sahaja untuk melihat jikalau
+	sistem saya serasi atau tidak. PCBSD telah pupus anda boleh mencuba sistem <b>midnightbsd</b>. 
+      </p>
+
+      <figure><img src="openbsd_notes/dmesg-vga.png" alt="dmesg untuk melihat perkakas VGA atau Graphics">
+	<figcaption>dmesg untuk melihat perkakas graphics.</figcaption>
+      </figure>
+
+
+      <p>Kalau anda mahu memastikan jenis perkakas graphics cuba semak mesej di dalam <b>dmesg</b>. Sebagai contoh, perkakas vga saya adalah dari VMWare</p>
+
+      <h3>Window Manager, cwm</h3>
+
+      <p>Kalau file xsession tidak di buat, kita akan memakai Window manager yang tersedia oleh OpenBSD, <b>fvwm</b> (F Virtual Window Manager). Sekiranya anda
+	membuat file konfigurasi xsession, kita akan menggunakan <b>cwm</b> sebagai Window Manager.</p>
+
+      <p>Aplikasi <b>xterm</b> telah tersedia di lancarkan. Merasa nostalgic tentang Sistem X Windows, saya mulakan dengan melancarkan aplikasi <b>xeyes</b>.
+	xeyes. Aplikasi ini telah di lancarkan dan mata nya mengikuti perjalanan kursor saya ke mana saja saya tujukan. Anda boleh menutup aplikasi tersebut
+	dengan <b>ctrl + c</b> secara serentak menekan nya.
+      </p>
+
+      <figure><img src="openbsd_notes/xeyes.png" alt="Melancarkan aplikasi xeyes dari xterm di dalam cwm">
+	<figcaption>Saya melancarkan aplikasi <b>xeyes</b> dari <b>xterm</b> di dalam <b>cwm</b></figcaption>
+      </figure>
+
+      <p>Kalau anda melancarkan <b>firefox</b> ia tidak di ketemui, kerana yang di pasang adalah yang asas sahaja. Anda boleh menggunakan sistem <b>ports</b> untuk memasang
+	aplikasi firefox atau yang lainnya.
+      </p>
+
+      <p><b>Windows Manager</b> adalah Desktop kita. Desktop yang kita gunakan <b>cwm</b> adalah yang asas sahaja. Kalau ingin sistem desktop yang penuh
+	kita boleh menggunakan <b>Gnome</b> ataupun <b>KDE</b>. Desktop lain seperti <b>Lumina</b>, <b>MATE</b> dan <b>XFCE</b> ada juga tersedia.
+      </p>
+
+      <h3>logout</h3>
+
+      <p>Jika ingin keluar dari sistem Window, Tekan <b>ctrl + alt + backspace</b> secara serentak untuk kembali ke sistem penyambut.
+      </p>  
+
+      <p>Ketika di sistem penyambut tekan <b>ctrl + alt + F1</b> secara serentak untuk kembali ke Shell tty0. F1 hingga F4 key adalah untuk
+	shell tty0 sehingga tty3. Untuk masuk ke sistem X Windows semula saya perlu tekan <b>crl + alt + F5</b> secara serentak. Untuk menggembalikan
+	OpenBSD ke sistem init 3, saya perlu membuat xenodm supaya tidak aktif ketika boot time.
+      </p>
+      
+      <h3>Rujukan</h3>
+      <ol>
+	<li><a href="https://www.xenocara.org">Xenocara https://www.xenocara.org</a></li>
+	<li><a href="https://lumina-desktop">Lumina https://lumina-desktop.org</a></li>
+	<li><a href="https://www.x.org">X.org https://www.x.org</a></li>
+	<li><a href="https://www.xfree86.org">The XFree86 Project, Inc https://www.xfree86.org</a></li>
+	<li><a href="http://fugita.org">fugita https://fugita.org</a></li>
+      </ol>
+	  
+    </article>
+
+    <footer>
+      <ul>
+	<li>
+	  <a href="https://creativecommons.org/licenses/by/4.0/">
+	    <img src="openbsd_notes/cc-by.svg" alt="CC-BY-4.0">
+	  </a>
+	</li>
+	<li>
+	  <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fbadlirashid.github.io%2Fopenbsd_notes.html">
+	    <img src="openbsd_notes/HTML5_Logo_64.png" alt="W3C Nu Html Checker">
+	  </a>
+	</li>
+	<li>
+	  <a href="https://jigsaw.w3.org/css-validator/validator?uri=badlirashid.github.io%2Fopenbsd_notes.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">
+	    <img src="openbsd_notes/vcss.gif" alt="W3C CSS Validation Service">
+	  </a>
+	</li>
+      </ul>
+    </footer>
+
+  </body>
+  
+</html>
