@@ -73,7 +73,7 @@
 
       <p>Saya reboot sistem OpenBSD dan sistem xenodm boleh di jalankan lancar. Saya memasukkan butiran saya dan log masuk di arah penyambut sistem.
 	Secara ringkas saya telah membuat konfigurasi xsession dan telah menukar run level dari <b>init 3</b> ke <b>init 5</b>. init 3 merupakan
-	sistem  multi pengguna dengan rangkaian tanpa menggunakan Sistem X Windows kepada init 3 iaitu system init 3 bersama sama dengan sistem X Windows.  
+	sistem multi pengguna dengan rangkaian tanpa menggunakan Sistem X Windows kepada init 3 iaitu system init 3 bersama sama dengan sistem X Windows.  
       </p>
 
       <figure><img src="openbsd_notes/xenodm.png" alt="Log masuk kedalam OpenBSD secara graphical">
@@ -123,13 +123,13 @@
       </p>  
 
       <p>Ketika di sistem penyambut tekan <b>ctrl + alt + F1</b> secara serentak untuk kembali ke Shell tty0. F1 hingga F4 key adalah untuk
-	shell tty0 sehingga tty3. Untuk masuk ke sistem X Windows semula saya perlu tekan <b>crl + alt + F5</b> secara serentak. Untuk menggembalikan
+	shell tty0 sehingga tty3. Untuk masuk ke sistem X Windows semula saya perlu tekan <b>crl + alt + F5</b> secara serentak. Untuk mengembalikan
 	OpenBSD ke sistem init 3, saya perlu membuat xenodm supaya tidak aktif ketika boot time.
       </p>
 
       <h3>extra - cwmrc</h3>
 
-      <p>Ini adalah contoh konfigurasi cwmrc yang di perolehi di dalam man cwmrc. Isi file <b>.cwmrc</b> saya berupa begini begini. Kommen
+      <p>Ini adalah contoh konfigurasi cwmrc yang di peroleh di dalam man cwmrc. Isi file <b>.cwmrc</b> saya berupa begini begini. Komen
 	bermula dengan tanda #.</p>
 
       <p class="prompt"># Set default Xft(3) font
@@ -179,10 +179,10 @@
 
       <p>Falsafah Unix berasaskan modulariti. Iaitu membuat satu aplikasi untuk satu perkara dengan baik. Ini dapat di lihat dengan OpenBSD dengan
 	Xenocara iaitu Sistem X Windows kerana kita boleh tidak memilih langsung untuk memasang Xenocara sama sekali ketika permasangan.
-	Ini membuatkan size permasanagannya lebih kecil, membantu menggurangakan permukaan serangan dan mebebaskan kuasa processor daripada di gunakan.
+	Ini membuatkan size pemasangannya lebih kecil, membantu mengkurangakan permukaan serangan dan membebaskan kuasa processor daripada di gunakan.
       </p>
 
-      <p>OpenBSD prospektif menarik untuk permasang sebagai virtual firewall atau router atau ke dalam perkakas berkuasa rendah seperti Netgate, RCC-VE-2440.
+      <p>OpenBSD prospektif menarik untuk pemasang sebagai virtual firewall atau router dan ke dalam perkakas berkuasa rendah seperti Netgate, RCC-VE-2440.
       </p>  
 
       <p>Microsoft telah mengikuti pertama kalinya dengan Windows Sever 2008 dengan <b>Server core</b> dan Windows Server 2016 dengan <b>Nano server</b>
@@ -197,8 +197,8 @@
 	<figcaption><b>Melancarkan</b> xenodm semasa boot.</figcaption>
       </figure>
 
-      <p>Di atas kita boleh melihat perbezaan sistem OpenBSD yang di lancar denagan xenodm telah mempunyaie sebanyak <b> 43 process, menggunakan 13M memori
-	  dan swap 51M </b> berbanding dengan yang tidak melancarkan sebanyak <b> 32 process, meggunakan  8M  memori dan 24M swap</b>.
+      <p>Di atas kita boleh melihat perbezaan sistem OpenBSD yang di lancar denagan xenodm telah mempunyai sebanyak <b> 43 process, menggunakan 13M memori
+	  dan swap 51M </b> berbanding dengan yang tidak melancarkan sebanyak <b> 32 process, menggunakan  8M  memori dan 24M swap</b>.
       </p> 
 
       
