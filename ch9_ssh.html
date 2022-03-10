@@ -5,7 +5,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="openbsd, openssh, bsd, unix, opensource">
-    <meta name="description" content="Nota OpenBSD, OpenSSH, Akses Login dan Membuat Salinan">
+    <meta name="description" content="Nota OpenBSD, OpenSSH, Akses log masuk dan Membuat Salinan">
     <title>OpenSSH</title>
   </head>
 
@@ -35,7 +35,7 @@
 
     <article class="openssh">
       
-      <h2>Akses Login Jauh dan Membuat Salinan File</h2>
+      <h2>Akses Log Masuk Jauh dan Membuat Salinan File</h2>
 
       <h3>Pengenalan</h3>
 
@@ -55,8 +55,8 @@
       <p>Ada dua aplikasi asas untuk OpenSSH Klient iaitu <b>ssh</b> dan <b>scp</b>. Saya akan menggunakan OpenBSD dan Windows kerana cara permakaian
 	aplikasi ini sama sahaja</p>
 
-      <h4>ssh, akses login</h4>
-      <p> Cara menggunakan ssh klient ini ada lah dengan format <b>ssh</b> <b>Nama&period;Login@Alamat&period;Server</b>. Nama login adalah nama anda di
+      <h4>ssh, akses log masuk</h4>
+      <p> Cara menggunakan ssh klient ini ada lah dengan format <b>ssh</b> <b>Nama&period;LogMasuk@Alamat&period;Server</b>. Nama log masuk adalah nama anda di
 	dalam server tersebut. Alamat Server kita boleh memakai alamat IP atau nama penuh hos.
       </p>
 
@@ -126,16 +126,16 @@
       
       <h3>sshd </h3>
       
-      <p><b>OpenSSH Daemon</b> atau <b>sshd</b> adalah aplikasi yang mendengar permitaan login daripada klient ssh ataupun scp. Versi OpenSSH yang
+      <p><b>OpenSSH Daemon</b> atau <b>sshd</b> adalah aplikasi yang mendengar permitaan log masuk daripada klient ssh ataupun scp. Versi OpenSSH yang
 	tersedia hanya menerima SSH protokol versi 2.
       </p>
 
       <p>Konfigurasi sshd ini terdapat di <b>&sol;etc&sol;ssh&sol;sshd_config</b>. Antara pilihan yang selalu di ubah suai adalah:- </p>
 
       <ol>
-	<li>Port - Adalah numbor port ssh konnect. Port 22 ialah selalunya di pakai, kita boleh menggunakan numbor port yang lebih tinggi</li>
-	<li>listenAddress  - Jika ada beberapa alamat, kita boleh set alamat mana yang kita pakai.</li>
-	<li>PermitRootLogin - Jika root boleh login secara langsung atau tidak. Default is no.</li>
+	<li>Port - Adalah numbor port ssh berhubungan. Port 22 ialah selalu di pakai. Kita  boleh menggunakan numbor port yang lebih tinggi.</li>
+	<li>listenAddress  - Jika ada beberapa alamat IP, kita boleh pilih alamat mana SSHD mendengar.</li>
+	<li>PermitRootLogin - Jika root boleh log masuk secara langsung atau tidak. Jawapan yang tersedia adalah tidak.</li>
       </ol>
 
       <p>Dokumentasi lebih lanjut boleh di lihat dalam <b>man sshd</b> dan <b>sshd_config</b>.</p>
