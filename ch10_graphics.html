@@ -37,6 +37,7 @@
       
       <h2>Sistem X Windows</h2>
 
+
       <h3>startx untuk mula</h3>
       
       <p>Saya mulakan dengan memberi arahan <b>startx</b> dalam shell, tetapi saya berhadapan dengan server error.</p>
@@ -104,8 +105,8 @@
 	dengan <b>ctrl + c</b> secara serentak menekan nya.
       </p>
 
-      <figure><img src="openbsd_notes/xeyes.png" alt="Melancarkan aplikasi xeyes dari xterm di dalam cwm">
-	<figcaption>Saya melancarkan aplikasi <b>xeyes</b> dari <b>xterm</b> di dalam <b>cwm</b></figcaption>
+      <figure><img src="openbsd_notes/xeyes.png" alt="Melancarkan aplikasi xeyes dari di dalam cwm">
+	<figcaption>Saya melancarkan aplikasi <b>xeyes</b> dari di dalam <b>cwm</b></figcaption>
       </figure>
 
       <p>Kalau anda melancarkan <b>firefox</b> ia tidak di ketemui, kerana yang di pasang adalah yang asas sahaja. Anda boleh menggunakan sistem <b>ports</b> untuk memasang
@@ -172,7 +173,35 @@
 	<br>bind-mouse M-2  window-lower
 	<br>bind-mouse M-3  window-resize
       </p>
-            
+
+
+      <h3>Kenapa tidak di aktifkan atau di pasang Sistem X Windows Untuk OpenBSD</h3>
+
+      <p>Falsafah Unix berasaskan modulariti. Iaitu membuat satu aplikasi untuk satu perkara dengan baik. Ini dapat di lihat dengan OpenBSD dengan
+	Xenocara iaitu Sistem X Windows kerana kita boleh tidak memilih langsung untuk memasang Xenocara sama sekali ketika permasangan.
+	Ini membuatkan size permasanagannya lebih kecil, membantu menggurangakan permukaan serangan dan mebebaskan kuasa processor daripada di gunakan.
+      </p>
+
+      <p>OpenBSD prospektif menarik untuk permasang sebagai virtual firewall atau router atau ke dalam perkakas berkuasa rendah seperti Netgate, RCC-VE-2440.
+      </p>  
+
+      <p>Microsoft telah mengikuti pertama kalinya dengan Windows Sever 2008 dengan <b>Server core</b> dan Windows Server 2016 dengan <b>Nano server</b>
+	yang membuatkannya sizenya lebih kecil.
+      </p> 
+
+      <figure><img src="openbsd_notes/nox.png" alt="OpenBSD dengan tidak melancarkan Xenocara">
+	<figcaption><b>Tidak melancarkan</b> xenodm semasa boot</figcaption>
+      </figure>
+
+      <figure><img src="openbsd_notes/withx.png" alt="OpenBSD dengan Xenocana yang telah di lancarkan">
+	<figcaption><b>Melancarkan</b> xenodm semasa boot.</figcaption>
+      </figure>
+
+      <p>Di atas kita boleh melihat perbezaan sistem OpenBSD yang di lancar denagan xenodm telah mempunyaie sebanyak <b> 43 process, menggunakan 13M memori
+	  dan swap 51M </b> berbanding dengan yang tidak melancarkan sebanyak <b> 32 process, meggunakan  8M  memori dan 24M swap</b>.
+      </p> 
+
+      
       
       <h3>Rujukan</h3>
       <ol>
