@@ -55,6 +55,7 @@
 	<br>export ENV=$HOME&sol;.kshrc
 	<br>xsetroot -solid grey &
 	<br>xterm -bg black -fg white +sb &amp;
+	<br>cwm
       </p>
 
       <p> Kandungan file konfigurasi pengguna <b>.xsession</b> di dalam direktori home pengguna.
@@ -115,7 +116,7 @@
 	kita boleh menggunakan <b>Gnome</b> ataupun <b>KDE</b>. Desktop lain seperti <b>Lumina</b>, <b>MATE</b> dan <b>XFCE</b> ada juga tersedia.
       </p>
 
-      <h3>logout</h3>
+      <h3>Keluar Dari Desktop</h3>
 
       <p>Jika ingin keluar dari sistem Window, Tekan <b>ctrl + alt + backspace</b> secara serentak untuk kembali ke sistem penyambut.
       </p>  
@@ -124,6 +125,53 @@
 	shell tty0 sehingga tty3. Untuk masuk ke sistem X Windows semula saya perlu tekan <b>crl + alt + F5</b> secara serentak. Untuk menggembalikan
 	OpenBSD ke sistem init 3, saya perlu membuat xenodm supaya tidak aktif ketika boot time.
       </p>
+
+      <h3>extra - cwmrc</h3>
+
+      <p>Ini adalah contoh konfigurasi cwmrc yang di perolehi di dalam man cwmrc. Isi file <b>.cwmrc</b> saya berupa begini begini. Kommen
+	bermula dengan tanda #.</p>
+
+      <p class="prompt"># Set default Xft(3) font
+	<br>fontname "sans-serif:pixelsize=12"
+	<br># Turn on sticky-group mode
+	<br>sticky yes
+	<br>
+	<br># Any entry here is shown in the application menu
+	<br>command xterm xterm
+	<br>command firefox firfox
+	<br>command xeyes xeyes
+	<br>command top "xterm -e top"
+	<br>command Lock xlock
+	<br>
+	<br># Autogroup definitions
+	<br>autogroup 3 "aterm,XTerm"
+	<br>autogroup 3 "xterm,XTerm"
+	<br>
+	<br># Ignore programs by that name by not drawing borders around them.
+	<br>ignore XMMS
+	<br>ignore xwi
+	<br>ignore xapm
+	<br>ignore xclock
+	<br>
+	<br># Key bindings
+	<br>bind-key CM-r window-menu-label
+	<br>bind-key CS-Return "xterm -e top"
+	<br>bind-key C4-equal window-vmaximize
+	<br>bind-key C4S-equal window-hmaximize
+	<br>bind-key M-1 group-only-1
+	<br>bind-key M-2 group-only-2
+	<br>bind-key M-3 group-only-3
+	<br>bind-key MS-1 window-movetogroup-1
+	<br>bind-key MS-2 window-movetogroup-2
+	<br>bind-key MS-3 window-movetogroup-3
+	<br>unbind-key 4-o
+	<br>unbind-key CM-equal
+	<br>unbind-key CMS-equal
+	<br># Mouse bindings
+	<br>bind-mouse M-2  window-lower
+	<br>bind-mouse M-3  window-resize
+      </p>
+            
       
       <h3>Rujukan</h3>
       <ol>
