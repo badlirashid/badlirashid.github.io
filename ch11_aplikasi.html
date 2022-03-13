@@ -42,21 +42,21 @@
       <h3>Dari sumber tarballs</h3>
       
       <p>Di dalam Unix atau Semacam Unix, salah satu distribusi aplikasi adalah di dalam file tarballs iaitu file yang dengan penghujungnya
-	&period;tar&period;gz , &period;tgz , &period;tar&period;bz2 atau semacamnya. Saya memuat turun aplikasi <b>GNU Nano</b> dan melakukakn
+	&period;tar&period;gz , &period;tgz , &period;tar&period;bz2 atau semacamnya. Saya memuat turun aplikasi <b>GNU Nano</b> dan melakukan
 	konfigurasi dan kompilasi. Semasa kompilasi saya mendapat banyak amaran dan saya cuba dengan meneruskan dengan melancarkan file binari tersebut
-	terus mendapat segfault. Setelah bebrapa kali mencuba aku teringat mereka selalu bercakap tentang koleksi aplikasi dari <b>Ports</b>.
-	Setelah melihat dokumentasi aku mencuba ports.
+	terus mendapat <b>segfault</b>. Setelah beberapa kali mencuba aku teringat mereka selalu bercakap dengan aku tentang koleksi aplikasi dari <b>Ports</b>.
+	Setelah melihat dokumentasi aku mencuba ports ini.
       </p>  
 
       <h3>Koleksi Ports OpenBSD</h3>
       
       <p>Anda boleh melompat ke bahagian <b>pkg_add</b> untuk memasang terus aplikasi binari sahaja. <b>ports</b> adalah koleksi sumber file aplikasi
-	dan kod kod penambal supaya aplikasi anda dapat di pasang dan di lancarkan di dalam OpenBSD. Ports juga akan memuat turn mana mana sumber file yang
-	di perlukan untuk membuat pemasangan. File itu akan di verfikasi secara automatik. Sumber file file ini akan di konfigure dan di kompilasi
+	dan kod kod penambal supaya aplikasi anda dapat di pasang dan di lancarkan di dalam OpenBSD. Ports juga akan memuat turun mana mana sumber file yang
+	di perlukan untuk membuat pemasangan. File itu akan di verfikasi secara automatik. Sumber file file ini akan di konfigurasi dan di kompilasi
 	untuk mendapatkan file file binari aplikasi tersebut.
       </p>
 
-      <p>Koleksi ini dapat di muat turun di halaman ftp OpenBSD, <b>https://ftp.openbsd.org/pub/OpenBSD/7.0</b>. saya memuat turn tiga file,
+      <p>Koleksi ini dapat di muat turun di halaman ftp OpenBSD, <b>https://ftp.openbsd.org/pub/OpenBSD/7.0</b>. saya memuat turun tiga file,
 	<b>ports.tar.gz</b>, <b>SHA256</b> dan <b>SHA256.sig</b>. File <b>ports.tar.gz</b> adalah koleksi aplikasi untuk sistem ports.
       </p>
 
@@ -71,8 +71,8 @@
 	<br>SHA256 (xenocara.tar.gz) = 09a41c52ac6ade2059ee7678ad2bd9d50c16474818268941db170ccd40962fd7
       </p>
 
-      <p>File SHA256 mempunyaie checksum untuk file ports.tar.gz. Apabila aplikasi <b>sha256</b> di jalankan dengan file tersebut ia akan bersamaan dengan
-	<b>a9bd96828f24a415428ac1a6d394a0ebdaf179b6499dd47699255544c6c89d01</b>. Jika jumlah itu tak sama bermakna file itu rosak dalaam transaksi</p>
+      <p>File SHA256 mempunyai checksum untuk file ports.tar.gz. Apabila aplikasi <b>sha256</b> di jalankan dengan file tersebut ia akan bersamaan dengan
+	<b>a9bd96828f24a415428ac1a6d394a0ebdaf179b6499dd47699255544c6c89d01</b>. Jika jumlah itu tak sama bermakna file itu rosak dalam transaksi</p>
 
 
       <p class="prompt">cs$ cat SHA256
@@ -92,7 +92,7 @@
 	
 
       
-      <p>SHA256.sig adalah file signature untuk memastikan file file tersebut adalah dari pihak OpenBSD dengan kunci kriptographic awam mereka.
+      <p>SHA256.sig adalah file signature untuk memastikan file file tersebut adalah dari pihak OpenBSD dengan kunci kriptograpik awam mereka.
       </p>
 
       <p class="prompt">cs$ ls
@@ -109,9 +109,9 @@
 	<br>openbsd-70-base.pub: FAIL
       </p>
 
-      <p>Font berwarna biru menunjukan aplikasi <b>signify</b> telah membuat verifikasi file ports.tar.gz . File tersebut adalah dari pihak OpenBSD kerana
+      <p>Font berwarna biru menunjukkan aplikasi <b>signify</b> telah membuat verifikasi file ports.tar.gz . File tersebut adalah dari pihak OpenBSD kerana
 	telah di verifikasi dengan kunci kriptographik awam OpenBSD iaitu file <b>openbsd-70-base.pub</b> yang berada di dalam direktori
-	&sol;etc&sol;signify&sol;. Kunci awam tersebut boleh juga awda muat turn di halaman tersebut.
+	&sol;etc&sol;signify&sol;. Kunci awam tersebut boleh juga awda muat turun di halaman tersebut.
       </p>
 
       <p class="prompt">cs# cd &sol;usr
@@ -128,7 +128,7 @@
 
       <p>Sebagai contoh, saya memasang aplikasi penyunting teks <b>nano</b> dengan memasuki direktori  &sol;usr&sol;ports&sol;editors&sol;nano dan
 	membuat arahan <b>doas make</b> dan <b>doas make install</b> di dalamnya. Ports akan menguruskan file sumber dan file file librari yang
-	di perlukan, verifikasinya, konfigurasi dan kompilasi untuk aplikasi nano. Sekira anda menghadapi masaalah tengok apakah yang di hendaki seperti
+	di perlukan, verifikasi, konfigurasi dan kompilasi untuk aplikasi nano. Sekira anda menghadapi masaalah tengok apakah yang di hendaki seperti
 	libarari atau sebagainya dan cuba memasang libarari tersebut.
       </p>
 
@@ -138,7 +138,7 @@
       <h3>pkg_add, file binari aplikasi</h3>
 
       <p><b>pkg_add</b> adalah untuk memasang aplikasi binari ke dalam sistem OpenBSD. Saya mulakan dengan arahan <b>pkg_add -u</b>. Aplikasi aplikasi yang
-	tersedia akan menaruh membuat upgrade jika perlu untuk aplikasi aplikasi yang sudah di pasang. Kemudian kita menggunakan memasang aplikasi
+	tersedia akan menaruh membuat naik taraf jika perlu untuk aplikasi aplikasi yang sudah di pasang. Kemudian kita menggunakan memasang aplikasi
 	<b>Firefox</b> dengan memberi arahan <b>pkg_add firefox</b>.
       </p>  
 
@@ -197,12 +197,12 @@
       </p>
 
       <p>Saya menggunakan pengguna root untuk melakukan pemasangan. Font yang bewarna biru menunjukan dependency untuk aplikasi firefox kerana ia adalah
-	file libarari yang di perlurkan untuk melancarkan firefox. Selain itu ia pkg_add juga akan membuat verfikasi file tersebut secara automatik.
+	file libarari yang di perlukan untuk melancarkan firefox. Selain itu ia pkg_add juga akan membuat verfikasi file tersebut secara automatik.
       </p>
 
-      <p>Sekiranya anda mengunakan kaedah <b>make install</b> di dalam direktori <b>&sol;usr&sol;ports&sol;www&sol;firefox-esr&sol;</b> ia akan mengambil
-	masa yang agak panjang. Sekiranya specifikasi anda adalah yang terhebat dan yang baru di dalam pasaran anda boleh mencubanya untuk melihat kepantasan
-	dan kebersanaan prosessor anda.
+      <p>Sekiranya anda menggunakan kaedah <b>make install</b> di dalam direktori <b>&sol;usr&sol;ports&sol;www&sol;firefox-esr&sol;</b> ia akan mengambil
+	masa yang agak panjang. Sekiranya spesifikasi anda adalah yang terhebat dan yang baru di dalam pasaran anda boleh mencubanya untuk melihat kepantasan
+	dan keberkesanan prosesor anda.
       </p>
 
     </article>
