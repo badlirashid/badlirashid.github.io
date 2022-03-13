@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="kxd">
+  <head>
+    <link rel="stylesheet" href="openbsd_notes.css">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="openbsd, bsd, unix, opensource, ports aplikasi">
+    <meta name="description" content="Nota OpenBSD aplikasi">
+    <title>Aplikasi Aplikasi OpenBSD</title>
+  </head>
+
+  <body>
+    <header>      
+      <h1>Nota OpenBSD</h1>
+      
+      <table class="author">
+	<tr>
+	  <td>penulis</td>
+	  <td>Badli Al Rashid</td>
+	</tr>
+	<tr>
+	  <td>emel</td>
+	  <td>badli&period;a&period;r&commat;gmail&period;com</td>
+	</tr>
+	<tr>
+	  <td>tarikh</td>
+	  <td>12 Mac 2022</td>
+	</tr>
+	<tr>
+	  <td>lesen</td>
+	  <td>Atribusi 4.0 Antarabangsa</td>
+	</tr>
+      </table>
+    </header>
+
+    <article class="aplikasi">
+
+      <h2>Aplikasi Aplikasi OpenBSD</h2>
+
+      <p>Di dalam sistem operasi OpenBSD ada bebrapa cara untuk kita membuat pemasangan aplikasi.</p>
+
+      <h3>Dari sumber tarballs</h3>
+      
+      <p>Di dalam Unix atau Semacam Unix, salah satu distribusi aplikasi adalah di dalam file tarballs iaitu file yang dengan penghujungnya
+	&period;tar&period;gz , &period;tgz , &period;tar&period;bz2 atau semacamnya. Saya memuat turun aplikasi <b>GNU Nano</b> dan melakukakn
+	konfigurasi dan kompilasi. Semasa kompilasi saya mendapat banyak amaran dan saya cuba dengan meneruskan dengan melancarkan file binari tersebut
+	terus mendapat segfault. Setelah bebrapa kali mencuba aku teringat mereka selalu bercakap tentang koleksi aplikasi dari <b>Ports</b>.
+	Setelah melihat dokumentasi aku mencuba ports.
+      </p>  
+
+      <h3>Koleksi Ports OpenBSD</h3>
+      
+      <p>Anda boleh melompat ke bahagian <b>pkg_add</b> untuk memasang terus aplikasi binari sahaja. <b>ports</b> adalah koleksi sumber file aplikasi
+	dan kod kod penambal supaya aplikasi anda dapat di pasang dan di lancarkan di dalam OpenBSD. Ports juga akan memuat turn mana mana sumber file yang
+	di perlukan untuk membuat pemasangan. File itu akan di verfikasi secara automatik. Sumber file file ini akan di konfigure dan di kompilasi
+	untuk mendapatkan file file binari aplikasi tersebut.
+      </p>
+
+      <p>Koleksi ini dapat di muat turun di halaman ftp OpenBSD, <b>https://ftp.openbsd.org/pub/OpenBSD/7.0</b>. saya memuat turn tiga file,
+	<b>ports.tar.gz</b>, <b>SHA256</b> dan <b>SHA256.sig</b>. File <b>ports.tar.gz</b> adalah koleksi aplikasi untuk sistem ports.
+      </p>
+
+      <p class="prompt">cs$ cat SHA256
+	<br>SHA256 (ANNOUNCEMENT) = 09b7a6347c189e90899f6576eacf65c28e12485caf1f35caf5a4cee4b1aa6ead
+	<br>SHA256 (README) = 58f8720e3bcaade942107eef7811f01a9321dff01a40f669776ed398da34ee09
+	<br>SHA256 (openbsd-70-base.pub) = db407b2015126ec80cedebb9b3248ee3c3a6e9369236828db758e6898c05fdbd
+	<br>SHA256 (ports.tar.gz) = a9bd96828f24a415428ac1a6d394a0ebdaf179b6499dd47699255544c6c89d01
+	<br>SHA256 (root.mail) = 892b4eadb697cdf64963e51edd1e9ea582190c9e0903ecb6491ea39523b34230
+	<br>SHA256 (src.tar.gz) = afb37f5f4e1daee76e6b23f83801addbe1e3f6283aa729c8d5339ebfddc6e714
+	<br>SHA256 (sys.tar.gz) = a87324046be2850a9685cd0e906e0237cbc966deff727ee7d9e3f799d02283bb
+	<br>SHA256 (xenocara.tar.gz) = 09a41c52ac6ade2059ee7678ad2bd9d50c16474818268941db170ccd40962fd7
+      </p>
+
+      <p>File SHA256 mempunyaie checksum untuk file ports.tar.gz. Apabila aplikasi <b>sha256</b> di jalankan dengan file tersebut ia akan bersamaan dengan
+	<b>a9bd96828f24a415428ac1a6d394a0ebdaf179b6499dd47699255544c6c89d01</b>. Jika jumlah itu tak sama bermakna file itu rosak dalaam transaksi</p>
+
+
+      <p class="prompt">cs$ cat SHA256
+	<br>SHA256      SHA256.sig
+	<br>cs$ cat SHA256.sig
+	<br>untrusted comment: verify with openbsd-70-base.pub
+	<br>RWR3KL+gSr4QZ57kPRszRweP1lK4NVCBxzIZSwBMlmJxfRcGC58t24SNz+EHxInnak3RvRXxdarOewraKZmD6CrVfFVY3jIfRw4=
+	<br>SHA256 (ANNOUNCEMENT) = 09b7a6347c189e90899f6576eacf65c28e12485caf1f35caf5a4cee4b1aa6ead
+	<br>SHA256 (README) = 58f8720e3bcaade942107eef7811f01a9321dff01a40f669776ed398da34ee09
+	<br>SHA256 (openbsd-70-base.pub) = db407b2015126ec80cedebb9b3248ee3c3a6e9369236828db758e6898c05fdbd
+	<br>SHA256 (ports.tar.gz) = a9bd96828f24a415428ac1a6d394a0ebdaf179b6499dd47699255544c6c89d01
+	<br>SHA256 (root.mail) = 892b4eadb697cdf64963e51edd1e9ea582190c9e0903ecb6491ea39523b34230
+	<br>SHA256 (src.tar.gz) = afb37f5f4e1daee76e6b23f83801addbe1e3f6283aa729c8d5339ebfddc6e714
+	<br>SHA256 (sys.tar.gz) = a87324046be2850a9685cd0e906e0237cbc966deff727ee7d9e3f799d02283bb
+	<br>SHA256 (xenocara.tar.gz) = 09a41c52ac6ade2059ee7678ad2bd9d50c16474818268941db170ccd40962fd7
+      </p>
+	
+
+      
+      <p>SHA256.sig adalah file signature untuk memastikan file file tersebut adalah dari pihak OpenBSD dengan kunci kriptographic awam mereka.
+      </p>
+
+      <p class="prompt">cs$ ls
+	<br>SHA256&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHA256.sig&nbsp;&nbsp;&nbsp;ports.tar.gz
+	<br>cs$ signify -C -p &sol;etc&sol;signify&sol;openbsd-70-base.pub  -x SHA256.sig
+	<br>Signature Verified
+	<br><span class="blue">ports.tar.gz: OK</span>
+	<br>xenocara.tar.gz: FAIL
+	<br>src.tar.gz: FAIL
+	<br>sys.tar.gz: FAIL
+	<br>root.mail: FAIL
+	<br>README: FAIL
+	<br>ANNOUNCEMENT: FAIL
+	<br>openbsd-70-base.pub: FAIL
+      </p>
+
+      <p>Font berwarna biru menunjukan aplikasi <b>signify</b> telah membuat verifikasi file ports.tar.gz . File tersebut adalah dari pihak OpenBSD kerana
+	telah di verifikasi dengan kunci kriptographik awam OpenBSD iaitu file <b>openbsd-70-base.pub</b> yang berada di dalam direktori
+	&sol;etc&sol;signify&sol;. Kunci awam tersebut boleh juga awda muat turn di halaman tersebut.
+      </p>
+
+      <p class="prompt">cs# cd &sol;usr
+	<br>cs# tar -xzvf &sol;tmp&sol;ports.tar.gz
+      </p>
+
+      <p>Di dalam direktori <b>&sol;usr</b> saya telah membuat  arahan <b>tar -xzvf</b> untuk membuat extract file file ports tersebut ke dalam direktori
+	<b>&sol;usr&sol;ports</b>.
+      </p>
+
+      <p class="prompt">cs$ cd &sol;usr&sol;ports&sol;editors&sol;nano
+	<br>cs$ doas make install
+      </p>
+
+      <p>Sebagai contoh, saya memasang aplikasi penyunting teks <b>nano</b> dengan memasuki direktori  &sol;usr&sol;ports&sol;editors&sol;nano dan
+	membuat arahan <b>doas make</b> dan <b>doas make install</b> di dalamnya. Ports akan menguruskan file sumber dan file file librari yang
+	di perlukan, verifikasinya, konfigurasi dan kompilasi untuk aplikasi nano. Sekira anda menghadapi masaalah tengok apakah yang di hendaki seperti
+	libarari atau sebagainya dan cuba memasang libarari tersebut.
+      </p>
+
+      <p>Selepas selesai kesemuanya, anda hanya menaip <b>nano</b> di dalam shell untuk melancarkan aplikasi tersebut.
+      </p>
+      
+      <h3>pkg_add, file binari aplikasi</h3>
+
+      <p><b>pkg_add</b> adalah untuk memasang aplikasi binari ke dalam sistem OpenBSD. Saya mulakan dengan arahan <b>pkg_add -u</b>. Aplikasi aplikasi yang
+	tersedia akan menaruh membuat upgrade jika perlu untuk aplikasi aplikasi yang sudah di pasang. Kemudian kita menggunakan memasang aplikasi
+	<b>Firefox</b> dengan memberi arahan <b>pkg_add firefox</b>.
+      </p>  
+
+      <p class="prompt">cs# pkg_add -u
+	<br>quirks-4.54 signed on 2022-03-10T14&colon;06&colon;21Z
+	<br>quirks-4.54&colon; ok
+	<br>cs# pkg_add firefox
+	<br>quirks-4.54 signed on 2022-03-10T14&colon;06&colon;21Z
+	<br><span class="blue">firefox-95.0.1&colon;libiconv-1.16p0&colon; ok
+	<br>firefox-95.0.1&colon;gettext-runtime-0.21p1&colon; ok
+	<br>firefox-95.0.1&colon;libffi-3.3p1&colon; ok
+	<br>firefox-95.0.1&colon;pcre-8.44&colon; ok
+	<br>firefox-95.0.1&colon;sqlite3-3.35.5p0&colon; ok
+	<br>firefox-95.0.1&colon;bzip2-1.0.8p0&colon; ok
+	<br>firefox-95.0.1&colon;xz-5.2.5&colon; ok
+	<br>firefox-95.0.1&colon;python-3.8.12&colon; ok
+	<br>firefox-95.0.1&colon;glib2-2.68.4&colon; ok
+	<br>firefox-95.0.1&colon;desktop-file-utils-0.26&colon; ok
+	<br>firefox-95.0.1&colon;nspr-4.32&colon; ok
+	<br>firefox-95.0.1&colon;nss-3.70p0&colon; ok
+	<br>firefox-95.0.1&colon;icu4c-69.1p0v0&colon; ok
+	<br>firefox-95.0.1&colon;hicolor-icon-theme-0.17&colon; ok
+	<br>firefox-95.0.1&colon;png-1.6.37&colon; ok
+	<br>firefox-95.0.1&colon;libxml-2.9.12p0&colon; ok
+	<br>firefox-95.0.1&colon;shared-mime-info-2.1&colon; ok
+	<br>firefox-95.0.1&colon;jpeg-2.1.1v0&colon; ok
+	<br>firefox-95.0.1&colon;lz4-1.9.3p0&colon; ok
+	<br>firefox-95.0.1&colon;zstd-1.5.0&colon; ok
+	<br>firefox-95.0.1&colon;tiff-4.3.0&colon; ok
+	<br>firefox-95.0.1&colon;gdk-pixbuf-2.42.6&colon; ok
+	<br>firefox-95.0.1&colon;gtk-update-icon-cache-3.24.30&colon; ok
+	<br>firefox-95.0.1&colon;fribidi-1.0.10&colon; ok
+	<br>firefox-95.0.1&colon;graphite2-1.3.14&colon; ok
+	<br>firefox-95.0.1&colon;lzo2-2.10p2&colon; ok
+	<br>firefox-95.0.1&colon;cairo-1.16.0&colon; ok
+	<br>firefox-95.0.1&colon;harfbuzz-2.9.1&colon; ok
+	<br>firefox-95.0.1&colon;pango-1.48.10&colon; ok
+	<br>firefox-95.0.1&colon;librsvg-2.50.7&colon; ok
+	<br>firefox-95.0.1&colon;adwaita-icon-theme-40.1.1&colon; ok
+	<br>firefox-95.0.1&colon;atk-2.36.0&colon; ok
+	<br>firefox-95.0.1&colon;dbus-1.12.20p1v0&colon; ok
+	<br>firefox-95.0.1&colon;at-spi2-core-2.40.3&colon; ok
+	<br>firefox-95.0.1&colon;at-spi2-atk-2.38.0&colon; ok
+	<br>firefox-95.0.1&colon;dconf-0.40.0&colon; ok
+	<br>firefox-95.0.1&colon;gtk+3-3.24.30&colon; ok</span>
+	<br>firefox-95.0.1&colon; ok
+	<br>Running tags&colon; ok
+	<br>The following new rcscripts were installed&colon; &sol;etc&sol;rc.d&sol;messagebus
+	<br>See rcctl&lpar;8&rpar; for details.
+	<br>New and changed readme&lapr;s&rpar;&colon;
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&sol;usr&sol;local&sol;share&sol;doc&sol;pkg-readmes&sol;dbus
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&sol;usr&sol;local&sol;share&sol;doc&sol;pkg-readmes&sol;firefox
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&sol;usr&sol;local&sol;share&sol;doc&sol;pkg-readmes&sol;glib2
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&sol;usr&sol;local&sol;share&sol;doc&sol;pkg-readmes&sol;gtk+3
+	<br>cs#
+      </p>
+
+      <p>Saya menggunakan pengguna root untuk melakukan pemasangan. Font yang bewarna biru menunjukan dependency untuk aplikasi firefox kerana ia adalah
+	file libarari yang di perlurkan untuk melancarkan firefox. Selain itu ia pkg_add juga akan membuat verfikasi file tersebut secara automatik.
+      </p>
+
+      <p>Sekiranya anda mengunakan kaedah <b>make install</b> di dalam direktori <b>&sol;usr&sol;ports&sol;www&sol;firefox-esr&sol;</b> ia akan mengambil
+	masa yang agak panjang. Sekiranya specifikasi anda adalah yang terhebat dan yang baru di dalam pasaran anda boleh mencubanya untuk melihat kepantasan
+	dan kebersanaan prosessor anda.
+      </p>
+
+    </article>
+
+    <footer>
+      <ul>
+	<li>
+	  <a href="https://creativecommons.org/licenses/by/4.0/">
+	    <img src="openbsd_notes/cc-by.svg" alt="CC-BY-4.0">
+	  </a>
+	</li>
+	<li>
+	  <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fbadlirashid.github.io%2Fch11_aplikasi.html">
+	    <img src="openbsd_notes/HTML5_Logo_64.png" alt="W3C Nu Html Checker">
+	  </a>
+	</li>
+	<li>
+	  <a href="https://jigsaw.w3.org/css-validator/validator?uri=badlirashid.github.io%2Fch11_aplikasi.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">
+	    <img src="openbsd_notes/vcss.gif" alt="W3C CSS Validation Service">
+	  </a>
+	</li>
+      </ul>
+    </footer>
+
+  </body>
+  
+</html>
