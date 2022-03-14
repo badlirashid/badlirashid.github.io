@@ -4,7 +4,8 @@
     <link rel="stylesheet" href="openbsd_notes.css">
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="openbsd, bsd, unix, opensource, ports aplikasi">
+    <meta name="keywords" content="openbsd, bsd, unix, opensource, ports, make, pkg_add">
+    <meta name="author" content="Badli Al Rashid">
     <meta name="description" content="Nota OpenBSD aplikasi">
     <title>Aplikasi Aplikasi OpenBSD</title>
   </head>
@@ -24,7 +25,7 @@
 	</tr>
 	<tr>
 	  <td>tarikh</td>
-	  <td>12 Mac 2022</td>
+	  <td>15 Mac 2022</td>
 	</tr>
 	<tr>
 	  <td>lesen</td>
@@ -42,10 +43,10 @@
       <h3>Dari sumber tarballs</h3>
       
       <p>Di dalam Unix atau Semacam Unix, salah satu distribusi aplikasi adalah di dalam file tarballs iaitu file yang dengan penghujungnya
-	&period;tar&period;gz , &period;tgz , &period;tar&period;bz2 atau semacamnya. Saya memuat turun aplikasi <b>GNU Nano</b> dan melakukan
-	konfigurasi dan kompilasi. Semasa kompilasi saya mendapat banyak amaran dan saya cuba dengan meneruskan dengan melancarkan file binari tersebut
-	terus mendapat <b>segfault</b>. Setelah beberapa kali mencuba aku teringat mereka selalu bercakap dengan aku tentang koleksi aplikasi dari <b>Ports</b>.
-	Setelah melihat dokumentasi aku mencuba ports ini.
+	&period;tar&period;gz , &period;tgz , &period;tar&period;bz2 atau semacamnya yang telah di arkib dan di padatkan. Saya memuat turun aplikasi
+	<b>GNU Nano</b> dan melakukan konfigurasi dan kompilasi. Semasa kompilasi saya mendapat banyak amaran dan saya cuba dengan meneruskan dengan
+	melancarkan file binari tersebut terus mendapat <b>segfault</b>. Setelah beberapa kali mencuba aku teringat kawan aku selalu bercakap dengan aku
+	tentang koleksi aplikasi dari <b>Ports</b>. Setelah melihat dokumentasi aku mencuba ports ini.
       </p>  
 
       <h3>Koleksi Ports OpenBSD</h3>
@@ -57,7 +58,8 @@
       </p>
 
       <p>Koleksi ini dapat di muat turun di halaman ftp OpenBSD, <b>https://ftp.openbsd.org/pub/OpenBSD/7.0</b>. saya memuat turun tiga file,
-	<b>ports.tar.gz</b>, <b>SHA256</b> dan <b>SHA256.sig</b>. File <b>ports.tar.gz</b> adalah koleksi aplikasi untuk sistem ports.
+	<b>ports.tar.gz</b>, <b>SHA256</b> dan <b>SHA256.sig</b>. File <b>ports.tar.gz</b> adalah koleksi aplikasi untuk sistem ports di dalam file ini
+	mengandungi file skrip untuk membuat pemasangan.
       </p>
 
       <p class="prompt">cs$ cat SHA256
@@ -92,7 +94,7 @@
 	
 
       
-      <p>SHA256.sig adalah file signature untuk memastikan file file tersebut adalah dari pihak OpenBSD dengan kunci kriptograpik awam mereka.
+      <p>SHA256.sig adalah file signature untuk memastikan file file tersebut adalah dari pihak OpenBSD dengan kunci kriptografi awam mereka.
       </p>
 
       <p class="prompt">cs$ ls
@@ -123,22 +125,29 @@
       </p>
 
       <p class="prompt">cs$ cd &sol;usr&sol;ports&sol;editors&sol;nano
-	<br>cs$ doas make install
+	<br>cs$ doas make
       </p>
 
       <p>Sebagai contoh, saya memasang aplikasi penyunting teks <b>nano</b> dengan memasuki direktori  &sol;usr&sol;ports&sol;editors&sol;nano dan
-	membuat arahan <b>doas make</b> dan <b>doas make install</b> di dalamnya. Ports akan menguruskan file sumber dan file file librari yang
-	di perlukan, verifikasi, konfigurasi dan kompilasi untuk aplikasi nano. Sekira anda menghadapi masaalah tengok apakah yang di hendaki seperti
-	libarari atau sebagainya dan cuba memasang libarari tersebut.
+	membuat arahan <b>doas make</b> dan setelah selesai <b>doas make install</b> di dalamnya. Ports akan menguruskan file sumber dan file file librari
+	yang di perlukan, verifikasi, konfigurasi dan kompilasi untuk aplikasi nano. Sekira anda menghadapi masaalah tengok apakah yang di hendaki seperti
+	libarari atau sebagainya dan memasang libarari tersebut.
       </p>
 
-      <p>Selepas selesai kesemuanya, anda hanya menaip <b>nano</b> di dalam shell untuk melancarkan aplikasi tersebut.
+      <p class="prompt">===>&nbsp;&nbsp;Building package for gettext-runtime-0&period;21p1
+	<br>Create &sol;usr&sol;ports&sol;packages&sol;amd64&sol;all&sol;gettext-runtime-0&period;21p1&period;tgz
+	<br>Missing library for iconv&gt;&equals;0&period;0
+      </p>
+
+      <p>Di saya menghadapai librari <b>gettext-runtime</b> memerlukan file librari libiconv. Saya memasang <b>libiconv</b> dulu sebelum menyambung memasang
+	<b>nano</b>. Anda boleh memasang file librari dengan <b>pkg_add</b>. Selepas selesai kesemuanya, anda menaip <b>nano</b> di dalam shell untuk
+	melancarkan aplikasi tersebut.
       </p>
       
       <h3>pkg_add, file binari aplikasi</h3>
 
-      <p><b>pkg_add</b> adalah untuk memasang aplikasi binari ke dalam sistem OpenBSD. Saya mulakan dengan arahan <b>pkg_add -u</b>. Aplikasi aplikasi yang
-	tersedia akan menaruh membuat naik taraf jika perlu untuk aplikasi aplikasi yang sudah di pasang. Kemudian kita menggunakan memasang aplikasi
+      <p>Dengan <b>pkg_add</b> anda memasang aplikasi binari ke dalam sistem OpenBSD. Saya mulakan dengan arahan <b>pkg_add -u</b>. Aplikasi aplikasi yang
+	telah di pasang akan di naik taraf jika perlu untuk aplikasi aplikasi yang sudah di pasang. Kemudian kita menggunakan memasang aplikasi
 	<b>Firefox</b> dengan memberi arahan <b>pkg_add firefox</b>.
       </p>  
 

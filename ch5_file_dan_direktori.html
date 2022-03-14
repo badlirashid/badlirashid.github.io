@@ -5,8 +5,9 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="openbsd, bsd, unix, ksh">
+    <meta name="author" content="Badli Al Rashid">
     <meta name="description" content="Akses File Dan Direktori">
-    <title>Nota OpenBSD, Akses File Dan Direktori</title>
+    <title>Akses File Dan Direktori</title>
   </head>
   <body>
     <header>
@@ -23,7 +24,7 @@
 	</tr>
 	<tr>
 	  <td>tarikh</td>
-	  <td>03 Mac 2022</td>
+	  <td>15 Mac 2022</td>
 	</tr>
 	<tr>
 	  <td>lesen</td>
@@ -228,11 +229,11 @@
       
 
       <p class="prompt">cheesysalmon# ls -al index.html
-	<br>-rwxrwxrwx  1 badli  badli  0 Feb 26 19:59 index.html
+	<br>-rwxrwxrwx  1 badli&nbsp;&nbsp;badli&nbsp;&nbsp;0 Feb 26 19:59 index.html
 	<br>cheesysalmon# chmod 644 index.html
 	<br>cheesysalmon# chown badli.www index.html
 	<br>cheesysalmon# ls -al index.html
-	<br>-rw-r--r--  1 badli  www  0 Feb 26 19:59 index.html
+	<br>-rw-r--r--  1 badli&nbsp;&nbsp;www&nbsp;&nbsp;0 Feb 26 19:59 index.html
 	<br>cheesysalmon#
       </p>
 
@@ -246,18 +247,18 @@
 	<br>cheesysalmon# chmod 700 direktori_website
 	<br>cheesysalmon# ls -al
 	<br>cheesysalmon$ exit
-	<br>drwx------  2 root   wheel  512 Feb 26 19:59 direktori_website
-	<br>cheesysalmon$ cd direktori_website/
+	<br>drwx------  2 root&nbsp;&nbsp;&nbsp;wheel&nbsp;&nbsp;512 Feb 26 19:59 direktori_website
+	<br>cheesysalmon$ cd direktori_website&sol;
 	<br>ksh: cd: /var/www/direktori_website - Permission denied
 	<br>cheesysalmon$ su -
 	<br>Password:
-	<br>cheesysalmon# cd /var/www/htdocs
+	<br>cheesysalmon# cd &sol;var&sol;www&sol;htdocs
 	<br>cheesysalmon# chown badli.www direktori_website
 	<br>cheesysalmon# chmod 755 direktori_website
 	<br>cheesysalmon# ls -al
-	<br>drwxr-xr-x  2 badli  www    512 Feb 26 19:59 direktori_website
+	<br>drwxr-xr-x  2 badli&nbsp;&nbsp;www&nbsp;&nbsp;&nbsp;&nbsp;512 Feb 26 19:59 direktori_website
 	<br>cheesysalmon# exit
-	<br>cheesysalmon$ cheesysalmon$ cd /var/www/htdocs/direktori_website
+	<br>cheesysalmon$ cheesysalmon$ cd &sol;var&sol;www&sol;htdocs&sol;direktori_website
 	<br>cheesysalmon$ mkdir test_dir
 	<br>cheesysalmon$
       </p>
