@@ -33,7 +33,8 @@
 
     </header>
 
-    <article class=install>
+    <article class="install">
+      
       <h2>Pemasangan OpenBSD</h2>
       
       <p>Sebelum anda memasang OpenBSD ke dalam Laptop, Desktop atau Server. Sebaiknya kita selidiki jikalau perkakas anda serasi dengan
@@ -42,10 +43,10 @@
 
       <ul>
 	<li>Storage controller</li>
-	<li>Network Adapter</li>
-	<li>Wireless Adapter</li>
-	<li>Graphics Card</li>
-	<li>Audio Card</li>
+	<li>kad penghubung</li>
+	<li>Kad penghubung tanpa wire</li>
+	<li>grafik kad</li>
+	<li>audio Kad</li>
 	<li>dan perkakas perkakas yang lain.</li>
       </ul>
 
@@ -60,7 +61,7 @@
       </p>
 
       <ul>
-	<li><a href="https://www.openbsd.org/faq/faq16.html">vmm</a></li>
+	<li><a href="https://www.openbsd.org/faq/faq16.html">OpenBSD vmm</a></li>
 	<li><a href="https://bhyve.org">bhyve</a></li>
 	<li><a href="https://www.linux-kvm.org">Linux KVM</a></li>
 	<li><a href="https://xenproject.org">Xen Project</a></li>	
@@ -69,7 +70,7 @@
 	<li><a href="https://www.vmware.com">dan VMware</a></li>
       </ul>
 
-      <h3> Media Permasangan </h3>
+      <h3> Media Pemasangan </h3>
       
       <p>Installation media boleh didapati di halaman utama<a href="https://www.openbsd.org"> OpenBSD</a>. Media yang boleh digunakan
 	seperti USB Pendrive, Cakera Padat dan Floppy.
@@ -79,12 +80,12 @@
       </p>
 
       <ul>
-	<li>i386 - Processor 32bit untuk Intel i386 atau yang sebanding dengannya.</li>
+	<li>i386 - Processor 32 bit untuk Intel i386 atau yang sebanding dengannya.</li>
 	<li>amd64- Processor 64 bit Dari AMD64 atau yang sebanding dengannya.</li>
 	<li>macppc - Processor Power PC telah digunakan oleh Apple sebelum mereka bertukar ke Intel Processor dahulu</li>
       </ul>
 
-      <h3> Processor 64bit dan 32bit</h3>
+      <h3> Processor 64 bit dan 32 bit</h3>
 
       <p>Sekiranya anda memasang drivers perkakas untuk sistem 32 bit, drivers itu tidak akan berfungsi ke sistem 64 bit dan begitu
 	juga sebaliknya. Aplikasi OpenBSD 32 bit tidak boleh dipakai host OpenBSD 64 bit dan aplikasi OpenBSD 64bit tidak boleh dipakai host OpenBSD 32bit.
@@ -96,12 +97,13 @@
       </p>
 
       <ul>
-	<li>hostname ia itu nama komputer anda</li>
-	<li>IP address</li>
-	<li>IP address DNS</li>
+	<li>hostname ia itu nama sistem anda</li>
+	<li>jika tidak secara automatik alamat IP anda </li>
+	<li>jika tidak secara automatik alamat DNS server</li>
+	<li>dan jika tidak secara automatik alamat gateway</li>
       </ul>
 
-      <p>Dokumentasi untuk memasang file-file pemasangan OpenBSD ke dalam media yang anda pilih ada di dalam halaman utama mereka.
+      <p>Dokumentasi untuk memasang file file pemasangan OpenBSD ke dalam media yang anda pilih ada di dalam halaman utama mereka.
 	Masukkan media tersebut and mulakan pengembaraan anda ke dalam alam OpenBSD.
       </p>
 
@@ -113,11 +115,7 @@
 
       <p><em>boot Cakera Padat yang mengandugi file permasangan OpenBSD</em>
       </p>
-			<!--
-			<figure><img src="openbsd_notes/boot_cd.png" alt="Boot Dari Pemasangan Media">
-				<figcaption>Gambar 06 - Boot dari Cakera Padat</figcaption>
-			</figure>
-			-->
+      
       <p>Sistem menanti arahan untuk membuat boot ke cakera padat OpenBSD. Tekan hanya menekan "Enter" untuk meneruskan.
       </p>
 
@@ -131,13 +129,9 @@
 	<br>Welcome to the OpenBSD&bsol;amd64 7.0 installation program&period;
 	<br>&lpar;I&rpar;nstall, &lpar;U&rpar;pgrade, &lpar;A&rpar;utoinstall or &lpar;S&rpar;hell&quest;
       </p>			
-			<!--
-			<figure><img src="openbsd_notes/step_1.png" alt="Skrip pemasangan OpenBSD">
-				<figcaption>Gambar 07 - 'i' untuk Install</figcaption>
-			</figure>
-			-->
+
       <p>Semasa process Boot, ia akan menunjukkan perkakas yang ada terpasang di dalam sistem anda. Setelah selesai ia
-	menunjukkan beberapa pilihan. Tekan huruf "i" and tekan "Enter" untuk meneruskan.
+	menunjukkan beberapa pilihan. Tekan huruf <b>"i"</b> and tekan <b>"Enter"</b> untuk meneruskan memasang sistem operasi.
       </p>
 
       <h4>3 - Akses Sistem melauie SSHD dan Akaun root</h4>
@@ -151,11 +145,7 @@
 	<br>Do you expect to run the X Window System&quest; &lsqb;yes&rsqb;
 	<br>Do you want the X Window System to be started by xenodm&lpar;1&rpar;&quest; &lsqb;no&rsqb;
       </p>
-			<!--
-			<figure><img src="openbsd_notes/step_15.png" alt="Akses dan Root">
-				<figcaption>Gambar 08 - Akses dan Root</figcaption>
-			</figure>
-			-->
+			
       <P> Start sshd&lpar;8&rpar; by default&quest; &lsqb;yes&rsqb;
 	<br> Untuk mengakses sistem anda dari luar kita perlu mengaktifkan SSH daemon semasa boot. Sekiranya jika anda tidak mahu
 	<br>SSH daemon berfungsi anda boleh menjawab No &lpar;tidak&rpar;.
@@ -169,7 +159,7 @@
 
       <h5>root dan Pengguna biasa</h5>
       <p>OpenBSD mempunyai dua jenis pengguna, root akaun dan pengguna biasa. root akaun ini satu sahaja yang di sediakan dan ia di katakan
-	sebagai &quot;Super User&quot;. root ini selalu digunakan untuk mentadbir sistem anda.
+	sebagai &quot;Super User&quot;. root ini selalu digunakan untuk mentadbir sistem operasi anda.
       </p>
 
       <p>Lain pula dengan pengguna biasa, ia adalah akaun yang selalu di gunakan untuk membuat kerja kerja harian dan tidak perlu menggunakan
@@ -183,11 +173,14 @@
       </figure>
 
       <p>Struktur Cakera Keras yang saya pilih adalah yang saya buat sendiri. Anda boleh mengikut struktur yang di sediakan oleh skrip pemasangan
-	sebagai permulaan. <span lang="en">Swap partition</span> adalah memori virtual komputer. Ia membolehkan sistem akses lebih dari memori kemampuan sebenar.
-	Kebesarannya swap akan mengikut size fizikal memory atau dua kali ganda size fizikal.</p>
+	sebagai permulaan.</p>
 
-      <p>Dulu semasa saya belajar mengenai Debian ada orang menyebut tentang /exports, saya bengang apa yang dimaksudkan dengan folder exports ?
-	Saya mendapat tahu, dia menggunakan untuk mount point NFS server mereka. Struktur folder mereka berbeza dengan yang saya biasa
+      <p><span lang="en">Swap partition</span> adalah memori virtual komputer. Ia membolehkan sistem akses lebih dari memori kemampuan sebenar.
+	Kebesarannya swap akan mengikut size fizikal memori atau dua kali ganda size fizikal memori.</p>
+
+      <p>Dulu semasa saya belajar mengenai Debian ada orang menyebut tentang direktori &sol;exports, saya bengang apa yang dimaksudkan dengan
+	direktori exports ? Saya mendapat tahu, dia menggunakan untuk mount point NFS server mereka. Struktur direktori mereka berbeza
+	dengan yang saya biasa.
       </p>
 
       <h4>5 - Komponen komponen OpenBSD</h4>
@@ -206,11 +199,11 @@
 	<li>etc.tgz - file konfigurasi sistem utama</li>
 	<li>comp70.tgz - sistem kompiler, file library dan sebagainya</li>
 	<li>game70.tgz - game teks </li>
-	<li>xetc70.tgz - file konfigurasi x11</li>
-	<li>xserv.tgz - komponen X11</li>
-	<li>xbase70.tgz - komponen utama X11</li>
-	<li>xshare70.tgz - file ini perlu untuk xbase</li>
-	<li>xfont70.tgz - font X11</li>
+	<li>xetc70.tgz - file konfigurasi x11 iaitu grafik</li>
+	<li>xserv.tgz - komponen X11  iaitu grafik</li>
+	<li>xbase70.tgz - komponen utama X11  iaitu grafik</li>
+	<li>xshare70.tgz - file ini perlu untuk xbase  iaitu grafik</li>
+	<li>xfont70.tgz - font X11  iaitu grafik</li>
       </ul>
 
       <h4>6 - Waktu tempatan</h4>
@@ -267,7 +260,13 @@
 	<ol>
 	  <li><a href ="https://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY https://www.chiark.greenend.org.uk/~sgtatham/putty/</a></li>
 	  <li><a href ="https://winscp.net">WinSCP https://winscp.net</a></li>
-	  <li><a href ="https://www.openbsd.org/faq/faq16.html">OpenBSD vmm</a></li>
+	  <li><a href ="https://www.openbsd.org/faq/faq16.html">OpenBSD vmm https://www.openbsd.org/faq/faq16.html</a></li>
+	  <li><a href ="https://bhyve.org">bhyve https://bhyve.org</a></li>
+	  <li><a href ="https://www.linux-kvm.org">Linux KVM https://www.linux-kvm.org</a></li>
+	  <li><a href ="https://xenproject.org">Xen Project https://xenproject.org</a></li>
+	  <li><a href ="https://www.virtualbox.org">Oracle VirtualBox https://www.virtualbox.org</a></li>
+	  <li><a href ="https://docs.microsoft.com">Microsoft Hyper-V https://docs.microsoft.com</a></li>
+	  <li><a href ="https://www.vmware.com">dan VMware https://www.vmware.com</a></li>
 	</ol>
 
     </article>
