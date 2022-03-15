@@ -78,7 +78,7 @@
 
 
       <p class="prompt">cs$ cat SHA256
-	<br>SHA256      SHA256.sig
+	<br>SHA256&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHA256.sig
 	<br>cs$ cat SHA256.sig
 	<br>untrusted comment: verify with openbsd-70-base.pub
 	<br>RWR3KL+gSr4QZ57kPRszRweP1lK4NVCBxzIZSwBMlmJxfRcGC58t24SNz+EHxInnak3RvRXxdarOewraKZmD6CrVfFVY3jIfRw4=
@@ -124,13 +124,67 @@
 	<b>&sol;usr&sol;ports</b>.
       </p>
 
+            <p>Aplikasi aplikasi ini di bahagi bahagikan mengikut kategori kategori di dalam direktori ports seperti berikut.</p>
+      
+      <ul>
+	<li>archivers</li>
+	<li>astro</li>
+	<li>audio</li>
+	<li>benchmarks</li>
+	<li>biology</li>
+	<li>books</li>
+	<li>bulk</li>
+	<li>cad</li>
+	<li>chinese</li>
+	<li>comms</li>
+	<li>converters</li>
+	<li>databases</li>
+	<li>devel</li>
+	<li>distfiles</li>
+	<li>editors</li>
+	<li>education</li>
+	<li>emulators</li>
+	<li>fonts</li>
+	<li>games</li>
+	<li>geo</li>
+	<li>graphics</li>
+	<li>infrastructure</li>
+	<li>inputmethods</li>
+	<li>japanese</li>
+	<li>java</li>
+	<li>korean</li>
+	<li>lang</li>
+	<li>mail</li>
+	<li>math</li>
+	<li>meta</li>
+	<li>misc</li>
+	<li>multimedia</li>
+	<li>net</li>
+	<li>news</li>
+	<li>packages</li>
+	<li>plan9</li>
+	<li>plist</li>
+	<li>pobj</li>
+	<li>print</li>
+	<li>productivity</li>
+	<li>security</li>
+	<li>shells</li>
+	<li>sysutils</li>
+	<li>telephony</li>
+	<li>tests</li>
+	<li>textproc</li>
+	<li>www</li>
+	<li>x11</li>
+      </ul>
+
       <p class="prompt">cs$ cd &sol;usr&sol;ports&sol;editors&sol;nano
 	<br>cs$ doas make
       </p>
+      
 
       <p>Sebagai contoh, saya memasang aplikasi penyunting teks <b>nano</b> dengan memasuki direktori  &sol;usr&sol;ports&sol;editors&sol;nano dan
 	membuat arahan <b>doas make</b> dan setelah selesai <b>doas make install</b> di dalamnya. Ports akan menguruskan file sumber dan file file librari
-	yang di perlukan, verifikasi, konfigurasi dan kompilasi untuk aplikasi nano. Sekira anda menghadapi masaalah tengok apakah yang di hendaki seperti
+	yang di perlukan, verifikasi, konfigurasi dan kompilasi untuk aplikasi nano. Sekiranya anda menghadapi masaalah tengok apakah yang di hendaki seperti
 	libarari atau sebagainya dan memasang libarari tersebut.
       </p>
 
@@ -139,9 +193,9 @@
 	<br>Missing library for iconv&gt;&equals;0&period;0
       </p>
 
-      <p>Di saya menghadapai librari <b>gettext-runtime</b> memerlukan file librari libiconv. Saya memasang <b>libiconv</b> dulu sebelum menyambung memasang
-	<b>nano</b>. Anda boleh memasang file librari dengan <b>pkg_add</b>. Selepas selesai kesemuanya, anda menaip <b>nano</b> di dalam shell untuk
-	melancarkan aplikasi tersebut.
+      <p>Saya memerlukan <b>librari iconv</b> yang di perlukan oleh <b>gettext-runtime</b>. Saya boleh mencari dengan <b>pkg_info -Q iconv</b> untuk
+	mendapatkan namanya. Saya memasang <b>libiconv</b> dulu sebelum menyambung memasang <b>nano</b>. File librari iconv boleh di pasang dengan
+	aplikasi <b>pkg_add</b>. Selepas selesai memasang kesemuanya, anda boleh menaip <b>nano</b> di dalam shell untuk melancarkan aplikasi tersebut.
       </p>
       
       <h3>pkg_add, file binari aplikasi</h3>
@@ -205,13 +259,63 @@
 	<br>cs#
       </p>
 
-      <p>Saya menggunakan pengguna root untuk melakukan pemasangan. Font yang berwarna biru menunjukkan aplikasi dan librari yang di gunakan oleh aplikasi firefox kerana ia adalah
-	file libarari yang di perlukan untuk melancarkan firefox. Selain itu ia pkg_add juga akan membuat verfikasi file tersebut secara automatik.
+      <p>Saya menggunakan pengguna root untuk melakukan pemasangan. Font yang berwarna biru menunjukkan aplikasi dan librari yang di gunakan oleh
+	aplikasi firefox kerana ia adalah file libarari yang di perlukan untuk melancarkan firefox. Selain itu ia pkg_add juga akan membuat verfikasi
+	file tersebut secara automatik.
       </p>
 
       <p>Sekiranya anda menggunakan kaedah <b>make install</b> di dalam direktori <b>&sol;usr&sol;ports&sol;www&sol;firefox-esr&sol;</b> ia akan mengambil
 	masa yang agak panjang. Sekiranya spesifikasi anda adalah yang terhebat dan yang baru di dalam pasaran anda boleh mencubanya untuk melihat kepantasan
 	dan keberkesanan prosesor anda.
+      </p>
+
+      <h3>Selesai memasang aplikasi </h3>
+      
+      <p>Dengan <b>pkg_info</b> saya boleh melihat apakah aplikasi aplikasi yang telah di pasang ke dalam sistem ini. Walaupun saya memerlukan firefox
+	dan nano tetapi ia menghendaki beberapa komponen komponen yang perlu di pasang untuk melancar aplikasi aplikasi tersebut.</p>
+      
+      <p class="prompt">cs$ pkg_info
+	<br>adwaita-icon-theme-40.1.1&nbsp;&nbsp;base icon theme for GNOME
+	<br>at-spi2-atk-2.38.0&nbsp;&nbsp;atk-bridge for at-spi2
+	<br>at-spi2-core-2.40.3&nbsp;&nbsp;service interface for assistive technologies
+	<br>atk-2.36.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;accessibility toolkit used by gtk+
+	<br>bzip2-1.0.8p0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block-sorting file compressor, unencumbered
+	<br>cairo-1.16.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vector graphics library
+	<br>dbus-1.12.20p1v0&nbsp;&nbsp;&nbsp;&nbsp;message bus system
+	<br>dconf-0.40.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;configuration backend system
+	<br>desktop-file-utils-0.26&nbsp;&nbsp;utilities for dot.desktop entries
+	<br>dwz-0.14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DWARF optimization and duplicate removal tool
+	<br>firefox-95.0.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Firefox web browser
+	<br>fribidi-1.0.10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;library implementing the Unicode Bidirectional Algorithm
+	<br>gdk-pixbuf-2.42.6&nbsp;&nbsp;&nbsp;&nbsp;image data transformation library
+	<br>gettext-runtime-0.21p1&nbsp;&nbsp;GNU gettext runtime libraries and programs
+	<br>glib2-2.68.4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;general-purpose utility library
+	<br>graphite2-1.3.14&nbsp;&nbsp;&nbsp;&nbsp;rendering for complex writing systems
+	<br>gtk+3-3.24.30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;multi-platform graphical toolkit
+	<br>gtk-update-icon-cache-3.24.30&nbsp;&nbsp;gtk+ icon theme caching utility
+	<br>harfbuzz-2.9.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text shaping library
+	<br>hicolor-icon-theme-0.17&nbsp;&nbsp;fallback theme of the icon theme specification
+	<br>icu4c-69.1p0v0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;International Components for Unicode
+	<br>jpeg-2.1.1v0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SIMD-accelerated JPEG codec replacement of libjpeg
+	<br>libffi-3.3p1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Foreign Function Interface
+	<br>libiconv-1.16p0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;character set conversion library
+	<br>librsvg-2.50.7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SAX-based render library for SVG files
+	<br>libxml-2.9.12p0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XML parsing library
+	<br>lz4-1.9.3p0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fast BSD-licensed data compression
+	<br>lzo2-2.10p2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;portable speedy lossless data compression library
+	<br>nano-5.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;simple editor, inspired by Pico
+	<br>nspr-4.32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Netscape Portable Runtime
+	<br>nss-3.70p0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;libraries to support development of security-enabled apps
+	<br>pango-1.48.10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;library for layout and rendering of text
+	<br>pcre-8.44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;perl-compatible regular expression library
+	<br>png-1.6.37&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;library for manipulating PNG images
+	<br>python-3.8.12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interpreted object-oriented programming language
+	<br>quirks-4.54&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exceptions to pkg_add rules
+	<br>shared-mime-info-2.1&nbsp;&nbsp;shared mime database for desktops
+	<br>sqlite3-3.35.5p0&nbsp;&nbsp;&nbsp;&nbsp;embedded SQL implementation
+	<br>tiff-4.3.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tools and library routines for working with TIFF images
+	<br>xz-5.2.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LZMA compression and decompression tools
+	<br>zstd-1.5.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zstandard fast real-time compression algorithm
       </p>
 
     </article>
