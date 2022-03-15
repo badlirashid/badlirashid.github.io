@@ -27,7 +27,7 @@
 	</tr>
 	<tr>
 	  <td>tarikh</td>
-	  <td>03 Mac 2022</td>
+	  <td>15 Mac 2022</td>
 	</tr>
 	<tr>
 	  <td>lesen</td>
@@ -88,12 +88,15 @@
 	<br>cheesysalmon$
       </p>
 
-      <p>Kita mulakan dengan menaip <b>pwd</b> (singkatan Print Working Directory)dan tekan 'Enter' untuk memastikan kita berada di dalam home folder.
+      <p>Kita mulakan dengan menaip <b>pwd</b> (singkatan Print Working Directory)dan tekan 'Enter' untuk memastikan kita berada di dalam home direktori.
 	Ia akan menunjukkan <b>/home/badli</b> di monitor andah.
       </p>
 
-      <p>Satu lagi cari untuk memastikan di mana home folder kita ialah dengan menaip <b>echo $HOME</b>. <b>$HOME</b> ada lah home environment variable.
+      <p>Satu lagi cari untuk memastikan di mana home direktori kita ialah dengan menaip <b>echo $HOME</b>. <b>$HOME</b> ada lah home environment variable.
 	Setiap pengguna sistem ini mempunyai berlainan home direktori.
+      </p>
+
+      <p>Setiap arahan yang kita taip kita mesti menekan <b>Enter</b> supaya sistem operasi dapat menerima dan memproses arahan arahan tersebut.
       </p>
 
       <h3>Nama host Dan Akaun - whoami, hostname dan uname</h3>
@@ -109,18 +112,18 @@
 	<br>OpenBSD cheesysalmon.my.domain 7.0 GENERIC#5 amd64
       </p>
       
-      <p>OpenBSD adalah sistem multi pengguna, beberapa pengguna dapat log masuk di dalam sistem tersebut secara serentak. Sebagai contoh saya akses
+      <p>OpenBSD adalah sistem pelbagai pengguna, beberapa pengguna dapat log masuk di dalam sistem tersebut secara serentak. Sebagai contoh saya akses
 	di depan komputer dan ada orang log masuk dari <b>ssh</b>.
       </p>
 
-      <p>Di sini saya menggunakan program <b>whoami</b> untuk memastikan akaun saya betul. Setelah itu saya menggunakan who akan menunjukkan siapa yang
+      <p>Di sini saya menggunakan program <b>whoami</b> untuk memastikan akaun saya betul. Setelah itu saya menggunakan <b>who</b> untuk menunjukkan siapa yang
 	sedang masuk di dalam sistem.
       </p>
 
       <p>Di sini <b>who</b> memberitahu yang dua pengguna telah masuk ke sistem, saya dan jane.
       </p>
 
-      <p>Program <b>hostname</b> melihat kan nama sistem anda sahaja. tetapi <b>uname -a</b> akan memapar kan sistem operasi yang di guna kan dan hostname
+      <p>Program <b>hostname</b> melihat kan nama sistem anda sahaja. tetapi <b>uname -a</b> akan memaparkan sistem operasi yang di guna kan dan hostname.
 	</p>
 
       <h3> File Dan Direktori Yang Disembunyikan </h3>
@@ -132,7 +135,7 @@
 	<br>
       </p>
       
-      <p>Taip <b>ls</b> (singkatan list) untuk melihat kandungan home direktori. Anda tidak nampak apa pun sama ada  file atau direktori home kamu.
+      <p>Taip <b>ls</b> (singkatan untuk list) untuk melihat kandungan home direktori. Anda tidak nampak apa pun sama ada file atau direktori home kamu.
       </p>
       
       <p>Sekarang taip <b>ls -a</b> kita akan mendapati ada file dan direktori yang di sembunyikan sebelumnya. <b>-a</b> di sini bermaksud untuk melihat
@@ -193,7 +196,7 @@
       </p>
       
       <p>Satu lagi kaedah untuk membeza di antara file dan direktori adalah dengan menggunakan <b>file</b>. Dari contoh program telah membezakan
-	<b>.profile</b> adalah text file dan <b>.ssh</b> adalah folder.
+	<b>.profile</b> adalah text file dan <b>.ssh</b> adalah direktori.
       </p>
 
       <p class="prompt">cheesysalmon$ file &sol;sys
@@ -253,7 +256,7 @@
       </p>
 	
       
-      <h3>Navigasi sistem,  Masuk Dan Keluar Folder</h3>
+      <h3>Navigasi sistem,  Masuk Dan Keluar Direktori</h3>
 	<p class="prompt">cheesysalmon$&nbsp;cd&nbsp;nota
 	  <br>cheesysalmon$&nbsp;rm&nbsp;list.txt
 	  <br>cheesysalmon$&nbsp;cd&nbsp;../
@@ -277,7 +280,7 @@
 	  <br>nota
 	</p>
 	
-      <p><b>cd&nbsp;nota</b> program cd adalah singkatan <b>"change directory"</b>. Fungsinya untuk masuk ke dalam folder <b>nota</b>
+      <p><b>cd&nbsp;nota</b> program cd adalah singkatan <b>"change directory"</b>. Fungsinya untuk masuk ke dalam direktori <b>nota</b>
       </p>
       <p><b>rm&nbsp;list&period;txt</b> <b>rm</b> bermaksud <b>remove</b> atau memusnahkan file list&period;txt tersebut.
       </p>
@@ -341,14 +344,14 @@
 
       <h3>Membaca Dokumentasi Program program yang tersedia </h3>
       
-      <p>Seperti sistem Unix yang lain nya anda boleh membaca dokumentasi program program atau arahan tersebut didalam OpenBSD sekiranya
-	anda telah memasang <b>man70.tgz</b> semasa pemasangan. Kalau tidak di install anda boleh membuat permasang file tersebut.  
+      <p>Seperti sistem Unix yang lain nya anda boleh membaca dokumentasi program program atau arahan tersebut di dalam OpenBSD sekiranya
+	anda telah memasang <b>man70.tgz</b> semasa pemasangan. Kalau tidak di pasang anda boleh membuat pemasang file tersebut.  
       </p>
 
       <h4>Sistem pertolongan <em>man</em></h4>
       
       <p><b>man</b> bermaksud <b>"perlihatkan manual"</b>, program ini program asas sistem pertolongan Unix. Jikalau anda pengguna sistem Unix,
-	anda pasti pernah menggunakan man  untuk mecari pilihan oleh program yang anda pakai. Dokumen dokumen yang di sediakah adalah bermutu tinggi.
+	anda pasti pernah menggunakan man  untuk mecari pilihan oleh program yang anda pakai. Dokumen dokumen yang di sediakan adalah bermutu tinggi.
 	Format arahan man seperti,<b>man program</b>. Contoh <b>man ls</b> untuk melihat manual untuk ls.
       </p>
 
@@ -375,11 +378,11 @@
       <h4> Enjin Carian </h4>
 
       <p>Sebelum injin carian mungkin baik kita melihat kepada OpenBSD FAQ. FAQ adalah tempat yang paling baik untuk melihat kerana ia akan memberi jawapan
-	kepada soalan soalan lazim di jawap. Selain halaman mereka mempunyai muka surat man.
+	kepada soalan soalan lazim yang di jawab. Selain halaman mereka mempunyai muka surat man.
       </p>
 
       <p>Ada pada masanya, saya menggunakan Injin carian apabila saya tersangkut. Jawapan yang di beri sebagai buat rujukan yang lebih
-	lanjut sekiranya  saya tak dapat mencari dari sistem bantuan atau kurang memahami dokumentasi. Di sini terdapat banyak sumber yang
+	lanjut sekiranya saya tak dapat mencari dari sistem bantuan atau kurang memahami dokumentasi. Di sini terdapat banyak sumber yang
 	anda boleh baca.
       </p>
 
@@ -418,13 +421,13 @@
       
 
       <p><b>&brvbar;</b> adalah symbol untuk mengambil <b>output</b> dari program <b>ls -l</b> itu and dijadikan <b>input</b> ke <b>wc</b>
-	untuk mengira berapa program yang terdapat didalam sistem OpenBSD anda.
+	untuk mengira berapa program yang terdapat di dalam sistem OpenBSD anda.
       </p>
 
       <h3>Kesimpulan</h3>
       
       <p>Kita tidak perlu menghafal ke semua program tersebut, Kita perlu membiasakan program yang penting sahaja untuk menggunakan <b>ksh</b>
-	atau mana mana Unix shell yang anda selesa. Proficiency akan mula terasa apa bila kita biasa menggunakannya. 
+	atau mana mana aplikasi Unix shell yang anda selesa. Tahap keberkesanan akan mula terasa apa bila kita biasa menggunakannya. 
       </p>
 
     </article>
